@@ -1,0 +1,58 @@
+@import '../../../../assets/style/vars.scss';
+
+.main_banner {
+	padding-bottom: 15px;
+	padding-top: 15px;
+	&_wrap {
+		display: flex;
+		flex-direction: row-reverse;
+		position: relative;
+	}
+	&_title {
+		font-family: 'Cormorant';
+		font-size: 84px;
+		color: var(--color-brown);
+		line-height: 101.72px;
+	}
+	&_left {
+		position: absolute;
+		left: 0;
+		top: 297px;
+	}
+	&_left span {
+		display: block;
+		font-family: 'Forum';
+		font-size: 50px;
+		color: var(--color-light-brown);
+		margin-left: 115px;
+		margin-top: 5px;
+	}
+	&_btn {
+		margin-left: 215px;
+		margin-top: 56px;
+	}
+}
+
+.btn_primary {
+	font-family: 'Montserrat Bold';
+	color: var(--color-white);
+	appearance: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    text-decoration: none;
+    padding: 0 40px;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+	background-color: var(--color-light-brown);
+	transition: 0.4s ease-in-out;
+	&:hover {
+		background-color: var(--color-brown);
+	}
+}

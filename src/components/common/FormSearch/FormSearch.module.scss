@@ -1,0 +1,35 @@
+@import '../../../assets/style/vars.scss';
+
+.form {
+	display: flex;
+	align-items: center;
+	&_item {
+		height: 20px;
+		padding-left: 5px;
+		color: var(--color-brown);
+		-webkit-appearance: none;
+		transition: 1.3s ease 0s;
+		border: 1px solid var(--color-grey);
+	}
+	&_item:hover {
+		border: 1px solid var(--color-brown);
+	}
+	&_item:focus::-webkit-input-placeholder {
+		color: transparent;
+	}
+	&_item::placeholder {
+		color: var(--color-light-brown);
+	}
+	&_item::-webkit-search-cancel-button {
+		-webkit-appearance: none;
+		width: 25px;
+		height: 25px;
+		background: url(../../../../public/cross.png);
+		margin-right: 2px;
+		margin-bottom: 10px;
+		cursor: pointer;
+	}
+	&_btn {
+		margin-left: 5px;
+	}
+}

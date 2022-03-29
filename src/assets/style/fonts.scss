@@ -1,0 +1,50 @@
+@font-face {
+	font-family: 'TTRicordiMarmo';
+	src: url('../fonts/TTRicordiMarmo-Regular.eot');
+	src: local('☺'), url('../fonts/TTRicordiMarmo-Regular.woff') format('woff'), url('../fonts/TTRicordiMarmo-Regular.ttf') format('truetype'), url('../fonts/TTRicordiMarmo-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../fonts/montserrat_regular.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/montserrat_regular.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/montserrat_regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/montserrat_regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/montserrat_regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/montserrat_regular.svg#montserrat_regular') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+
+@font-face {
+	font-family: 'Montserrat Bold';
+	src: url('../fonts/montserrat_bold.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/montserrat_bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/montserrat_bold.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/montserrat_bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/montserrat_bold.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/montserrat_bold.svg#montserrat_bold') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+
+
+
+@font-face {
+	font-family: 'Forum';
+	src: url('../fonts/Forum-Regular.eot');
+	src: local('☺'), url('../fonts/Forum-Regular.woff') format('woff'), url('../fonts/Forum-Regular.ttf') format('truetype'), url('../fonts/Forum-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cormorant';
+    src: local('CormorantGaramond'),
+         url('../fonts/CormorantGaramond-Medium.ttf') format('truetype'),
+         url('../fonts/CormorantGaramond-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/CormorantGaramond-Medium.woff') format('woff'); 
+    font-weight: 500;
+    font-style: normal;
+}

@@ -1,0 +1,27 @@
+@import '../../../../assets/style/vars.scss';
+
+.account, .basket {
+	margin-left: 22px;
+	& svg {
+		fill: var(--color-brown);
+		transition: 0.4s ease-in-out;
+	}
+	& svg:hover {
+		fill: var(--color-light-brown);
+	}
+}
+
+.account {
+	display: flex;
+	align-items: center;
+	&_user {
+		font-family: 'Montserrat';
+		font-size: 16px;
+		margin-right: 5px;
+		color: var(--color-brown);
+        transition: 0.4s ease-in-out;
+	}
+	&_user:hover {
+		color: var(--color-light-brown);
+	}
+}
