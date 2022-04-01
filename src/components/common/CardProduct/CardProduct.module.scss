@@ -1,0 +1,48 @@
+@import '../../../assets/style/vars.scss';
+
+.product {
+    &_item {
+        display: inline-block;
+        width: 280px;
+        border: 2px solid var(--color-light-brown);
+		cursor: pointer;
+		transition: 0.6s;
+    }
+	&_item:hover {
+		box-shadow: 7px 4px 4px rgb(216, 212, 212);
+	}
+    &_title {
+    font-family: 'Forum';
+	font-size: 24px;
+    text-align: end;
+	color: var(--color-brown);
+	margin-right: 12px;
+	margin-left: 12px;
+    }
+    &_price {
+		display: block;
+		text-align: end;
+		margin-right: 12px;
+		font-family: 'Forum';
+		font-size: 30px;
+		color: var(--color-brown);
+	}
+	&_item_img {
+		display: block;
+		margin: 15px 15px 10px 15px;
+	}
+	&_item_price_wrap {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-right: 12px;
+		margin-top: 7px;
+	}
+	&_btn {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}
+}
+

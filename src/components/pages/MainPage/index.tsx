@@ -4,6 +4,7 @@ import { data } from '../../../helpers';
 import UserList from './UserList';
 import Button from '../../common/Button';
 import MainBanner from './MainBanner';
+import PopularProduct from './PopularProduct';
 
 const MainPage = () => (
   // useEffect(() => console.log('MAIN_PAGE - MOUNT'), []);
@@ -24,6 +25,7 @@ const MainPage = () => (
 
   <>
     <MainBanner />
+    <PopularProduct />
     {/* <h1>User List</h1>
       {listVisible ? <UserList data={data} /> : <h2>Список скрыт</h2>}
       {/* {listVisible && <UserList data={data} />} */}

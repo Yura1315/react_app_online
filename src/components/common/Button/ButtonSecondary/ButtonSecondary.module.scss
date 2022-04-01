@@ -1,0 +1,26 @@
+@import '../../../../assets/style/vars.scss';
+
+.btn_secondary {
+	font-family: 'Montserrat Bold';
+	color: var(--color-white);
+	appearance: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    text-decoration: none;
+    padding: 0 30px;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+	background-color: var(--color-light-brown);
+	transition: 0.4s ease-in-out;
+	line-height: 12px;
+	&:hover {
+		background-color: var(--color-brown);
+	}
+}

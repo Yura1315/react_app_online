@@ -1,8 +1,9 @@
 @import '../../../../assets/style/vars.scss';
 
 .main_banner {
-	padding-bottom: 15px;
+	width: $container;
 	padding-top: 15px;
+	margin: 0 auto;
 	&_wrap {
 		display: flex;
 		flex-direction: row-reverse;

@@ -1,0 +1,20 @@
+@import '../../../../assets/style/vars.scss';
+
+.title {
+	font-family: 'TTRicordiMarmo';
+	font-size: 36px;
+	color: var(--color-brown);
+	// margin-top: 30px;
+	padding-bottom: 50px;
+}
+
+.container {
+    width: $container;
+    margin: 0 auto;
+}
+
+.popular {
+	background-color: var(--color-white);
+	padding-top: 80px;
+	padding-bottom: 150px;
+}
