@@ -1,6 +1,6 @@
 import React from 'react';
-import BreadCrumbs from './BreadCrumbs';
+import Catalog from './Catalog';
 
-const CatalogPage = () => <BreadCrumbs />;
+const CatalogPage = () => <Catalog />;
 
 export default CatalogPage;

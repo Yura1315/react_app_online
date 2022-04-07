@@ -1,0 +1,10 @@
+@import '../../../../assets/style/main.scss';
+
+.catalog {
+    &_wrap {
+        width: 1290px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+}

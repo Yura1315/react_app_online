@@ -1,9 +1,0 @@
-@import './../../../assets/style/vars.scss';
-
-.popular_product {
-	&_list {
-		display: grid;
-	    grid-template-columns: repeat(4, 1fr);
-	    grid-gap: 53px;
-	}
-}

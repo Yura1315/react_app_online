@@ -8,7 +8,7 @@ const PopularProduct = () => (
   <div className={style.popular}>
     <div className={style.container}>
       <h2 className={style.title}>Популярные товары</h2>
-      <ProductList data={product} type={style.container} />
+      <ProductList data={product} type />
     </div>
   </div>
 );
