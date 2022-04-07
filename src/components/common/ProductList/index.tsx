@@ -1,8 +1,8 @@
 import React from 'react';
-import CardProduct from '../../../../common/CardProduct';
+import CardProduct from '../CardProduct';
 import style from './PopularProductList.module.scss';
 
-type PopularProductListType = {
+type ProductListType = {
   data: {
     id: number;
     title: string;
@@ -11,9 +11,10 @@ type PopularProductListType = {
     article: number;
     alt: string;
   }[];
+  type: string;
 };
 
-const PopularProductList = ({ data }: PopularProductListType) => (
+const ProductList = ({ data }: ProductListType) => (
   <ul className={style.popular_product_list}>
     {data.map((el) => (
       <CardProduct id={el.id} title={el.title} price={el.price} src={el.src} alt={el.alt} />
@@ -21,4 +22,4 @@ const PopularProductList = ({ data }: PopularProductListType) => (
   </ul>
 );
 
-export default PopularProductList;
+export default ProductList;

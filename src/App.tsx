@@ -5,6 +5,7 @@ import RegistrationContainer from './containers/RegistrationContainer';
 import AuthContainer from './containers/AuthContainer';
 import PageWrapper from './components/common/PageWrapper';
 import OneUserContainer from './containers/OneUserContainer';
+import CatalogContainer from './containers/CatalogContainer';
 
 const App = () => {
   console.log('APP => start');
@@ -14,7 +15,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<PageWrapper />}>
         <Route index element={<MainContainer />} />
-        {/* <Route path="users" element={<MainContainer />} /> */}
+        <Route path="catalog" element={<CatalogContainer />} />
         <Route path="users/:name" element={<OneUserContainer />} />
         <Route path="auth" element={<AuthContainer />} />
         <Route path="reg" element={<RegistrationContainer />} />
