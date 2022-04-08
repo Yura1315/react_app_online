@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ButtonSecondary from '../Button/ButtonSecondary';
 import style from './CardProduct.module.scss';
 
 type CardProductType = {
-  id: number;
+  id: string;
   title: string;
   src: string;
   price: number;
@@ -11,7 +12,7 @@ type CardProductType = {
 };
 
 const CardProduct = ({ id, title, src, price, alt }: CardProductType) => (
-  <li className={style.product_item} key={id}>
+  <Link className={style.product_item} key={id} to={`/catalog/${id}`}>
     <img className={style.product_item_img} src={src} alt={alt} />
     <h2 className={style.product_title}>{title}</h2>
     <p className={style.product_item_price_wrap}>
@@ -32,7 +33,7 @@ const CardProduct = ({ id, title, src, price, alt }: CardProductType) => (
       <ButtonSecondary title="ПОДРОБНЕЕ" />
       <ButtonSecondary title="В КОРЗИНУ" />
     </div>
-  </li>
+  </Link>
 );
 
 export default CardProduct;

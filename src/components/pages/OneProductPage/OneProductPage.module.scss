@@ -1,0 +1,98 @@
+@import '../../../assets/style/vars.scss';
+
+.card_more {
+	padding-top: 50px;
+	padding-bottom: 80px;
+	background-color: var(--color-grey);
+	&_wrap {
+		display: flex;
+	}
+	&_img {
+		overflow: hidden;
+		width: 500px;
+		height: 500px;
+	}
+	&_img img {
+		display: block;
+	}
+	&_list {
+		display: flex;
+	}
+	&_info {
+		margin-left: 34px;
+	}
+	&_title {
+		font-family: 'Forum';
+		font-size: 50px;
+		color: var(--color-brown);
+		width: 450px;
+	}
+	&_price {
+		font-family: 'Forum';
+		font-size: 35px;
+		color: var(--color-brown);
+		margin-right: 6px;
+	}
+	&_link {
+		font-family: 'Montserrat';
+		font-size: 16px;
+		color: var(--color-brown);
+		margin-right: 48px;
+		transition: 0.4s ease-in-out;
+	}
+	&_link:active {
+		color: var(--color-light-brown);
+	}
+	&_link:hover {
+		color: var(--color-light-brown);
+	}
+	&_link:last-child {
+		margin-right: 0;
+	}
+	&_slider {
+		display: inline-flex;
+		border-bottom: 2px solid var(--color-light-brown);
+		padding-bottom: 10px;
+		padding-right: 60px;
+		margin-bottom: 30px;
+		margin-top: 20px;
+	}
+	&_char-item {
+		display: flex;
+		width: 200px;
+		align-items: center;
+		font-family: 'Montserrat';
+		font-size: 16px;
+		color: var(--color-brown);
+		margin-bottom: 10px;
+	}
+	&_char-item p {
+		width: 100px;
+	}
+	&_char {
+		width: 100%;
+		flex-shrink: 0;
+	}
+	&_roubles {
+		margin-top: 10px;
+	}
+	&_descr {
+		width: 100%;
+	}
+}
+
+.product_articles {
+	font-family: 'Montserrat';
+	font-size: 16px;
+	color: var(--color-brown);
+	margin-top: 20px;
+	margin-bottom: 10px;
+	& span {
+		margin-left: 15px;
+	}
+}
+
+.slider_item {
+	display: flex;
+	overflow: hidden;
+}
