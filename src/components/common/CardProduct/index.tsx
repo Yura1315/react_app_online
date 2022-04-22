@@ -4,7 +4,7 @@ import ButtonSecondary from '../Button/ButtonSecondary';
 import style from './CardProduct.module.scss';
 
 type CardProductType = {
-  id: string;
+  id: number;
   title: string;
   src: string;
   price: number;

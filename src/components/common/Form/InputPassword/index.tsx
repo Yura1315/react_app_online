@@ -1,25 +1,25 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { ChangeEvent } from 'react';
-import style from './Input.module.scss';
+import React, { ChangeEvent, useState } from 'react';
+import style from './InputPassword.module.scss';
+import SearchPassButton from './SearchPassButton';
 
-type InputPropsType = {
-  // title: string;
+type InputPasswordPropsType = {
   id: string;
   placeholder: string;
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
-  type?: 'text' | 'password';
 };
 
-const Input = ({ id, placeholder, value, setValue, type = 'text' }: InputPropsType) => {
+const InputPassword = ({ id, placeholder, value, setValue }: InputPasswordPropsType) => {
+  const [visible, setVisible] = useState(false);
   const handler = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };
   return (
     <div className={style.input_wrap}>
       <input
+        type={visible ? 'text' : 'password'}
         className={style.input}
-        type={type}
         value={value}
         placeholder={placeholder}
         onChange={handler}
@@ -28,8 +28,9 @@ const Input = ({ id, placeholder, value, setValue, type = 'text' }: InputPropsTy
       <label className={style.input_label} htmlFor={id}>
         {id}
       </label>
+      <SearchPassButton value={visible} setValue={setVisible} />
     </div>
   );
 };
 
-export default Input;
+export default InputPassword;

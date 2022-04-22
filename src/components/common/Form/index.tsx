@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './Form.module.scss';
 
-type FormPropsType = {
-  title: string;
-};
+// type FormPropsType = {
+//   title: string;
+// };
 
-const Form: React.FC<FormPropsType> = ({ title, children }) => (
+const Form: React.FC = ({ children }) => (
   <div className={style.form}>
     <form className={style.form__body}>{children}</form>
   </div>

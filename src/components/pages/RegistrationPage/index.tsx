@@ -1,16 +1,55 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Button from '../../common/Button';
+import ButtonPrimary from '../../common/Button/ButtonPrimary';
+import Checkbox from '../../common/Checkbox';
 import Form from '../../common/Form';
+import Input from '../../common/Form/Input';
+import InputPassword from '../../common/Form/InputPassword';
 
-const RegistrationPage = () => (
-  <Form title="Регистрация">
-    {/* <Input title="Name" id="name" placeholder="Введите имя" />
-      <Input title="Email" id="email" placeholder="Введите почту" />
-      <Input title="Password" id="password" placeholder="Введите пароль" />
-      <Input title="Repeat Password" id="repeatPassword" placeholder="Повторите пароль" /> */}
-    <Button title="Регистрация" onClick={() => console.log('registration')} />
-  </Form>
-);
+const RegistrationPage = () => {
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
+  const [hasError, setHasError] = useState(false);
+  const submitHandler = () => {
+    if (password.length > 10) {
+      setHasError(false);
+      console.log({ emailUser: email, password });
+    } else {
+      setHasError(true);
+      console.log('Error');
+    }
+  };
+
+  const handler = () => {};
+
+  useEffect(() => {
+    if (password.length > 10) {
+      setHasError(false);
+    } else if (password.length > 0) {
+      setHasError(true);
+    }
+  }, [password]);
+  console.log('');
+  return (
+    <Form>
+      <Input id="имя" placeholder="Введите имя" setValue={setName} value={name} />
+      <Input id="email" placeholder="Введите email" setValue={setEmail} value={email} />
+      <Input id="телефон" placeholder="8 (9**) ***-**-**" setValue={setPhone} value={phone} />
+      <InputPassword id="пароль" placeholder="********" value={password} setValue={setPassword} />
+      <InputPassword
+        id="пароль"
+        placeholder="********"
+        value={repeatPassword}
+        setValue={setRepeatPassword}
+      />
+      <Checkbox />
+      <ButtonPrimary title="ЗАРЕГИСТРИРОВАТЬСЯ" />
+    </Form>
+  );
+};
 
 export default RegistrationPage;

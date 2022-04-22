@@ -1,0 +1,72 @@
+@import '../../../assets/style/vars.scss';
+
+
+.card_wrap {
+    width: $container;
+    margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.card_descr {
+	position: relative;
+	&_item {
+		position: absolute;
+		top: 50%;
+		left: 1.2%;
+		font-family: 'Forum';
+		line-height: 31px;
+		font-size: 30px;
+		color: var(--color-white);
+	}
+	&_img {
+		display: block;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.auth_content {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.auth_wrap {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+.nav_auth {
+    font-size: 17px;
+    font-family: "Montserrat";
+    color: var(--color-brown);
+    padding-bottom: 5px;
+    width: 100%;
+    transition: 0.6s ease-out;
+    &:hover {
+        color: var(--color-light-brown);
+    }
+    &_active {
+        font-size: 17px;
+        font-family: "Montserrat";
+        color: var(--color-light-brown);
+        padding-bottom: 5px;
+        width: 100%;
+
+        transition: 0.6s ease-out;
+    }
+}
+
+.form_wrap {
+    width: 474px;
+    height: 584px;
+    background-color: var(--color-white);
+}
+
+// .active_link {
+//     color: aqua;
+// }

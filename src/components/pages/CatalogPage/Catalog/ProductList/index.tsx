@@ -4,7 +4,7 @@ import style from './ProductList.module.scss';
 
 type ProductListType = {
   data: {
-    id: string;
+    id: number;
     title: string;
     src: string;
     price: number;

@@ -3,7 +3,7 @@ import style from './OneProductPage.module.scss';
 
 type OneProductPropsType = {
   productInfo:
-    | { id: string; title: string; alt: string; price: number; article: number; src: string }
+    | { id: number; title: string; alt: string; price: number; article: number; src: string }
     | undefined;
 };
 

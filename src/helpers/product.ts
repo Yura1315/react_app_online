@@ -6,7 +6,7 @@ import rack from '../img/rack.png';
 
 export const product = [
   {
-    id: '1',
+    id: 1,
     title: 'Декоративная ваза из керамики',
     alt: 'vase',
     src: vase,
@@ -14,7 +14,7 @@ export const product = [
     article: 123456,
   },
   {
-    id: '2',
+    id: 2,
     title: 'Овальный поднос из гипса',
     alt: 'stand',
     src: stand,
@@ -22,7 +22,7 @@ export const product = [
     article: 123458,
   },
   {
-    id: '3',
+    id: 3,
     title: 'Комплект двух ароматических свечей',
     alt: 'candle',
     src: candle,
@@ -30,7 +30,7 @@ export const product = [
     article: 123459,
   },
   {
-    id: '4',
+    id: 4,
     title: 'Подставка для украшений из бетона',
     alt: 'rack',
     src: rack,
