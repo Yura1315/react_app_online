@@ -8,6 +8,7 @@ import OneUserContainer from './containers/OneUserContainer';
 import CatalogContainer from './containers/CatalogContainer';
 import OneProductContainer from './containers/OneProductContainer';
 import AuthWrapper from './components/common/AuthWrapper';
+import NotFaundContainer from './containers/NotFoundContainer';
 
 const App = () => {
   console.log('APP => start');
@@ -24,7 +25,7 @@ const App = () => {
           <Route path="auth" element={<AuthContainer />} />
           <Route path="reg" element={<RegistrationContainer />} />
         </Route>
-        <Route path="*" element={<h1>NOT FOUND</h1>} />
+        <Route path="*" element={<NotFaundContainer />} />
       </Route>
     </Routes>
   );
