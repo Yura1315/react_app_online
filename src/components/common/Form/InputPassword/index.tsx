@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import style from './InputPassword.module.scss';
 import SearchPassButton from './SearchPassButton';
 
@@ -7,27 +7,39 @@ type InputPasswordPropsType = {
   id: string;
   placeholder: string;
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setValue: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  text: string;
+  handleBlur: React.FocusEventHandler<HTMLInputElement> | undefined;
+  err?: string | false | undefined;
 };
 
-const InputPassword = ({ id, placeholder, value, setValue }: InputPasswordPropsType) => {
+const InputPassword = ({
+  id,
+  placeholder,
+  value,
+  setValue,
+  text,
+  handleBlur,
+  err,
+}: InputPasswordPropsType) => {
   const [visible, setVisible] = useState(false);
-  const handler = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
   return (
     <div className={style.input_wrap}>
       <input
         type={visible ? 'text' : 'password'}
-        className={style.input}
+        className={err ? `${style.input} ${style.input_err}` : `${style.input}`}
         value={value}
         placeholder={placeholder}
-        onChange={handler}
+        onBlur={handleBlur}
+        onChange={setValue}
         id={id}
       />
-      <label className={style.input_label} htmlFor={id}>
-        {id}
+      <label
+        className={err ? `${style.input_label} ${style.input_label_err}` : `${style.input_label}`}
+        htmlFor={id}>
+        {text}
       </label>
+      {err ? <p className={style.err}>{err}</p> : ''}
       <SearchPassButton value={visible} setValue={setVisible} />
     </div>
   );

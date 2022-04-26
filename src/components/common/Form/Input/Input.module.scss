@@ -49,9 +49,12 @@
 	&:hover ~ &_label {
 		color: var(--color-light-brown);
 	}
+	&_err {
+		border: 2px solid red;
+	}
     &_wrap {
         position: relative;
-		margin-bottom: 20px;
+		margin-bottom: 25px;
     }
     &_label {
         position: absolute;
@@ -66,7 +69,19 @@
 		color: var(--color-brown);
 		transition: 0.4s ease-in-out;
     }
+	&_label_err {
+		color: red;
+	}
     &:focus ~ &_label {
         color: var(--color-light-brown);
     }
+}
+
+.err {
+	color: red;
+	position: absolute;
+	top: 52px;
+	left:auto;
+	font-family: "Montserrat";
+	font-size: 13px;
 }
