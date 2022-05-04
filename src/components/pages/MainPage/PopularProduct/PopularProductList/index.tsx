@@ -3,22 +3,25 @@ import CardProduct from '../../../../common/CardProduct';
 import style from './PopularProductList.module.scss';
 
 type PopularProductListType = {
-  data: {
+  productsData: {
     id: number;
     title: string;
-    src: string;
+    src: [string];
     price: number;
     article: number;
     alt: string;
   }[];
 };
 
-const PopularProductList = ({ data }: PopularProductListType) => (
-  <ul className={style.popular_product_list}>
-    {data.map((el) => (
-      <CardProduct id={el.id} title={el.title} price={el.price} src={el.src} alt={el.alt} />
-    ))}
-  </ul>
-);
+const PopularProductList = ({ productsData }: PopularProductListType) => {
+  const compareNumber = (a: number, b: number) => a - b;
+  return (
+    <ul className={style.popular_product_list}>
+      {productsData.map((el) => (
+        <CardProduct id={el.id} title={el.title} price={el.price} src={el.src} alt={el.alt} />
+      ))}
+    </ul>
+  );
+};
 
 export default PopularProductList;

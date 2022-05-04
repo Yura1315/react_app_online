@@ -9,12 +9,12 @@ const AuthWrapper = () => (
       <div className={style.form_wrap}>
         <div className={style.auth_wrap}>
           <NavLink
-            to="/auth"
+            to="auth"
             className={({ isActive }) => (isActive ? style.nav_auth_active : style.nav_auth)}>
             Авторизация
           </NavLink>
           <NavLink
-            to="/reg"
+            to="reg"
             className={({ isActive }) => (isActive ? style.nav_auth_active : style.nav_auth)}>
             Регистрация
           </NavLink>

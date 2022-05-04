@@ -4,11 +4,15 @@ import { product } from '../../../../helpers/product';
 import PopularProductList from './PopularProductList';
 import style from './PopularProduct.module.scss';
 
-const PopularProduct = () => (
+type PopularProductPropsType = {
+  productsData: any[];
+};
+
+const PopularProduct = ({ productsData }: PopularProductPropsType) => (
   <div className={style.popular}>
     <div className={style.container}>
       <h2 className={style.title}>Популярные товары</h2>
-      <PopularProductList data={product} />
+      <PopularProductList productsData={productsData} />
     </div>
   </div>
 );

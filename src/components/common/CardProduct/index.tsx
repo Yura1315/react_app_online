@@ -6,14 +6,14 @@ import style from './CardProduct.module.scss';
 type CardProductType = {
   id: number;
   title: string;
-  src: string;
+  src: [string];
   price: number;
   alt: string;
 };
 
 const CardProduct = ({ id, title, src, price, alt }: CardProductType) => (
   <Link className={style.product_item} key={id} to={`/catalog/${id}`}>
-    <img className={style.product_item_img} src={src} alt={alt} />
+    <img className={style.product_item_img} src={src[0]} alt={alt} />
     <h2 className={style.product_title}>{title}</h2>
     <p className={style.product_item_price_wrap}>
       <span className={style.product_price}>{price}</span>

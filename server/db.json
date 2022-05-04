@@ -4,6 +4,10 @@
         "id": 1,
         "title": "Декоративная ваза из керамики",
         "alt": "vase",
+        "category": [
+            "all",
+            "lounge"
+        ],
         "src": [
             "https://i.postimg.cc/4xMXTYhx/vase1.jpg"
         ],
@@ -15,6 +19,10 @@
         "id": 2,
         "title": "Овальный поднос из гипса",
         "alt": "tray",
+        "category": [
+            "all",
+            "kitchen"
+        ],
         "src": [
             "https://i.postimg.cc/TPLYyVXb/tray1.jpg"
         ],
@@ -26,6 +34,10 @@
         "id": 3,
         "title": "Комплект из двух ароматических свечей",
         "alt": "candle",
+        "category": [
+            "all",
+            "aroma"
+        ],
         "src": [
             "https://i.postimg.cc/Z5JdyDfd/candle1.jpg"
         ],
@@ -37,6 +49,11 @@
         "id": 4,
         "title": "Ароматическая свеча в бетоне",
         "alt": "candle",
+        "category": [
+            "all",
+            "aroma",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/1ztVvV1R/candle2.jpg",
             "https://i.postimg.cc/t4DVdtfm/candle2b.jpg"
@@ -49,6 +66,11 @@
         "id": 5,
         "title": "Ароматическая свеча в стекле",
         "alt": "candle",
+        "category": [
+            "all",
+            "aroma",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/fTf3ZfwT/candle3.png"
         ],
@@ -60,6 +82,11 @@
         "id": 6,
         "title": "Фигурная восковая свеча",
         "alt": "candle",
+        "category": [
+            "all",
+            "aroma",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/k5p6zM7Q/candle4.jpg",
             "https://i.postimg.cc/QCpFFp1m/candle4b.jpg"
@@ -72,6 +99,11 @@
         "id": 7,
         "title": "Ароматическая свеча с фитилем из дерева",
         "alt": "candle",
+        "category": [
+            "all",
+            "aroma",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/d1ZkYM0z/candle5.jpg"
         ],
@@ -83,6 +115,10 @@
         "id": 8,
         "title": "Набор свечей с фитилем из дерева",
         "alt": "candle",
+        "category": [
+            "all",
+            "aroma"
+        ],
         "src": [
             "https://i.postimg.cc/bJnJ5QCP/candle6.jpg",
             "https://i.postimg.cc/1R6n7Z2F/candle6b.jpg"
@@ -95,6 +131,11 @@
         "id": 9,
         "title": "Поднос круглый из бетона",
         "alt": "tray",
+        "category": [
+            "all",
+            "kitchen",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/mg6g2dKR/tray2a.jpg",
             "https://i.postimg.cc/SRqytHYL/tray2b.jpg"
@@ -107,6 +148,11 @@
         "id": 10,
         "title": "Поднос круглый под мрамор",
         "alt": "tray",
+        "category": [
+            "all",
+            "kitchen",
+            "sales"
+        ],
         "src": [
             "https://i.postimg.cc/XvRN9rVz/tray3a.jpg",
             "https://i.postimg.cc/wvDq29MT/tray3b.jpg"
@@ -119,6 +165,11 @@
         "id": 11,
         "title": "Комплект из двух круглых подносов",
         "alt": "tray",
+        "category": [
+            "all",
+            "kitchen",
+            "sales"
+        ],
         "src": [
             "https://i.postimg.cc/2jFjBjg0/tray4a.jpg",
             "https://i.postimg.cc/Xq8VMx9R/tray4b.jpg"
@@ -131,6 +182,11 @@
         "id": 12,
         "title": "Подставка круглая под тераццо",
         "alt": "tray",
+        "category": [
+            "all",
+            "kitchen",
+            "sales"
+        ],
         "src": [
             "https://i.postimg.cc/HsYY0Dgd/tray5.jpg",
             "https://i.postimg.cc/1t0S6M78/tray5b.jpg"
@@ -143,6 +199,11 @@
         "id": 13,
         "title": "Поднос  прямоугольный под тераццо",
         "alt": "tray",
+        "category": [
+            "all",
+            "kitchen",
+            "sales"
+        ],
         "src": [
             "https://i.postimg.cc/hthKwLvY/tray6a.jpg",
             "https://i.postimg.cc/wTw60fqJ/tray6b.jpg"
@@ -155,6 +216,11 @@
         "id": 14,
         "title": "Двухцветная кружка ручной работы",
         "alt": "cap",
+        "category": [
+            "all",
+            "kitchen",
+            "sales"
+        ],
         "src": [
             "https://i.postimg.cc/HsgJfh1h/cap1a.jpg",
             "https://i.postimg.cc/P56Pvfpg/cap1b.jpg"
@@ -167,6 +233,11 @@
         "id": 15,
         "title": "Кружка ручной работы с расцветкой на выбор ",
         "alt": "cap",
+        "category": [
+            "all",
+            "kitchen",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/CxMRKn1C/cap2a.jpg",
             "https://i.postimg.cc/N05L6hR5/cap2b.jpg",
@@ -182,6 +253,10 @@
         "id": 16,
         "title": "Кружка ручной работы с расцветкой на выбор ",
         "alt": "cap",
+        "category": [
+            "all",
+            "kitchen"
+        ],
         "src": [
             "https://i.postimg.cc/CxMRKn1C/cap2a.jpg",
             "https://i.postimg.cc/N05L6hR5/cap2b.jpg",
@@ -197,6 +272,11 @@
         "id": 17,
         "title": "Кружка ручной работы с пятнистой расцветкой",
         "alt": "cap",
+        "category": [
+            "all",
+            "kitchen",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/ZnFqbJzD/cap3a.jpg",
             "https://i.postimg.cc/VsjvBW0B/cap3b.jpg"
@@ -209,6 +289,11 @@
         "id": 18,
         "title": "Комплект из трех двухцветных кружек",
         "alt": "cap",
+        "category": [
+            "all",
+            "kitchen",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/zGffNmt0/cap4.jpg"
         ],
@@ -220,6 +305,11 @@
         "id": 19,
         "title": "Комплект из двух двухцветных кружек",
         "alt": "cap",
+        "category": [
+            "all",
+            "kitchen",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/28G5gjw1/cap5.jpg"
         ],
@@ -230,7 +320,12 @@
     {
         "id": 20,
         "title": "Ваза с фактурным рельефом",
-        "alt": "cap",
+        "alt": "vase",
+        "category": [
+            "all",
+            "lounge",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/R0H4CvcQ/vase2a.jpg"
         ],
@@ -241,7 +336,12 @@
     {
         "id": 21,
         "title": "Двухцветная ваза с фактурным рельефом",
-        "alt": "cap",
+        "alt": "vase",
+        "category": [
+            "all",
+            "lounge",
+            "new"
+        ],
         "src": [
             "https://i.postimg.cc/wM6pkJn0/vase3a.jpg",
             "https://i.postimg.cc/SQrqxTz5/vase3b.jpg"
@@ -253,7 +353,12 @@
     {
         "id": 22,
         "title": "Комплект из трех декоративных ваз",
-        "alt": "cap",
+        "alt": "vase",
+        "category": [
+            "all",
+            "lounge",
+            "sales"
+        ],
         "src": [
             "https://i.postimg.cc/VvDcZv81/vase4.jpg"
         ],

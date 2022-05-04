@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainContainer from './containers/MainContainer';
 import RegistrationContainer from './containers/RegistrationContainer';
@@ -9,26 +9,24 @@ import CatalogContainer from './containers/CatalogContainer';
 import OneProductContainer from './containers/OneProductContainer';
 import AuthWrapper from './components/common/AuthWrapper';
 import NotFaundContainer from './containers/NotFoundContainer';
+import CatalogWrapper from './components/common/CatalogWrapper';
 
-const App = () => {
-  console.log('APP => start');
-
-  useEffect(() => console.log('APP - MOUNT'), []);
-  return (
-    <Routes>
-      <Route path="/" element={<PageWrapper />}>
-        <Route index element={<MainContainer />} />
-        <Route path="catalog" element={<CatalogContainer />} />
-        <Route path="catalog/:id" element={<OneProductContainer />} />
-        <Route path="users/:name" element={<OneUserContainer />} />
-        <Route path="/" element={<AuthWrapper />}>
-          <Route path="auth" element={<AuthContainer />} />
-          <Route path="reg" element={<RegistrationContainer />} />
-        </Route>
-        <Route path="*" element={<NotFaundContainer />} />
+const App = () => (
+  <Routes>
+    <Route path="/" element={<PageWrapper />}>
+      <Route index element={<MainContainer />} />
+      <Route path="catalog" element={<CatalogWrapper />}>
+        <Route path=":category" element={<CatalogContainer />} />
       </Route>
-    </Routes>
-  );
-};
+      <Route path="catalog/:id" element={<OneProductContainer />} />
+      <Route path="users/:name" element={<OneUserContainer />} />
+      <Route path="logged" element={<AuthWrapper />}>
+        <Route path="auth" element={<AuthContainer />} />
+        <Route path="reg" element={<RegistrationContainer />} />
+      </Route>
+      <Route path="*" element={<NotFaundContainer />} />
+    </Route>
+  </Routes>
+);
 
 export default App;

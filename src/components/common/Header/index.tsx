@@ -21,7 +21,7 @@ const Header = () => (
             <NavLink to="/about-us">О НАС</NavLink>
           </li>
           <li className={style.mainmenu_item}>
-            <NavLink to="/catalog">КАТАЛОГ</NavLink>
+            <NavLink to="/catalog/all">КАТАЛОГ</NavLink>
           </li>
           <li className={style.mainmenu_item}>
             <NavLink to="/contacts">КОНТАКТЫ</NavLink>
@@ -36,38 +36,6 @@ const Header = () => (
         <BasketInfo />
       </div>
     </div>
-
-    {/* <h1>Header</h1>
-    <ul>
-      <li>
-        <NavLink
-          className={({ isActive }) => (isActive ? style.active_link : style.not_active_link)}
-          to="/">
-          MAIN
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) => (isActive ? style.active_link : style.not_active_link)}
-          to="/users">
-          USERS
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) => (isActive ? style.active_link : style.not_active_link)}
-          to="/auth">
-          AUTH
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) => (isActive ? style.active_link : style.not_active_link)}
-          to="/reg">
-          REG
-        </NavLink>
-      </li>
-    </ul> */}
   </header>
 );
 

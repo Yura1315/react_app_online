@@ -2,13 +2,33 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import { useDispatch } from 'react-redux';
 import ButtonPrimary from '../../common/Button/ButtonPrimary';
 import Checkbox from '../../common/Checkbox';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
 import InputPassword from '../../common/Form/InputPassword';
+import { SetUserNameAction } from '../../../store/userUnfo/actions';
 
-const RegistrationPage = () => {
+type MyFormValues = {
+  name: string;
+  email: string;
+  password: string;
+  repeatPassword: string;
+  phone: string;
+  checkbox: boolean;
+};
+
+const RegistrationPage: React.FC<{}> = () => {
+  const dispatch = useDispatch();
+  const initialValues: MyFormValues = {
+    name: '',
+    email: '',
+    password: '',
+    repeatPassword: '',
+    phone: '',
+    checkbox: false,
+  };
   const phoneRegExp = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
   const passwordRegExp =
     /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
@@ -36,17 +56,13 @@ const RegistrationPage = () => {
   });
   return (
     <Formik
-      initialValues={{
-        name: '',
-        email: '',
-        password: '',
-        repeatPassword: '',
-        phone: '',
-        checkbox: false,
-      }}
+      initialValues={initialValues}
       validateOnBlur
       onSubmit={(values) => {
-        console.log(JSON.stringify(values));
+        const infoUser = { name: values.name, phone: values.phone, email: values.email };
+        dispatch(SetUserNameAction(infoUser));
+        console.log(values);
+        console.log(typeof values);
       }}
       validationSchema={validationSchema}>
       {({

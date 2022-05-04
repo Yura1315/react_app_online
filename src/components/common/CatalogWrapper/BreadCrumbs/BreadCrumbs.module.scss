@@ -1,4 +1,4 @@
-@import '../../../../../assets/style/main.scss';
+@import '../../../../assets/style/vars.scss';
 
 .catalog {
 	margin-top: 50px;
@@ -13,6 +13,7 @@
         width: 342px;
 		background-color: var(--color-white);
 		padding-left: 27px;
+		min-height: 600px;
         height: 100%;
     }
     &_filter_top {

@@ -26,9 +26,10 @@
 		font-family: 'Montserrat-Bold';
 		font-size: 15px;
 		margin-left: 30px;
-		margin-top: 25px;
+		margin-top: 28px;
 		color: var(--color-brown);
         margin-bottom: 30px;
+		cursor: pointer;
 	}
     &_text::before {
         content: "";
