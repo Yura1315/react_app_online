@@ -7,9 +7,9 @@ import getProducts from '../../store/productInfo/selector';
 const CatalogContainer = () => {
   const dispatch = useDispatch();
   const productsData = useSelector(getProducts);
-  // useEffect(() => {
-  //   dispatch(GetProductsAction());
-  // }, []);
+  useEffect(() => {
+    dispatch(GetProductsAction());
+  }, []);
   return <CatalogPage productsData={productsData} />;
 };
 

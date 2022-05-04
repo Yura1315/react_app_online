@@ -10,6 +10,7 @@ type PopularProductListType = {
     price: number;
     article: number;
     alt: string;
+    category: [string];
   }[];
 };
 
@@ -18,7 +19,15 @@ const PopularProductList = ({ productsData }: PopularProductListType) => {
   return (
     <ul className={style.popular_product_list}>
       {productsData.map((el) => (
-        <CardProduct id={el.id} title={el.title} price={el.price} src={el.src} alt={el.alt} />
+        <CardProduct
+          id={el.id}
+          key={el.id!}
+          title={el.title}
+          price={el.price}
+          src={el.src}
+          alt={el.alt}
+          category={el.category}
+        />
       ))}
     </ul>
   );

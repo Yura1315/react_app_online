@@ -1,5 +1,4 @@
 import React from 'react';
-import { data } from '../../../helpers';
 import MainBanner from './MainBanner';
 import PopularProduct from './PopularProduct';
 

@@ -9,10 +9,12 @@ type CardProductType = {
   src: [string];
   price: number;
   alt: string;
+  key: number;
+  category: [string];
 };
 
-const CardProduct = ({ id, title, src, price, alt }: CardProductType) => (
-  <Link className={style.product_item} key={id} to={`/catalog/${id}`}>
+const CardProduct = ({ id, title, src, price, alt, key, category }: CardProductType) => (
+  <Link className={style.product_item} key={key} to={`/product/${id}`}>
     <img className={style.product_item_img} src={src[0]} alt={alt} />
     <h2 className={style.product_title}>{title}</h2>
     <p className={style.product_item_price_wrap}>

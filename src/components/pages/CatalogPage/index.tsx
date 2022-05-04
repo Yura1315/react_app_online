@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
+import Loader from '../../common/Loader';
 import ProductList from './Catalog/ProductList';
 
 type CatalogPagePropsType = {
@@ -7,7 +8,7 @@ type CatalogPagePropsType = {
 };
 
 const CatalogPage = ({ productsData }: CatalogPagePropsType) => (
-  <>{productsData.length ? <ProductList productsData={productsData} /> : <p>loading</p>}</>
+  <>{productsData.length ? <ProductList productsData={productsData} /> : <Loader />}</>
 );
 
 export default CatalogPage;
