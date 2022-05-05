@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import ButtonSecondary from '../Button/ButtonSecondary';
 import style from './CardProduct.module.scss';
 
@@ -11,6 +12,14 @@ type CardProductType = {
   alt: string;
   key: number;
   category: [string];
+};
+
+const listVariants = {
+  visible: {
+    opacity: 1,
+    transition: { duration: 3 },
+  },
+  hidden: { opacity: 0 },
 };
 
 const CardProduct = ({ id, title, src, price, alt, key, category }: CardProductType) => (
