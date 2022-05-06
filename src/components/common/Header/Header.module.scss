@@ -6,20 +6,30 @@
 }
 
 .header {
+	display: flex;
+	align-items: center;
 	flex: 0 0 auto;
-	background-color: var(--color-grey);
+	// background-color: var(--color-grey);
 	&_personal {
 		display: flex;
 	}
 	&_menu {
+		position: relative;
 		height: 80px;
-    width: $container;
-    margin: 0 auto;
+        width: $container;
+        margin: 0 auto;
 		display: flex;
 	    align-items: center;
 	    justify-content: space-between;
 	}
 }
+
+@media (max-width: 1340px) {
+	.header_menu {
+        width: 1200px;
+    }
+  }
+
 
 .mainmenu {
 
@@ -89,27 +99,3 @@
 		margin-left: 5px;
 	}
 }
-
-
-// .account {
-// 	display: flex;
-// 	align-items: center;
-// 	&_user {
-// 		font-family: 'Montserrat';
-// 		font-size: 16px;
-// 		margin-right: 5px;
-// 		color: var(--color-brown);
-// 	}
-// 	&_user:hover {
-// 		color: var(--color-brown-hover);
-// 	}
-// }
-
-
-
-// .active_link {
-//   color: green;
-// }
-// .not_active_link {
-//   color: red;
-// }

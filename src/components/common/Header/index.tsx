@@ -8,10 +8,11 @@ import logo from '../../../img/logo.svg';
 import search from '../../../img/search.png';
 import FormSearch from '../FormSearch';
 import InputSearch from '../FormSearch/inputSearch';
+import ToggleMenu from './ToggleMenu';
 
 const Header = () => (
   <header className={style.header}>
-    <div className={style.header_menu}>
+    <div className={`${style.header_menu} ${style.container}`}>
       <NavLink to="/">
         <img src={logo} alt="logo" />
       </NavLink>
@@ -28,6 +29,7 @@ const Header = () => (
           </li>
         </ul>
       </nav>
+      <ToggleMenu />
       <div className={style.header_personal}>
         <FormSearch>
           <InputSearch type="text" placeholder="Поиск..." />

@@ -2,10 +2,14 @@
 
 .product {
     &_item {
-        display: inline-block;
+        display: inline-flex;
+		flex-direction: column;
+		height: 430px;
         width: 285px;
         border: 2px solid var(--color-light-brown);
 		cursor: pointer;
+		justify-content: space-between;
+		padding: 15px 15px 15px 15px;
 		transition: 0.6s;
     }
 	&_item:hover {
@@ -16,8 +20,6 @@
 	font-size: 24px;
     text-align: end;
 	color: var(--color-brown);
-	margin-right: 12px;
-	margin-left: 12px;
     }
     &_price {
 		display: block;
@@ -29,20 +31,17 @@
 	}
 	&_item_img {
 		display: block;
-		margin: 15px 15px 10px 15px;
 	}
 	&_item_price_wrap {
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
 		margin-right: 12px;
-		margin-top: 7px;
+		margin-bottom: 7px;
 	}
 	&_btn {
 		display: flex;
-		justify-content: space-around;
-		margin-bottom: 15px;
-		margin-top: 15px;
+		justify-content: space-between;
 	}
 }
 

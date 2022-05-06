@@ -1,0 +1,29 @@
+@import '../../../../../assets/style/vars.scss';
+
+.icon_placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex: 40px 0;
+    margin-right: 20px;
+  }
+  
+  .text_placeholder {
+    font-family: "Montserrat";
+    color: var(--color-brown);
+    border-radius: 5px;
+    width: 200px;
+    height: 20px;
+    flex: 1;
+    &:hover {
+      color: red;
+    }
+  }
+
+.menu_item {
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
