@@ -53,3 +53,10 @@
 		cursor: pointer;
 	}
 }
+
+
+@media (max-width: 886px) {
+	.account_user {
+        display: none;
+    }
+}

@@ -1,8 +1,9 @@
-import React from 'react';
+/* eslint-disable import/prefer-default-export */
+import React, { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ButtonSecondary from '../Button/ButtonSecondary';
-import style from './CardProduct.module.scss';
+import style from './MCardProduct.module.scss';
 
 type CardProductType = {
   id: number;
@@ -14,17 +15,9 @@ type CardProductType = {
   category: [string];
 };
 
-const listVariants = {
-  visible: {
-    opacity: 1,
-    transition: { duration: 1.5 },
-  },
-  hidden: { opacity: 0 },
-};
-
-const CardProduct = ({ id, title, src, price, alt, key, category }: CardProductType) => (
-  <motion.div variants={listVariants} initial="hidden" animate="visible">
-    <Link className={style.product_item} key={key} to={`/product/${id}`}>
+const CardProduct = forwardRef(
+  ({ id, title, src, price, alt, key, category }: CardProductType, ref: any) => (
+    <Link className={style.product_item} key={key} to={`/product/${id}`} ref={ref}>
       <img className={style.product_item_img} src={src[0]} alt={alt} />
       <h2 className={style.product_title}>{title}</h2>
       <p className={style.product_item_price_wrap}>
@@ -46,7 +39,9 @@ const CardProduct = ({ id, title, src, price, alt, key, category }: CardProductT
         <ButtonSecondary title="В КОРЗИНУ" />
       </div>
     </Link>
-  </motion.div>
+  )
 );
 
-export default CardProduct;
+const MCardProduct = motion(CardProduct);
+
+export default MCardProduct;

@@ -14,7 +14,7 @@ const MainBanner = () => (
         </NavLink>
       </div>
       <div className={style.main_banner_right}>
-        <img src={banner} alt="banner" />
+        <img className={style.main_banner_img} src={banner} alt="banner" />
       </div>
     </div>
   </div>

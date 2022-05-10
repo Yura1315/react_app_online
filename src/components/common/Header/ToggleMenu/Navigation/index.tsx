@@ -13,6 +13,7 @@ const variants = {
 };
 
 const itemIds = [
+  { title: 'ГЛАВНАЯ', path: '/' },
   { title: 'О НАС', path: '/about-us' },
   { title: 'КАТАЛОГ', path: '/catalog/all' },
   { title: 'КОНТАКТЫ', path: '/contacts' },

@@ -1,5 +1,5 @@
 import React from 'react';
-import CardProduct from '../../../../common/CardProduct';
+import MCardProduct from '../../../../common/MCardProduct';
 import style from './PopularProductList.module.scss';
 
 type PopularProductListType = {
@@ -19,7 +19,7 @@ const PopularProductList = ({ productsData }: PopularProductListType) => {
   return (
     <ul className={style.popular_product_list}>
       {productsData.map((el) => (
-        <CardProduct
+        <MCardProduct
           id={el.id}
           key={el.id!}
           title={el.title}

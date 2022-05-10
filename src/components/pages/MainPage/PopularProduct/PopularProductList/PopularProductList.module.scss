@@ -2,8 +2,37 @@
 
 .popular_product {
 	&_list {
-		display: grid;
-	    grid-template-columns: repeat(4, 1fr);
-	    grid-gap: 53px;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		gap: 50px;
+		overflow: hidden;
+	}
+}
+
+// ===============================
+
+@media (max-width: 1170px) {
+	.popular_product {
+		&_list {
+			gap: 26px;
+		}
+	}
+}
+
+@media (max-width: 1022px) {
+	.popular_product {
+		&_list {
+			gap: 80px;
+		}
+	}
+}
+
+
+@media (max-width: 886px) {
+	.popular_product {
+		&_list {
+			gap: 15px;
+		}
 	}
 }

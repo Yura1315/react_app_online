@@ -74,3 +74,34 @@
 		color: var(--color-light-brown);
 	}
 }
+
+
+
+
+// ==============MEDIA============
+
+@media (max-width: 1340px) {
+	.footer_wrap {
+        width: 1150px;
+    }
+}
+
+@media (max-width: 1170px) {
+	  .footer_wrap {
+		  width: 1000px;
+	  }
+}
+
+
+@media (max-width: 1022px) {
+	.footer_wrap {
+		width: 850px;
+	}
+}
+
+
+@media (max-width: 886px) {
+	.footer_wrap {
+        width: 750px;
+    }
+}

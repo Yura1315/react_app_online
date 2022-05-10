@@ -1,9 +1,9 @@
 .background {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0px;
     bottom: 0;
-    width: 300px;
+    width: 100%;
     background: #fff;
   }
 
@@ -14,4 +14,13 @@
     left: 0;
     bottom: 0;
     width: 300px;
+    z-index: 5;
+  }
+
+  // ===============MEDIA==============
+
+  @media (max-width: 1022px) {
+    .menu_nav {
+      display: block;
+    }
   }

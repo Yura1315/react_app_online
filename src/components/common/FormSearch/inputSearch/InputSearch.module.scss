@@ -32,3 +32,12 @@
 		margin-left: 5px;
 	}
 }
+
+@media (max-width: 886px) {
+	.form {
+		margin-left: 30px;
+		&_item {
+			// width: 80%;
+		}
+	}
+}

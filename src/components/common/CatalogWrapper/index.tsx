@@ -5,8 +5,10 @@ import style from './CatalogWrapper.module.scss';
 
 const CatalogWrapper = () => (
   <div className={style.catalog_wrap}>
-    <BreadCrumbs />
-    <Outlet />
+    <div className={style.container}>
+      <BreadCrumbs />
+      <Outlet />
+    </div>
   </div>
 );
 

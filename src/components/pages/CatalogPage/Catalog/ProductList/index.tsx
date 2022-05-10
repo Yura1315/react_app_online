@@ -1,11 +1,19 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import CardProduct from '../../../../common/CardProduct';
+import MCardProduct from '../../../../common/MCardProduct';
 import style from './ProductList.module.scss';
 
 type ProductListType = {
   productsData: any[];
+};
+
+const listVariants = {
+  visible: {
+    opacity: 1,
+    transition: { duration: 1.5 },
+  },
+  hidden: { opacity: 0 },
 };
 
 const ProductList = ({ productsData }: ProductListType) => {
@@ -15,7 +23,10 @@ const ProductList = ({ productsData }: ProductListType) => {
       {productsData
         .filter((el) => Object.values(el.category).includes(category))
         .map((el) => (
-          <CardProduct
+          <MCardProduct
+            variants={listVariants}
+            initial="hidden"
+            animate="visible"
             id={el.id}
             key={el.id}
             title={el.title}
