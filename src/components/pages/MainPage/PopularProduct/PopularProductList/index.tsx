@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { number } from 'yup/lib/locale';
 import MCardProduct from '../../../../common/MCardProduct';
 import style from './PopularProductList.module.scss';
 
@@ -11,14 +13,24 @@ type PopularProductListType = {
     article: number;
     alt: string;
     category: [string];
+    bought: number;
   }[];
 };
 
 const PopularProductList = ({ productsData }: PopularProductListType) => {
-  const compareNumber = (a: number, b: number) => a - b;
+  const [width, setWidth] = useState(0);
+  const carousel: any = useRef();
+  useEffect(() => {
+    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+  }, [width]);
+  const popularProduct = productsData.sort((a: any, b: any) => b.bought - a.bought).slice(0, 8);
   return (
-    <ul className={style.popular_product_list}>
-      {productsData.map((el) => (
+    <motion.ul
+      ref={carousel}
+      drag="x"
+      dragConstraints={{ right: 0, left: -width }}
+      className={style.popular_product_list}>
+      {popularProduct.map((el) => (
         <MCardProduct
           id={el.id}
           key={el.id!}
@@ -29,7 +41,7 @@ const PopularProductList = ({ productsData }: PopularProductListType) => {
           category={el.category}
         />
       ))}
-    </ul>
+    </motion.ul>
   );
 };
 

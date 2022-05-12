@@ -28,9 +28,7 @@ const sidebar = {
 const ToggleMenu = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
-  const { height, width } = useDimensions(containerRef);
-  console.log(height, width);
-  console.log(containerRef);
+  const { height } = useDimensions(containerRef);
   return (
     <motion.nav
       className={style.menu_nav}

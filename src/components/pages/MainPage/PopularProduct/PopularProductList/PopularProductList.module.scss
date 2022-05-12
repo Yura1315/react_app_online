@@ -5,28 +5,21 @@
 		display: flex;
 		flex-wrap: nowrap;
 		justify-content: space-between;
-		gap: 50px;
-		overflow: hidden;
+		gap: 30px;
 	}
 }
+
 
 // ===============================
 
 @media (max-width: 1170px) {
 	.popular_product {
 		&_list {
-			gap: 26px;
+			gap: 16px;
 		}
 	}
 }
 
-@media (max-width: 1022px) {
-	.popular_product {
-		&_list {
-			gap: 80px;
-		}
-	}
-}
 
 
 @media (max-width: 886px) {

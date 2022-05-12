@@ -101,16 +101,13 @@
     }
 }
 
-  @media (max-width: 1170px) {
+@media (max-width: 1170px) {
 	.header_menu {
         width: 1000px;
     }
 }
 
 @media (max-width: 1022px) {
-	.header {
-		background-color: var(--color-white);
-	}
 	.header_menu {
         width: 850px;
     }

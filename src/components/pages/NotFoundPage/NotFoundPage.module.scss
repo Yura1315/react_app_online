@@ -1,14 +1,21 @@
 @import '../../../assets/style/vars.scss';
 
+
+
+
 .notfound {
+    &_wrap {
+        background-color: var(--color-grey);
+    }
     &_container {
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        width: $container;
+        width: 1290px;
     }
-    &_wrap {
+    &_left {
         padding-top: 150px;
+        
     }
     &_title {
         font-family: "Montserrat Bold";

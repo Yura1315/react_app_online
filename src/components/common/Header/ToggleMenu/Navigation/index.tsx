@@ -13,15 +13,15 @@ const variants = {
 };
 
 const itemIds = [
-  { title: 'ГЛАВНАЯ', path: '/' },
-  { title: 'О НАС', path: '/about-us' },
-  { title: 'КАТАЛОГ', path: '/catalog/all' },
-  { title: 'КОНТАКТЫ', path: '/contacts' },
+  { id: 1, title: 'ГЛАВНАЯ', path: '/' },
+  { id: 2, title: 'О НАС', path: '/about-us' },
+  { id: 3, title: 'КАТАЛОГ', path: '/catalog/all' },
+  { id: 4, title: 'КОНТАКТЫ', path: '/contacts' },
 ];
 const Navigation = () => (
   <motion.ul className={style.menu_list} variants={variants}>
     {itemIds.map((el) => (
-      <MenuItem key={el.title} itemText={el.title} path={el.path} />
+      <MenuItem key={el.id} itemText={el.title} path={el.path} />
     ))}
   </motion.ul>
 );

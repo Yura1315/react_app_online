@@ -21,7 +21,7 @@ const variants = {
 };
 
 type MenuItemPropsType = {
-  key: string;
+  key: number;
   itemText: string;
   path: string;
 };
