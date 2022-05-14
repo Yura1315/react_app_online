@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { number } from 'yup/lib/locale';
 import MCardProduct from '../../../../common/MCardProduct';
 import style from './PopularProductList.module.scss';
 
