@@ -1,0 +1,26 @@
+@import '../../../../assets/style/vars.scss';
+
+.slider_arrow {
+	&_wrap {
+		position: absolute;
+	    top: 45%;
+	}
+	&_left_wrap {
+		position: absolute;
+		left: 0;
+		z-index: 5;
+	}
+	&_right_wrap {
+		position: absolute;
+		right: -500px;
+		z-index: 5;
+	}
+	&_left {
+		background-color: transparent;
+		cursor: pointer;
+	}
+	&_right {
+		background-color: transparent;
+		cursor: pointer;
+	}
+}

@@ -9,8 +9,11 @@
             "lounge"
         ],
         "src": [
+            "https://images.unsplash.com/photo-1612120867524-e3f3c59f4240?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950",
             "https://i.postimg.cc/4xMXTYhx/vase1.jpg"
         ],
+        "char": [{"Высота": "300 мм"}, {"Ширина": "150 мм"}, {"Глубина": "80 мм"}, {"Вес": "300 г"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасная ваза",
         "price": 999,
         "article": 123456,
         "bought": 5
@@ -26,6 +29,8 @@
         "src": [
             "https://i.postimg.cc/TPLYyVXb/tray1.jpg"
         ],
+        "char": [{"Высота": "600 мм"}, {"Ширина": "400 мм"}, {"Глубина": "50 мм"}, {"Вес": "300 г"}, {"Состав": "Гипс"}],
+        "descr": "Прекрасный поднос",
         "price": 499,
         "article": 123457,
         "bought": 4
@@ -41,6 +46,8 @@
         "src": [
             "https://i.postimg.cc/Z5JdyDfd/candle1.jpg"
         ],
+        "char": [{"Высота": "100 мм"}, {"Радиус": "70 мм"}, {"Вес": "100 г"}, {"Состав": "Бетон"}],
+        "descr": "Прекрасная ароматическая свеча",
         "price": 799,
         "article": 123458,
         "bought": 2
@@ -58,6 +65,8 @@
             "https://i.postimg.cc/1ztVvV1R/candle2.jpg",
             "https://i.postimg.cc/t4DVdtfm/candle2b.jpg"
         ],
+        "char": [{"Высота": "100 мм"}, {"Радиус": "80 мм"}, {"Вес": "100 г"}, {"Состав": "Бетон"}],
+        "descr": "Прекрасная ароматическая свеча",
         "price": 399,
         "article": 123459,
         "bought": 8
@@ -74,6 +83,8 @@
         "src": [
             "https://i.postimg.cc/fTf3ZfwT/candle3.png"
         ],
+        "char": [{"Высота": "70 мм"}, {"Радиус": "50 мм"}, {"Вес": "100 г"}, {"Состав": "Стекло"}],
+        "descr": "Прекрасная ароматическая свеча",
         "price": 399,
         "article": 123460,
         "bought": 7
@@ -91,6 +102,8 @@
             "https://i.postimg.cc/k5p6zM7Q/candle4.jpg",
             "https://i.postimg.cc/QCpFFp1m/candle4b.jpg"
         ],
+        "char": [{"Высота": "300 мм"}, {"Вес": "100 г"}, {"Состав": "Воск"}],
+        "descr": "Прекрасная ароматическая свеча",
         "price": 499,
         "article": 123461,
         "bought": 9
@@ -107,6 +120,8 @@
         "src": [
             "https://i.postimg.cc/d1ZkYM0z/candle5.jpg"
         ],
+        "char": [{"Высота": "100 мм"}, {"Радиус": "80 мм"}, {"Вес": "100 г"}, {"Состав": "Стекло"}],
+        "descr": "Прекрасная ароматическая свеча",
         "price": 599,
         "article": 123462,
         "bought": 13
@@ -123,6 +138,8 @@
             "https://i.postimg.cc/bJnJ5QCP/candle6.jpg",
             "https://i.postimg.cc/1R6n7Z2F/candle6b.jpg"
         ],
+        "char": [{"Высота": "100 мм"}, {"Радиус": "80 мм"},  {"Вес": "100 г"}, {"Состав": "Кермика"}],
+        "descr": "Прекрасная ароматическая свеча",
         "price": 999,
         "article": 123462,
         "bought": 15
@@ -140,6 +157,8 @@
             "https://i.postimg.cc/mg6g2dKR/tray2a.jpg",
             "https://i.postimg.cc/SRqytHYL/tray2b.jpg"
         ],
+        "char": [{"Высота": "30 мм"}, {"Радиус": "300 мм"}, {"Вес": "150 г"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасный поднос",
         "price": 1299,
         "article": 123463,
         "bought": 6
@@ -157,6 +176,8 @@
             "https://i.postimg.cc/XvRN9rVz/tray3a.jpg",
             "https://i.postimg.cc/wvDq29MT/tray3b.jpg"
         ],
+        "char": [{"Высота": "30 мм"}, {"Радиус": "300 мм"}, {"Вес": "150 г"}, {"Состав": "Гипс"}],
+        "descr": "Прекрасный поднос",
         "price": 1199,
         "article": 123463,
         "bought": 6
@@ -170,6 +191,8 @@
             "kitchen",
             "sales"
         ],
+        "char": [{"Высота": "40 мм"}, {"Радиус": "350 мм"}, {"Вес": "100 г"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасный поднос",
         "src": [
             "https://i.postimg.cc/2jFjBjg0/tray4a.jpg",
             "https://i.postimg.cc/Xq8VMx9R/tray4b.jpg"
@@ -191,6 +214,8 @@
             "https://i.postimg.cc/HsYY0Dgd/tray5.jpg",
             "https://i.postimg.cc/1t0S6M78/tray5b.jpg"
         ],
+        "char": [{"Высота": "40 мм"}, {"Радиус": "150 мм"}, {"Вес": "100 г"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасный подставка",
         "price": 399,
         "article": 123465,
         "bought": 10
@@ -208,6 +233,8 @@
             "https://i.postimg.cc/hthKwLvY/tray6a.jpg",
             "https://i.postimg.cc/wTw60fqJ/tray6b.jpg"
         ],
+        "char": [{"Высота": "50 мм"}, {"Ширина": "300 мм"}, {"Длина": "500 мм"}, {"Вес": "300 г"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасный поднос",
         "price": 1199,
         "article": 123466,
         "bought": 9
@@ -225,6 +252,8 @@
             "https://i.postimg.cc/HsgJfh1h/cap1a.jpg",
             "https://i.postimg.cc/P56Pvfpg/cap1b.jpg"
         ],
+        "char": [{"Высота": "100 мм"}, {"Радиус": "80 мм"}, {"Вес": "100 г"}, {"Объем": "200 мл"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасная кружка",
         "price": 599,
         "article": 123467,
         "bought": 15
@@ -239,12 +268,14 @@
             "new"
         ],
         "src": [
-            "https://i.postimg.cc/CxMRKn1C/cap2a.jpg",
+            "https://images.unsplash.com/photo-1614940403522-a8c829e7eb82?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=689",
             "https://i.postimg.cc/N05L6hR5/cap2b.jpg",
             "https://i.postimg.cc/yNtxnfTn/cap2c.jpg",
             "https://i.postimg.cc/2yf6NVMZ/cap2d.jpg",
             "https://i.postimg.cc/9FCMxwG3/cap2e.jpg"
         ],
+        "char": [{"Высота": "100 мм"}, {"Радиус": "90 мм"}, {"Вес": "100 г"}, {"Объем": "200 мл"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасная кружка",
         "price": 599,
         "article": 123468,
         "bought": 11
@@ -258,13 +289,13 @@
             "kitchen"
         ],
         "src": [
-            "https://i.postimg.cc/CxMRKn1C/cap2a.jpg",
-            "https://i.postimg.cc/N05L6hR5/cap2b.jpg",
-            "https://i.postimg.cc/yNtxnfTn/cap2c.jpg",
-            "https://i.postimg.cc/2yf6NVMZ/cap2d.jpg",
-            "https://i.postimg.cc/9FCMxwG3/cap2e.jpg"
+            "https://images.unsplash.com/photo-1591745742384-ee81ec590924?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170",
+            "https://images.unsplash.com/photo-1589724369435-6f852967d772?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687",
+            "https://images.unsplash.com/photo-1595879810894-d0156ae8009c?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687"
         ],
-        "price": 599,
+        "char": [{"Высота": "120 мм"}, {"Радиус": "90 мм"}, {"Вес": "100 г"}, {"Объем": "250 мл"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасная кружка",
+        "price": 999,
         "article": 123468,
         "bought": 11
     },
@@ -281,6 +312,8 @@
             "https://i.postimg.cc/ZnFqbJzD/cap3a.jpg",
             "https://i.postimg.cc/VsjvBW0B/cap3b.jpg"
         ],
+        "char": [{"Высота": "110 мм"}, {"Радиус": "90 мм"}, {"Вес": "100 г"}, {"Объем": "200 мл"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасная кружка",
         "price": 599,
         "article": 123469,
         "bought": 12
@@ -297,6 +330,8 @@
         "src": [
             "https://i.postimg.cc/zGffNmt0/cap4.jpg"
         ],
+        "char": [{"Высота": "115 мм"}, {"Радиус": "90 мм"}, {"Вес": "110 г"}, {"Объем": "250 мл"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасная кружка",
         "price": 1399,
         "article": 123470,
         "bought": 13
@@ -313,6 +348,8 @@
         "src": [
             "https://i.postimg.cc/28G5gjw1/cap5.jpg"
         ],
+        "char": [{"Высота": "100 мм"}, {"Радиус": "90 мм"}, {"Вес": "100 г"}, {"Объем": "200 мл"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасная кружка",
         "price": 999,
         "article": 123471,
         "bought": 14
@@ -329,6 +366,8 @@
         "src": [
             "https://i.postimg.cc/R0H4CvcQ/vase2a.jpg"
         ],
+        "char": [{"Высота": "300 мм"}, {"Радиус": "100 мм"}, {"Вес": "300 г"}, {"Объем": "1500 мл"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасная ваза",
         "price": 999,
         "article": 123473,
         "bought": 17
@@ -343,9 +382,12 @@
             "new"
         ],
         "src": [
+            "https://images.unsplash.com/photo-1616627974449-a485887f4d89?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887",
             "https://i.postimg.cc/wM6pkJn0/vase3a.jpg",
             "https://i.postimg.cc/SQrqxTz5/vase3b.jpg"
         ],
+        "char": [{"Высота": "300 мм"}, {"Радиус": "100 мм"}, {"Вес": "300 г"}, {"Объем": "1500 мл"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасная ваза",
         "price": 899,
         "article": 123474,
         "bought": 21
@@ -360,8 +402,11 @@
             "sales"
         ],
         "src": [
+            "https://images.unsplash.com/photo-1569774308455-313ea1ced653?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688",
             "https://i.postimg.cc/VvDcZv81/vase4.jpg"
         ],
+        "char": [{"Высота": "280 мм"}, {"Радиус": "60 мм"}, {"Вес": "300 г"}, {"Объем": "800 мл"}, {"Состав": "Керамика"}],
+        "descr": "Прекрасная ваза",
         "price": 1599,
         "article": 123475,
         "bought": 24

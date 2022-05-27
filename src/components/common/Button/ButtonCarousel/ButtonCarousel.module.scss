@@ -1,0 +1,24 @@
+@import '../../../../assets/style/vars.scss';
+
+.carousel_btn {
+    &_right {
+        height: 50px;
+        width: 50px;
+        // border-radius: 50%;
+        // text-align: center;
+    }
+    &_left {
+        height: 50px;
+        width: 50px;
+        // border-radius: 50%;
+        margin-right: 20px;
+    }
+	&_wrap {
+		display: flex;
+	    justify-content: space-between;
+	}
+}
+
+// .btn_svg {
+//     display: inline;
+// }

@@ -13,7 +13,7 @@ import ToggleMenu from './ToggleMenu';
 const Header = () => (
   <header className={style.header}>
     <div className={style.header_menu}>
-      <ToggleMenu />
+      {/* <ToggleMenu /> */}
       <NavLink className={style.logo} to="/">
         <img src={logo} alt="logo" />
       </NavLink>

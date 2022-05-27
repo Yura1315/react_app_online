@@ -1,0 +1,50 @@
+@import '../../../../assets/style/vars.scss';
+
+.card_more {
+    &_descr_link {
+		font-family: 'Montserrat';
+		font-size: 16px;
+		color: var(--color-brown);
+		margin-right: 48px;
+		transition: 0.4s ease-in-out;
+	}
+	&_descr_link:active {
+		color: var(--color-light-brown);
+	}
+	&_descr_link:hover {
+		color: var(--color-light-brown);
+	}
+	&_descr_wrap {
+		display: inline-flex;
+		border-bottom: 2px solid var(--color-light-brown);
+		padding-bottom: 10px;
+		padding-right: 60px;
+		margin-bottom: 30px;
+		margin-top: 20px;
+	}
+	&_char {
+		height: 130px;
+
+	}
+	&_char_item {
+		display: flex;
+		width: 200px;
+		align-items: center;
+		font-family: 'Montserrat';
+		font-size: 16px;
+		color: var(--color-brown);
+		margin-bottom: 10px;
+	}
+	&_char_item_text {
+		width: 100px;
+	}
+	&_char_list {
+		width: 100%;
+	}
+	&_descr_one {
+		width: 100%;
+		font-family: 'Montserrat';
+		font-size: 16px;
+		color: var(--color-brown);
+	}
+}

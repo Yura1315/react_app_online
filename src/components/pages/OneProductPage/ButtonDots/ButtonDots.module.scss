@@ -1,0 +1,61 @@
+@import '../../../../assets/style/vars.scss';
+
+.slider_dots {
+	&_list {
+		display: flex;
+		justify-content: center;
+		margin-top: 10px;
+	}
+	&_link {
+		position: relative;
+		display: inline-block;
+		width: 16px;
+	    height: 16px;
+	    border-radius: 50%;
+	    background-color: transparent;
+		border: 2px solid var(--color-brown);
+		margin-right: 5px;
+		cursor: pointer;
+		&:hover:after {
+			transform: translate(-50%, -50%) scale(1,1);
+			opacity: 1;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(0,0);
+			width: 75%;
+			height: 75%;
+			border-radius: 50%;
+			background-color: var(--color-brown);
+			opacity: 0;
+			transition: 300ms;
+		}
+		&_active {
+			position: relative;
+		    display: inline-block;
+		    width: 16px;
+		    height: 16px;
+		    border-radius: 50%;
+		    background-color: transparent;
+		    border: 2px solid var(--color-brown);
+		    margin-right: 5px;
+		    cursor: pointer;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) scale(1,1);
+				width: 75%;
+				height: 75%;
+				border-radius: 50%;
+				background-color: var(--color-brown);
+				transition: 300ms;
+			}
+		}
+
+	}
+}

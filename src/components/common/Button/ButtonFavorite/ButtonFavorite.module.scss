@@ -1,0 +1,16 @@
+@import '../../../../assets/style/vars.scss';
+
+
+.button_favorite {
+    width: 60px;
+    height: 60px;
+    margin-left: 15px;
+	appearance: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+	background-color: var(--color-light-brown);
+	transition: 0.4s ease-in-out;
+	&:hover {
+		background-color: var(--color-brown);
+	}
+}

@@ -1,15 +1,26 @@
 @import '../../../assets/style/vars.scss';
 
-// .wrapper {
-//   cursor: pointer;
-//   background-color: #ebf0fa;
-//   border: none;
-//   text-align: center;
-//   font-family: $text;
-//   font-size: $text-size;
-//   color: #272b33;
-//   width: 100%;
-//   min-width: 100px;
-//   height: 50px;
-//   margin-top: 40px;
-// }
+.btn {
+	font-family: 'Montserrat Bold';
+	color: var(--color-white);
+	appearance: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 200px;
+    text-decoration: none;
+    padding: 0 40px;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+	background-color: var(--color-light-brown);
+	transition: 0.4s ease-in-out;
+	&:hover {
+		background-color: var(--color-brown);
+	}
+}

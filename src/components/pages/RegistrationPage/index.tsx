@@ -61,8 +61,6 @@ const RegistrationPage: React.FC<{}> = () => {
       onSubmit={(values) => {
         const infoUser = { name: values.name, phone: values.phone, email: values.email };
         dispatch(SetUserNameAction(infoUser));
-        console.log(values);
-        console.log(typeof values);
       }}
       validationSchema={validationSchema}>
       {({
