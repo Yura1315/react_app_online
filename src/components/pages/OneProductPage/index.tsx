@@ -44,7 +44,6 @@ const OneProductPage = ({ productInfo }: OneProductPropsType) => {
 
   const moveDot = (index: number) => {
     setSlideIndex(index);
-    console.log(index);
   };
 
   return (

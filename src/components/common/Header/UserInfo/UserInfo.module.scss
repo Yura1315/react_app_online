@@ -14,9 +14,12 @@
 .account {
 	display: flex;
 	align-items: center;
+	width: 110px;
+	justify-content: end;
 	position: relative;
 	&_login {
 		position: absolute;
+		width: 220px;
 		top: 30px;
 		background-color: var(--color-white);
 		z-index: 2;
@@ -34,13 +37,40 @@
 		padding-bottom: 20px;
 		padding-right: 20px;
 		padding-left: 20px;
+		font-size: 15px;
 		font-family: "Montserrat";
 		color: var(--color-brown);
 		transition: 0.4s ease-in-out;
+		&:hover {
+			color: var(--color-light-brown);
+		}
+		&_btn {
+			display: inline-flex;
+			width: 100%;
+		    padding-top: 20px;
+		    padding-bottom: 20px;
+		    padding-left: 20px;
+		    background-color: transparent;
+		    font-size: 15px;
+		    font-family: "Montserrat";
+		    color: var(--color-brown);
+			border-top: 1px solid rgb(240, 240, 240);
+		    transition: 0.4s ease-in-out;
+			&:hover {
+				color: var(--color-light-brown);
+			}
+		}
 	}
-	&_link:hover {
-		color: var(--color-light-brown);
-		
+	&_user_name {
+		display: block;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-right: 20px;
+		padding-left: 20px;
+		font-family: "Montserrat";
+		color: var(--color-brown);
+		transition: 0.4s ease-in-out;
+		border-bottom: 1px solid rgb(240, 240, 240);
 	}
 	&_user {
 		font-family: 'Montserrat';

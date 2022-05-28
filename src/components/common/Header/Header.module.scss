@@ -6,7 +6,7 @@
 }
 
 .header {
-	flex: 0 0 auto;
+	grid-area: header;
 	background-color: var(--color-grey);
 	&_personal {
 		display: flex;

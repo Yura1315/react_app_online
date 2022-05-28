@@ -15,13 +15,21 @@ const OneProductDescr = ({ char, descr }: OneProductDescrPropstype) => {
     <div className={style.card_more_descr}>
       <div className={style.card_more_descr_wrap}>
         <button
-          className={style.card_more_descr_link}
+          className={
+            visible === 'char'
+              ? `${style.card_more_descr_link_active}`
+              : `${style.card_more_descr_link}`
+          }
           type="button"
           onClick={() => setVisible('char')}>
           Характеристики
         </button>
         <button
-          className={style.card_more_descr_link}
+          className={
+            visible === 'descr'
+              ? `${style.card_more_descr_link_active}`
+              : `${style.card_more_descr_link}`
+          }
           type="button"
           onClick={() => setVisible('descr')}>
           Описание

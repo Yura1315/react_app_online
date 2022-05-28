@@ -2,9 +2,9 @@
 
 
 .footer {
+	grid-area: footer;
 	display: flex;
 	align-items: center;
-    flex: 0 0 auto;
 	background-color: var(--color-grey);
     &_wrap {
         display: flex;

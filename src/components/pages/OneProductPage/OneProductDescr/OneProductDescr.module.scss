@@ -7,9 +7,14 @@
 		color: var(--color-brown);
 		margin-right: 48px;
 		transition: 0.4s ease-in-out;
-	}
-	&_descr_link:active {
-		color: var(--color-light-brown);
+		&_active {
+			font-family: 'Montserrat';
+		    font-size: 16px;
+		    color: var(--color-brown);
+		    margin-right: 48px;
+		    transition: 0.4s ease-in-out;
+		    color: var(--color-light-brown);
+		}
 	}
 	&_descr_link:hover {
 		color: var(--color-light-brown);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ClearUserNameAction } from '../../../../store/userUnfo/actions';
 import { GetUserName } from '../../../../store/userUnfo/selectors';
 import style from './UserInfo.module.scss';
@@ -12,7 +12,7 @@ const UserInfo = () => {
   return (
     <div className={style.account}>
       {name ? (
-        <p className={style.account_user}>{name}</p>
+        <p className={style.account_user}>Профиль</p>
       ) : (
         <p className={style.account_user}>Войти</p>
       )}
@@ -27,15 +27,23 @@ const UserInfo = () => {
       </svg>
       {name ? (
         <ul className={style.account_login}>
-          <Link to="profile" className={style.account_link}>
+          <p className={style.account_user_name}>{name}</p>
+          <Link to="profile/info" className={style.account_link}>
             Личный кабинет
           </Link>
+          <Link to="profile/whishlist" className={style.account_link}>
+            Избранное
+          </Link>
+          <Link to="profile/orders" className={style.account_link}>
+            Мои покупки
+          </Link>
           <button
+            className={style.account_link_btn}
             type="button"
             onClick={() => {
               dispatch(ClearUserNameAction());
             }}>
-            выйти
+            Выйти
           </button>
         </ul>
       ) : (

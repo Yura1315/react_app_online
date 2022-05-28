@@ -1,11 +1,15 @@
 @import '../../../assets/style/vars.scss';
 
 .page_wrapper {
-    display: flex;
-	flex-direction: column;
-	// background-color: var(--color-grey);
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'content'
+    'footer';
+    grid-template-rows: 80px auto 160px;
 }
 
 .content {
-     flex: 1 0 auto;
+    grid-area: content;
 }
