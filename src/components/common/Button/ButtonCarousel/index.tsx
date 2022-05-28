@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes } from 'react';
 import style from './ButtonCarousel.module.scss';
 
 type ButtonCarouselPropsType = {
-  setPaginate: any;
+  setPaginate?: any;
 };
 
 const ButtonCarousel = ({ setPaginate }: ButtonCarouselPropsType) => (

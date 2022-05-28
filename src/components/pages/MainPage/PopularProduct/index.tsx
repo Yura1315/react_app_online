@@ -9,27 +9,16 @@ type PopularProductPropsType = {
   productsData: any[];
 };
 
-const PopularProduct = ({ productsData }: PopularProductPropsType) => {
-  const [[page, direction], setPage] = useState([0, 0]);
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
-  console.log(page);
-  return (
-    <div className={style.popular}>
-      <motion.div className={style.container}>
-        <div className={style.field_top}>
-          <h2 className={style.title}>Популярные товары</h2>
-          <ButtonCarousel setPaginate={paginate} />
-        </div>
-        {productsData.length ? (
-          <PopularProductList productsData={productsData} direction={direction} page={page} />
-        ) : (
-          <Loader />
-        )}
-      </motion.div>
-    </div>
-  );
-};
+const PopularProduct = ({ productsData }: PopularProductPropsType) => (
+  <div className={style.popular}>
+    <motion.div className={style.container}>
+      <div className={style.field_top}>
+        <h2 className={style.title}>Популярные товары</h2>
+        <ButtonCarousel />
+      </div>
+      {productsData.length ? <PopularProductList productsData={productsData} /> : <Loader />}
+    </motion.div>
+  </div>
+);
 
 export default PopularProduct;
