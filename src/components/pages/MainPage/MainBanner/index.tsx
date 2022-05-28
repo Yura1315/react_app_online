@@ -9,7 +9,7 @@ const MainBanner = () => (
       <div className={style.main_banner_left}>
         <h1 className={style.main_banner_title}>ДЕКОР И ПОСУДА</h1>
         <span>в стиле минимализм</span>
-        <NavLink className={`${style.btn_primary} ${style.main_banner_btn}`} to="/catalog">
+        <NavLink className={`${style.btn_primary} ${style.main_banner_btn}`} to="/catalog/all">
           КУПИТЬ СЕЙЧАС
         </NavLink>
       </div>
