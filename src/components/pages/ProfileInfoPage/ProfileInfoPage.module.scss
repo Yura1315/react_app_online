@@ -1,0 +1,21 @@
+@import '../../../assets/style/vars.scss';
+
+.profile {
+    &_info {
+        // margin-left: 120px;
+    }
+    &_user_info {
+        display: flex;
+        justify-content: space-between;
+        width: 390px;
+        margin-top: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--color-brown);
+        font-family: 'Montserrat';
+        font-size: 15px;
+        color: var(--color-brown);
+        span {
+            color: #2e2b29;
+        }
+    }
+}

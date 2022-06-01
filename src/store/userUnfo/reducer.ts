@@ -6,7 +6,13 @@ const initialState: UserInfoReducerType = {
     name: '',
     email: '',
     phone: '',
-  }
+    lastName: '',
+    middleName: '',
+    birthDay: '',
+    gender: '',
+  },
+  whishList: []
+
 };
 
 const userInfoReducer = (state = initialState, action: ActionType) => {
@@ -22,6 +28,20 @@ const userInfoReducer = (state = initialState, action: ActionType) => {
       return (
         {
           ...initialState
+        }
+      );
+    case UserInfoActionType.addWhish:
+      return (
+        {
+          ...state,
+          whishList: [...state.whishList, action.payload]
+        }
+      );
+    case UserInfoActionType.removeWhish:
+      return (
+        {
+          ...state,
+          whishList: state.whishList.filter((whish: any) => whish.id !== action.payload.id)
         }
       );
     default:

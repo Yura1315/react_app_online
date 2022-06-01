@@ -11,6 +11,7 @@ type InputPasswordPropsType = {
   text: string;
   handleBlur: React.FocusEventHandler<HTMLInputElement> | undefined;
   err?: string | false | undefined;
+  textClass?: string;
 };
 
 const InputPassword = ({
@@ -21,6 +22,7 @@ const InputPassword = ({
   text,
   handleBlur,
   err,
+  textClass,
 }: InputPasswordPropsType) => {
   const [visible, setVisible] = useState(false);
   return (
@@ -34,11 +36,23 @@ const InputPassword = ({
         onChange={setValue}
         id={id}
       />
-      <label
-        className={err ? `${style.input_label} ${style.input_label_err}` : `${style.input_label}`}
-        htmlFor={id}>
-        {text}
-      </label>
+      {textClass ? (
+        <label
+          className={
+            err
+              ? `${style.input_label_edit} ${style.input_label_err_edit}`
+              : `${style.input_label_edit}`
+          }
+          htmlFor={id}>
+          {text}
+        </label>
+      ) : (
+        <label
+          className={err ? `${style.input_label} ${style.input_label_err}` : `${style.input_label}`}
+          htmlFor={id}>
+          {text}
+        </label>
+      )}
       {err ? <p className={style.err}>{err}</p> : ''}
       <SearchPassButton value={visible} setValue={setVisible} />
     </div>

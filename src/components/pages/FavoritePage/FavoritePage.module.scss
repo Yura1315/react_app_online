@@ -1,0 +1,8 @@
+@import '../../../assets/style/vars.scss';
+
+.whish_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+    grid-column-gap: 30px;
+}

@@ -1,5 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AddWhishListAction, RemoveWhishListAction } from '../../../store/userUnfo/actions';
+import { GetUserInfo } from '../../../store/userUnfo/selectors';
 import Button from '../../common/Button';
 import ButtonFavorite from '../../common/Button/ButtonFavorite';
 import ButtonArrow from './ButtonArrow';
@@ -24,7 +27,15 @@ type OneProductPropsType = {
 
 const OneProductPage = ({ productInfo }: OneProductPropsType) => {
   const [slideIndex, setSlideIndex] = useState(1);
+  const dispatch = useDispatch();
+  const user = useSelector(GetUserInfo);
   const dataSrcLenght = Number(productInfo?.src.length);
+  const addWhish = () => {
+    dispatch(AddWhishListAction(productInfo));
+  };
+  const removeWhish = () => {
+    dispatch(RemoveWhishListAction(productInfo));
+  };
 
   const nextSlide = () => {
     if (slideIndex !== dataSrcLenght) {
@@ -87,7 +98,15 @@ const OneProductPage = ({ productInfo }: OneProductPropsType) => {
             <OneProductDescr char={productInfo?.char} descr={productInfo?.descr} />
             <div className={style.btn_wrap}>
               <Button title="В КОРЗИНУ" />
-              <ButtonFavorite />
+              {user.name ? (
+                <ButtonFavorite
+                  whishId={productInfo?.id}
+                  addWhish={addWhish}
+                  removeWhish={removeWhish}
+                />
+              ) : (
+                ''
+              )}
             </div>
           </div>
         </div>

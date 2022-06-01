@@ -5,7 +5,12 @@ export type UserInfoReducerType = {
         name: string,
         email: string,
         phone: string,
-    }
+        lastName: string,
+        middleName: string,
+        birthDay: string,
+        gender: string,
+    },
+    whishList: any
 };
 
 export type SetUserNameActionType = {
@@ -17,4 +22,14 @@ export type ClearUserNameActionType = {
     type: UserInfoActionType.clearUserName
 }
 
-export type ActionType = SetUserNameActionType | ClearUserNameActionType
+export type AddWhishListActionType = {
+    type: UserInfoActionType.addWhish
+    payload: any
+}
+
+export type RemoveWhishListActionType = {
+    type: UserInfoActionType.removeWhish
+    payload: any
+}
+
+export type ActionType = SetUserNameActionType | ClearUserNameActionType | AddWhishListActionType | RemoveWhishListActionType

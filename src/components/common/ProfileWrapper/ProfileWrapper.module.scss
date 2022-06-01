@@ -1,0 +1,62 @@
+@import '../../../assets/style/vars.scss';
+
+.container {
+    width: 1290px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: start;
+}
+
+.profile {
+    &_wrap {
+        background-color: var(--color-grey);
+        height: 100%;
+    }
+    &_left {
+        display: flex;
+        flex-direction: column;
+    }
+    &_right {
+        margin-left: 120px;
+    }
+    &_user {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Forum';
+        font-size: 40px;
+        background-color: rgb(207, 205, 205);
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        color: var(--color-brown);
+        font-size: 55px;
+    }
+    &_links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+    }
+    &_link {
+        font-family: 'Forum';
+        font-size: 23px;
+        color: var(--color-brown);
+        margin-top: 20px;
+        margin-right: 10px;
+        transition: ease-in-out 0.4s;
+        &:hover {
+            color: var(--color-light-brown);
+        }
+    }
+    &_link_active {
+        font-family: 'Forum';
+        margin-top: 20px;
+        margin-right: 10px;
+        font-size: 23px;
+        color: var(--color-light-brown);
+        transition: ease-in-out 0.4s;
+    }
+}

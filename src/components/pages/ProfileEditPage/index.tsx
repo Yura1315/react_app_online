@@ -1,43 +1,61 @@
-/* eslint-disable operator-linebreak */
-import React from 'react';
+/* eslint-disable no-shadow */
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { useDispatch } from 'react-redux';
-import ButtonPrimary from '../../common/Button/ButtonPrimary';
-import Checkbox from '../../common/Checkbox';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { GetUserInfo } from '../../../store/userUnfo/selectors';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
+import ButtonPrimary from '../../common/Button/ButtonPrimary';
 import InputPassword from '../../common/Form/InputPassword';
 import { SetUserNameAction } from '../../../store/userUnfo/actions';
 
-type MyFormValues = {
+type InfoUserType = {
   name: string;
+  lastName: string;
+  middleName: string;
   email: string;
+  birthDay: string;
+  phone: string;
+  gender: string;
   password: string;
   repeatPassword: string;
-  phone: string;
-  checkbox: boolean;
 };
 
-const RegistrationPage = () => {
+const ProfileEditPage = () => {
+  const infoUser = useSelector(GetUserInfo);
   const dispatch = useDispatch();
-  const initialValues: MyFormValues = {
-    name: '',
-    email: '',
+  const initialValues: InfoUserType = {
+    name: infoUser.name,
+    lastName: infoUser.lastName,
+    middleName: infoUser.middleName,
+    email: infoUser.email,
+    birthDay: infoUser.birthDay,
+    phone: infoUser.phone,
+    gender: infoUser.gender,
     password: '',
     repeatPassword: '',
-    phone: '',
-    checkbox: false,
   };
   const phoneRegExp = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
-  const passwordRegExp =
-    /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
   const validationSchema = yup.object().shape({
     name: yup
       .string()
       .typeError('Должно быть строкой')
       .min(2, 'введите не менее двух символов')
       .required('обязательное поле'),
+    email: yup.string().email('некорректное значение').required('обязательное поле'),
+    phone: yup
+      .string()
+      .matches(phoneRegExp, 'введите в формате +79001432425 или 89001432425')
+      .required('обязательное поле'),
+    lastName: yup
+      .string()
+      .typeError('Должно быть строкой')
+      .min(2, 'введите не менее двух символов'),
+    middlename: yup
+      .string()
+      .typeError('Должно быть строкой')
+      .min(2, 'введите не менее двух символов'),
     password: yup
       .string()
       .typeError('Должно быть строкой')
@@ -47,12 +65,6 @@ const RegistrationPage = () => {
       .string()
       .oneOf([yup.ref('password')], 'Пароли не совпадают')
       .required('обязательное поле'),
-    email: yup.string().email('некорректное значение').required('обязательное поле'),
-    phone: yup
-      .string()
-      .matches(phoneRegExp, 'введите в формате +79001432425 или 89001432425')
-      .required('обязательное поле'),
-    checkbox: yup.boolean().oneOf([true], 'подтвердите для продолжения'),
   });
   return (
     <Formik
@@ -63,19 +75,21 @@ const RegistrationPage = () => {
           name: values.name,
           phone: values.phone,
           email: values.email,
-          lastName: '',
-          middleName: '',
-          birthDay: '',
+          lastName: values.lastName,
+          middleName: values.middleName,
+          birthDay: values.birthDay,
           gender: '',
+          password: values.password,
+          repeatPassword: values.repeatPassword,
         };
         dispatch(SetUserNameAction(infoUser));
-        console.log(values);
       }}
       validationSchema={validationSchema}>
       {({ handleSubmit, values, handleChange, handleBlur, touched, isValid, dirty, errors }) => (
-        <Form handleSubmit={handleSubmit}>
+        <Form handleSubmit={handleSubmit} textClass="edit">
           <Input
             id="name"
+            textClass="edit"
             placeholder="Введите имя"
             setValue={handleChange}
             handleBlur={handleBlur}
@@ -84,7 +98,26 @@ const RegistrationPage = () => {
             err={touched.name && errors.name}
           />
           <Input
+            id="lastName"
+            textClass="edit"
+            setValue={handleChange}
+            handleBlur={handleBlur}
+            value={values.lastName}
+            text="фамилия"
+            err={touched.lastName && errors.lastName}
+          />
+          <Input
+            id="middleName"
+            textClass="edit"
+            setValue={handleChange}
+            handleBlur={handleBlur}
+            value={values.middleName}
+            text="Отчество"
+            err={touched.middleName && errors.middleName}
+          />
+          <Input
             text="email"
+            textClass="edit"
             id="email"
             placeholder="Введите email"
             setValue={handleChange}
@@ -93,7 +126,17 @@ const RegistrationPage = () => {
             err={touched.email && errors.email}
           />
           <Input
+            id="birthDay"
+            textClass="edit"
+            setValue={handleChange}
+            handleBlur={handleBlur}
+            value={values.birthDay}
+            text="день рождения"
+            err={touched.birthDay && errors.birthDay}
+          />
+          <Input
             id="phone"
+            textClass="edit"
             placeholder="Введите телефон"
             setValue={handleChange}
             handleBlur={handleBlur}
@@ -103,15 +146,17 @@ const RegistrationPage = () => {
           />
           <InputPassword
             text="пароль"
+            textClass="edit"
             id="password"
             placeholder="********"
             handleBlur={handleBlur}
-            value={values.password}
             setValue={handleChange}
+            value={values.password}
             err={touched.password && errors.password}
           />
           <InputPassword
             text="повторите пароль"
+            textClass="edit"
             id="repeatPassword"
             placeholder="********"
             handleBlur={handleBlur}
@@ -119,17 +164,11 @@ const RegistrationPage = () => {
             value={values.repeatPassword}
             err={touched.repeatPassword && errors.repeatPassword}
           />
-          <Checkbox
-            id="checkbox"
-            value={values.checkbox}
-            setValue={handleChange}
-            err={touched.checkbox && errors.checkbox}
-          />
-          <ButtonPrimary title="ЗАРЕГИСТРИРОВАТЬСЯ" type="submit" disabled={!isValid && !dirty} />
+          <ButtonPrimary title="ИЗМЕНИТЬ" type="submit" disabled={!isValid && !dirty} />
         </Form>
       )}
     </Formik>
   );
 };
 
-export default RegistrationPage;
+export default ProfileEditPage;
