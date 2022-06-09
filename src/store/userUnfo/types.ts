@@ -9,8 +9,10 @@ export type UserInfoReducerType = {
         middleName: string,
         birthDay: string,
         gender: string,
+        token: string
     },
     whishList: any
+    AuthorizationErrorStatus: any
 };
 
 export type SetUserNameActionType = {
@@ -32,4 +34,9 @@ export type RemoveWhishListActionType = {
     payload: any
 }
 
-export type ActionType = SetUserNameActionType | ClearUserNameActionType | AddWhishListActionType | RemoveWhishListActionType
+export type AuthorizationErrorStatusType = {
+    type: UserInfoActionType.regError
+    payload: string
+}
+
+export type ActionType = SetUserNameActionType | ClearUserNameActionType | AddWhishListActionType | RemoveWhishListActionType | AuthorizationErrorStatusType

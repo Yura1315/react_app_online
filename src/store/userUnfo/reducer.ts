@@ -10,9 +10,10 @@ const initialState: UserInfoReducerType = {
     middleName: '',
     birthDay: '',
     gender: '',
+    token: ''
   },
-  whishList: []
-
+  whishList: [],
+  AuthorizationErrorStatus: ''
 };
 
 const userInfoReducer = (state = initialState, action: ActionType) => {
@@ -42,6 +43,13 @@ const userInfoReducer = (state = initialState, action: ActionType) => {
         {
           ...state,
           whishList: state.whishList.filter((whish: any) => whish.id !== action.payload.id)
+        }
+      );
+    case UserInfoActionType.regError:
+      return (
+        {
+          ...state,
+          AuthorizationErrorStatus: action.payload
         }
       );
     default:

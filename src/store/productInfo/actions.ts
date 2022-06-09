@@ -4,10 +4,10 @@
 import makeRequest from '../../network';
 
 export enum ProductsActionType {
-    getProducts='GET_PRODUCTS'
+  getProducts = 'GET_PRODUCTS'
 }
 
-export const GetProductsAction = () => async (dispatch:any) => {
+export const GetProductsAction = () => async (dispatch: any) => {
   const data = await makeRequest({ url: '/products' });
   dispatch({
     type: ProductsActionType.getProducts,

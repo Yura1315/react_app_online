@@ -63,13 +63,9 @@ const RegistrationPage = () => {
           name: values.name,
           phone: values.phone,
           email: values.email,
-          lastName: '',
-          middleName: '',
-          birthDay: '',
-          gender: '',
+          password: values.password,
         };
         dispatch(SetUserNameAction(infoUser));
-        console.log(values);
       }}
       validationSchema={validationSchema}>
       {({ handleSubmit, values, handleChange, handleBlur, touched, isValid, dirty, errors }) => (
