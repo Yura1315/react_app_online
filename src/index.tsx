@@ -3,15 +3,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/style/main.scss';
 import { BrowserRouter } from 'react-router-dom';
-import { applyMiddleware, createStore, legacy_createStore } from 'redux';
-import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import App from './App';
-import rootReducer, { persistor } from './store/rootReducer';
+import { persistor, store } from './store/rootReducer';
 
-const store = legacy_createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

@@ -1,5 +1,6 @@
+import { composeWithDevTools } from 'redux-devtools-extension';
 /* eslint-disable camelcase */
-import { createStore, applyMiddleware, combineReducers, legacy_createStore } from 'redux';
+import { applyMiddleware, combineReducers, legacy_createStore } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import thunk from 'redux-thunk';
 import storage from 'redux-persist/lib/storage';
@@ -14,11 +15,12 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'main-root',
   storage,
+  blackList: ['products'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const store = legacy_createStore(persistedReducer, applyMiddleware(thunk));
+export const store = legacy_createStore(persistedReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 export const persistor = persistStore(store);
 

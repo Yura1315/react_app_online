@@ -1,5 +1,5 @@
 /* eslint-disable operator-linebreak */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
@@ -8,7 +8,7 @@ import Checkbox from '../../common/Checkbox';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
 import InputPassword from '../../common/Form/InputPassword';
-import { SetUserNameAction } from '../../../store/userUnfo/actions';
+import { RegisrationUserAction } from '../../../store/userUnfo/actions';
 
 type MyFormValues = {
   name: string;
@@ -65,7 +65,7 @@ const RegistrationPage = () => {
           email: values.email,
           password: values.password,
         };
-        dispatch(SetUserNameAction(infoUser));
+        dispatch(RegisrationUserAction(infoUser));
       }}
       validationSchema={validationSchema}>
       {({ handleSubmit, values, handleChange, handleBlur, touched, isValid, dirty, errors }) => (

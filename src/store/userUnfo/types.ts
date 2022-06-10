@@ -15,7 +15,7 @@ export type UserInfoReducerType = {
     AuthorizationErrorStatus: any
 };
 
-export type SetUserNameActionType = {
+export type RegisrationUserActionType = {
     type: UserInfoActionType.setUserName
     payload: any
 };
@@ -39,4 +39,4 @@ export type AuthorizationErrorStatusType = {
     payload: string
 }
 
-export type ActionType = SetUserNameActionType | ClearUserNameActionType | AddWhishListActionType | RemoveWhishListActionType | AuthorizationErrorStatusType
+export type ActionType = RegisrationUserActionType | ClearUserNameActionType | AddWhishListActionType | RemoveWhishListActionType | AuthorizationErrorStatusType

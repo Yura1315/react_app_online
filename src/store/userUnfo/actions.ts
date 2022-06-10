@@ -11,24 +11,27 @@ export enum UserInfoActionType {
   removeWhish = 'REMOVE_WHISH'
 };
 
-// export const SetUserNameAction = (
-//   infoUser:
-//     {
-//       name: string, email: string, phone: string,
-//       lastName?: string, middleName?: string,
-//       birthDay?: string, gender?: string
-//     }
-// ) => ({
-//   type: UserInfoActionType.setUserName,
-//   payload: infoUser
-// });
-
-export const SetUserNameAction = (data: any) => async (dispatch: any) => {
+export const RegisrationUserAction = (data: any) => async (dispatch: any) => {
   const userInfo = await makeRequest({ url: 'http://localhost:5000/logged/reg', method: 'POST', data });
   if (userInfo.statusCode) {
     dispatch({
       type: UserInfoActionType.regError,
       payload: userInfo.payload.message
+    });
+  } else {
+    dispatch({
+      type: UserInfoActionType.setUserName,
+      payload: userInfo
+    });
+  }
+};
+
+export const AuthUserAction = (data: any) => async (dispatch: any) => {
+  const userInfo = await makeRequest({ url: 'http://localhost:5000/logged/auth', method: 'POST', data });
+  if (userInfo.statusCode) {
+    dispatch({
+      type: UserInfoActionType.regError,
+      payload: userInfo.message
     });
   } else {
     dispatch({
