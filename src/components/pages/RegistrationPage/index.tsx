@@ -1,14 +1,20 @@
 /* eslint-disable operator-linebreak */
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import style from './RegistrationPage.module.scss';
 import ButtonPrimary from '../../common/Button/ButtonPrimary';
 import Checkbox from '../../common/Checkbox';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
 import InputPassword from '../../common/Form/InputPassword';
 import { RegisrationUserAction } from '../../../store/userUnfo/actions';
+import { GetLoadingState } from '../../../store/loader/selectors';
+import Loader from '../../common/Loader';
+import makeRequest from '../../../network';
+import { HideLoaderAction, ShowLoaderAction } from '../../../store/loader/actions';
+import { GetAuthError } from '../../../store/userUnfo/selectors';
 
 type MyFormValues = {
   name: string;
@@ -21,6 +27,8 @@ type MyFormValues = {
 
 const RegistrationPage = () => {
   const dispatch = useDispatch();
+  const loading = useSelector(GetLoadingState);
+  const regErr = useSelector(GetAuthError);
   const initialValues: MyFormValues = {
     name: '',
     email: '',
@@ -54,21 +62,44 @@ const RegistrationPage = () => {
       .required('обязательное поле'),
     checkbox: yup.boolean().oneOf([true], 'подтвердите для продолжения'),
   });
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <Formik
       initialValues={initialValues}
       validateOnBlur
-      onSubmit={(values) => {
-        const infoUser = {
-          name: values.name,
-          phone: values.phone,
-          email: values.email,
-          password: values.password,
-        };
-        dispatch(RegisrationUserAction(infoUser));
+      onSubmit={async (values, { setStatus, resetForm }) => {
+        const { checkbox, repeatPassword, ...data } = values;
+        try {
+          // dispatch(ShowLoaderAction());
+          const response = await makeRequest({
+            method: 'POST',
+            url: 'http://localhost:5000/logged/reg',
+            data,
+          });
+          // dispatch(HideLoaderAction());
+          if (response.statusCode === 400) {
+            setStatus({ email: response.payload.message });
+          } else {
+            dispatch(RegisrationUserAction(response));
+            resetForm();
+          }
+        } catch (err) {
+          console.log(err);
+        }
       }}
       validationSchema={validationSchema}>
-      {({ handleSubmit, values, handleChange, handleBlur, touched, isValid, dirty, errors }) => (
+      {({
+        handleSubmit,
+        values,
+        handleChange,
+        handleBlur,
+        touched,
+        isValid,
+        dirty,
+        errors,
+        status,
+      }) => (
         <Form handleSubmit={handleSubmit}>
           <Input
             id="name"
@@ -88,6 +119,8 @@ const RegistrationPage = () => {
             value={values.email}
             err={touched.email && errors.email}
           />
+          {(touched.email && errors.email && <p className={style.err}>{errors.email}</p>) ||
+            (!!status && <p className={style.err}>{status.email}</p>)}
           <Input
             id="phone"
             placeholder="Введите телефон"

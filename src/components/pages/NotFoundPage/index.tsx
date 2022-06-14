@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import style from './NotFoundPage.module.scss';
 import notFound from '../../../img/404.png';
+import Loader from '../../common/Loader';
 
 const NotFaundPage = () => {
   const navigate = useNavigate();

@@ -6,3 +6,5 @@ export const GetUserName = (state: RootReducerType) => state.auth.infoUser.name;
 export const GetUserInfo = (state: RootReducerType) => state.auth.infoUser;
 
 export const GetWhishList = (state: RootReducerType) => state.auth.whishList;
+
+export const GetAuthError = (state: RootReducerType) => state.auth.AuthorizationErrorStatus;

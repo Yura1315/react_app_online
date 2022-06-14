@@ -40,6 +40,6 @@
     "react/jsx-wrap-multilines": "off",
     "default-param-last": "off",
     "linebreak-style": "off",
-    "max-len": [1, 150, 4]
+    "max-len": "off"
   }
 }

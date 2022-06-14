@@ -34,7 +34,7 @@ const BreadCrumbs = () => (
           </NavLink>
         </li>
         <li>
-          <NavLink className={style.catalog_filter_item} to="f">
+          <NavLink className={style.catalog_filter_item} to="bath">
             Ванная
           </NavLink>
         </li>
