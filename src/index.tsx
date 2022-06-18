@@ -1,21 +1,22 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/style/main.scss';
 import { BrowserRouter } from 'react-router-dom';
-import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import App from './App';
-import rootReducer from './store/rootReducer';
+import { persistor, store } from './store/rootReducer';
+import Loader from './components/common/Loader';
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

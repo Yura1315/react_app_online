@@ -10,7 +10,7 @@ type InputPasswordPropsType = {
   setValue: React.ChangeEventHandler<HTMLInputElement> | undefined;
   text: string;
   handleBlur: React.FocusEventHandler<HTMLInputElement> | undefined;
-  err?: string | false | undefined;
+  err?: string | false | string | undefined;
   textClass?: string;
 };
 

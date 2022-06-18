@@ -1,0 +1,19 @@
+@import '../../../assets/style/vars.scss';
+
+
+.err {
+	color: red;
+	position: absolute;
+	top: 53px;
+	left:auto;
+	font-family: "Montserrat";
+	font-size: 13px;
+  &_pass {
+    color: red;
+	  position: absolute;
+	  top: 127px;
+	  left:auto;
+	  font-family: "Montserrat";
+	  font-size: 13px;
+  }
+}

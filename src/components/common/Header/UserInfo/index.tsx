@@ -41,6 +41,7 @@ const UserInfo = () => {
             className={style.account_link_btn}
             type="button"
             onClick={() => {
+              localStorage.clear();
               dispatch(ClearUserNameAction());
             }}>
             Выйти

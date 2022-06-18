@@ -1,7 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { easeInOut } from '@popmotion/popcorn';
 import style from './OneProductDescr.module.scss';
 
 type OneProductDescrPropstype = {

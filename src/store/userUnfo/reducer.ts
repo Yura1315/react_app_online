@@ -10,40 +10,43 @@ const initialState: UserInfoReducerType = {
     middleName: '',
     birthDay: '',
     gender: '',
+    token: '',
   },
-  whishList: []
-
+  whishList: [],
+  AuthorizationErrorStatus: '',
 };
 
 const userInfoReducer = (state = initialState, action: ActionType) => {
   switch (action.type) {
     case UserInfoActionType.setUserName:
-      return (
-        {
-          ...state,
-          infoUser: action.payload,
-        }
-      );
+      return {
+        ...state,
+        infoUser: action.payload,
+      };
     case UserInfoActionType.clearUserName:
-      return (
-        {
-          ...initialState
-        }
-      );
+      return {
+        ...initialState,
+      };
     case UserInfoActionType.addWhish:
-      return (
-        {
-          ...state,
-          whishList: [...state.whishList, action.payload]
-        }
-      );
+      return {
+        ...state,
+        whishList: [...state.whishList, action.payload],
+      };
     case UserInfoActionType.removeWhish:
-      return (
-        {
-          ...state,
-          whishList: state.whishList.filter((whish: any) => whish.id !== action.payload.id)
-        }
-      );
+      return {
+        ...state,
+        whishList: state.whishList.filter((whish: any) => whish.id !== action.payload.id),
+      };
+    case UserInfoActionType.regError:
+      return {
+        ...state,
+        AuthorizationErrorStatus: action.payload,
+      };
+    case UserInfoActionType.removeAuthErr:
+      return {
+        ...state,
+        AuthorizationErrorStatus: '',
+      };
     default:
       return state;
   }

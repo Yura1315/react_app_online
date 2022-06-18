@@ -7,7 +7,7 @@ const makeRequest = async ({ url, method = 'GET', data = {}, params = {} }: Axio
       url,
       data,
       params,
-      baseURL: 'http://localhost:3001',
+      baseURL: 'http://localhost:5000',
       timeout: 10000,
     });
     return response.data;

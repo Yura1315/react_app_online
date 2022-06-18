@@ -3,6 +3,9 @@
 
 .form {
     padding: 41px 58px;
+    &_body {
+        position: relative;
+    }
 }
 
 .form_edit {

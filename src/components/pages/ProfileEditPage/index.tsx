@@ -8,7 +8,7 @@ import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
 import ButtonPrimary from '../../common/Button/ButtonPrimary';
 import InputPassword from '../../common/Form/InputPassword';
-import { SetUserNameAction } from '../../../store/userUnfo/actions';
+// import { SetUserNameAction } from '../../../store/userUnfo/actions';
 
 type InfoUserType = {
   name: string;
@@ -82,7 +82,7 @@ const ProfileEditPage = () => {
           password: values.password,
           repeatPassword: values.repeatPassword,
         };
-        dispatch(SetUserNameAction(infoUser));
+        // dispatch(SetUserNameAction(infoUser));
       }}
       validationSchema={validationSchema}>
       {({ handleSubmit, values, handleChange, handleBlur, touched, isValid, dirty, errors }) => (

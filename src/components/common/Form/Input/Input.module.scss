@@ -1,36 +1,19 @@
-@import '../../../../assets/style/vars.scss';
-
-// .wrapper {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   height: 100px;
-//   width: 100%;
-
-//   & > span {
-//     font-family: $text;
-//     font-size: $text-size;
-//   }
-
-//   & > input {
-//     font-size: $title-size;
-//   }
-// }
+@import "../../../../assets/style/vars.scss";
 
 .input {
-    height: 50px;
-	width: 100%;		
-    font-family: 'Montserrat';
+	height: 50px;
+	width: 100%;
+	font-family: "Montserrat";
 	font-size: 15px;
 	border-radius: 3px;
 	border: 2px solid var(--color-brown);
 	background-color: transparent;
 	outline: none;
 	padding-left: 18px;
-    opacity: 1;
+	opacity: 1;
 	color: var(--color-brown);
 	transition: 0.4s ease-in-out;
-    &::placeholder {
+	&::placeholder {
 		color: var(--color-brown);
 		transition: 0.4s ease-in-out;
 	}
@@ -40,9 +23,9 @@
 	&:focus::placeholder {
 		opacity: 0;
 	}
-    &:focus {
-        border: 2px solid var(--color-light-brown);
-    }
+	&:focus {
+		border: 2px solid var(--color-light-brown);
+	}
 	&:hover {
 		border-color: var(--color-light-brown);
 	}
@@ -52,29 +35,29 @@
 	&_err {
 		border: 2px solid red;
 	}
-    &_wrap {
-        position: relative;
+	&_wrap {
+		position: relative;
 		margin-bottom: 25px;
-    }
-    &_label {
-        position: absolute;
+	}
+	&_label {
+		position: absolute;
 		text-align: center;
 		padding-left: 10px;
 		padding-right: 10px;
 		top: -5px;
 		left: 15px;
 		background-color: var(--color-white);
-		font-family: 'Montserrat Bold';
+		font-family: "Montserrat Bold";
 		font-size: 10px;
 		color: var(--color-brown);
 		transition: 0.4s ease-in-out;
 		&_err {
 			color: red;
-        }
+		}
 	}
-    &:focus ~ &_label {
-        color: var(--color-light-brown);
-    }
+	&:focus ~ &_label {
+		color: var(--color-light-brown);
+	}
 	&_label_edit {
 		position: absolute;
 		text-align: center;
@@ -83,7 +66,7 @@
 		top: -5px;
 		left: 15px;
 		background-color: var(--color-grey);
-		font-family: 'Montserrat Bold';
+		font-family: "Montserrat Bold";
 		font-size: 10px;
 		color: var(--color-brown);
 		transition: 0.4s ease-in-out;
@@ -97,26 +80,21 @@
 	color: red;
 	position: absolute;
 	top: 52px;
-	left:auto;
+	left: auto;
 	font-family: "Montserrat";
 	font-size: 13px;
 }
 
 // =============MEDIA==============
 
-
 @media (max-width: 1340px) {
-
 }
 
 @media (max-width: 1170px) {
-	
 }
 
 @media (max-width: 1022px) {
-
 }
 
 @media (max-width: 886px) {
-
 }
