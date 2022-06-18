@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import MainPage from '../../components/pages/MainPage';
 import { GetLoadingState } from '../../store/loader/selectors';
 import { GetProductsAction } from '../../store/productInfo/actions';
-import getProducts from '../../store/productInfo/selector';
+import { getProducts } from '../../store/productInfo/selector';
 import Loader from '../../components/common/Loader';
 
 const MainContainer = () => {

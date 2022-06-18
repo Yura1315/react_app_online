@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import OneProductPage from '../../components/pages/OneProductPage';
-import getProducts from '../../store/productInfo/selector';
+import { GetOneProductAction } from '../../store/productInfo/actions';
+import Loader from '../../components/common/Loader';
+import { GetLoadingState } from '../../store/loader/selectors';
 
 const OneProductContainer = () => {
-  const product = useSelector(getProducts);
+  const dispatch = useDispatch();
+  const loading = useSelector(GetLoadingState);
   const { id } = useParams();
-  const oneProduct = product.find((el) => el.id === +id!);
-  return <OneProductPage productInfo={oneProduct} />;
+  useEffect(() => {
+    dispatch(GetOneProductAction(id));
+  }, []);
+  return loading ? <Loader /> : <OneProductPage />;
 };
 
 export default OneProductContainer;

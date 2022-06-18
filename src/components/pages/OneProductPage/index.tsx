@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getProductOne } from '../../../store/productInfo/selector';
 import { AddWhishListAction, RemoveWhishListAction } from '../../../store/userUnfo/actions';
 import { GetUserInfo } from '../../../store/userUnfo/selectors';
 import Button from '../../common/Button';
@@ -10,31 +11,17 @@ import ButtonDots from './ButtonDots';
 import OneProductDescr from './OneProductDescr';
 import style from './OneProductPage.module.scss';
 
-type OneProductPropsType = {
-  productInfo:
-    | {
-        id: number;
-        title: string;
-        alt: string;
-        price: number;
-        article: number;
-        src: string[];
-        char: any;
-        descr: any;
-      }
-    | undefined;
-};
-
-const OneProductPage = ({ productInfo }: OneProductPropsType) => {
+const OneProductPage = () => {
   const [slideIndex, setSlideIndex] = useState(1);
   const dispatch = useDispatch();
   const user = useSelector(GetUserInfo);
-  const dataSrcLenght = Number(productInfo?.src.length);
+  const oneProduct = useSelector(getProductOne);
+  const dataSrcLenght = Number(oneProduct.src.length);
   const addWhish = () => {
-    dispatch(AddWhishListAction(productInfo));
+    dispatch(AddWhishListAction(oneProduct));
   };
   const removeWhish = () => {
-    dispatch(RemoveWhishListAction(productInfo));
+    dispatch(RemoveWhishListAction(oneProduct));
   };
 
   const nextSlide = () => {
@@ -65,7 +52,7 @@ const OneProductPage = ({ productInfo }: OneProductPropsType) => {
             <ButtonArrow moveSlide={nextSlide} direction="next" />
             <ButtonArrow moveSlide={prevSlide} direction="prev" />
             <ul className={style.card_more_list}>
-              {productInfo?.src.map((el, i) => (
+              {oneProduct.src.map((el, i) => (
                 <li
                   className={slideIndex === i + 1 ? `${style.slide_active}` : `${style.slide}`}
                   key={i}>
@@ -73,12 +60,12 @@ const OneProductPage = ({ productInfo }: OneProductPropsType) => {
                 </li>
               ))}
             </ul>
-            <ButtonDots images={productInfo?.src} moveImages={moveDot} slideIndex={slideIndex} />
+            <ButtonDots images={oneProduct.src} moveImages={moveDot} slideIndex={slideIndex} />
           </div>
           <div className={style.card_more_info}>
-            <h2 className={style.card_more_title}>{productInfo?.title}</h2>
+            <h2 className={style.card_more_title}>{oneProduct.title}</h2>
             <div className={style.card_more_price_wrap}>
-              <span className={style.card_more_price}>{productInfo?.price}</span>
+              <span className={style.card_more_price}>{oneProduct.price}</span>
               <svg
                 width="14"
                 height="19"
@@ -93,14 +80,14 @@ const OneProductPage = ({ productInfo }: OneProductPropsType) => {
             </div>
             <p className={style.card_more_article}>
               Артикул:
-              <span>{productInfo?.article}</span>
+              <span>{oneProduct.article}</span>
             </p>
-            <OneProductDescr char={productInfo?.char} descr={productInfo?.descr} />
+            <OneProductDescr char={oneProduct.char} descr={oneProduct.descr} />
             <div className={style.btn_wrap}>
               <Button title="В КОРЗИНУ" />
               {user.name ? (
                 <ButtonFavorite
-                  whishId={productInfo?.id}
+                  whishId={oneProduct.id}
                   addWhish={addWhish}
                   removeWhish={removeWhish}
                 />

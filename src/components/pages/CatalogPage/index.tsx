@@ -11,7 +11,7 @@ type CatalogPagePropsType = {
 
 const CatalogPage = ({ productsData }: CatalogPagePropsType) => {
   const loading = useSelector(GetLoadingState);
-  return <>{productsData.length ? <ProductList productsData={productsData} /> : <Loader />}</>;
+  return <ProductList productsData={productsData} />;
 };
 
 export default CatalogPage;
