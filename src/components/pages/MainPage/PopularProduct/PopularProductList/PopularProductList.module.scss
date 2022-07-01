@@ -6,11 +6,25 @@
 		flex-wrap: nowrap;
 		justify-content: space-between;
 		gap: 30px;
+		pointer-events: none;
 	}
+}
+
+.slider_wrap {
+	position: relative;
 }
 
 
 // ===============================
+
+@media (max-width: 1024px) {
+	.popular_product {
+		&_list {
+			gap: 16px;
+			pointer-events: visible;
+		}
+	}
+}
 
 @media (max-width: 1170px) {
 	.popular_product {

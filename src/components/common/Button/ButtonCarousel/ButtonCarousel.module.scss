@@ -1,24 +1,26 @@
-@import '../../../../assets/style/vars.scss';
+@import "../../../../assets/style/vars.scss";
 
 .carousel_btn {
+    &_svg  {
+        stroke: var(--color-brown)
+    }
+    &_active {
+        stroke: var(--color-white)
+    }
     &_right {
         height: 50px;
         width: 50px;
-        // border-radius: 50%;
-        // text-align: center;
     }
     &_left {
         height: 50px;
         width: 50px;
-        // border-radius: 50%;
         margin-right: 20px;
     }
-	&_wrap {
-		display: flex;
-	    justify-content: space-between;
-	}
+    &_wrap {
+        display: flex;
+        justify-content: end;
+        position: absolute;
+        width: 1290px;
+        top: -80px;
+    }
 }
-
-// .btn_svg {
-//     display: inline;
-// }

@@ -2,6 +2,7 @@ import { ActionType, ProductsReducerType } from './types';
 import { ProductsActionType } from './actions';
 
 const initialState: ProductsReducerType = {
+  popularProducts: [],
   data: [],
   perPage: 9,
   currentPage: 1,
@@ -23,10 +24,10 @@ const initialState: ProductsReducerType = {
 
 const productsReducer = (state = initialState, action: ActionType) => {
   switch (action.type) {
-    case ProductsActionType.getProducts:
+    case ProductsActionType.getPopularProducts:
       return {
         ...state,
-        data: action.payload,
+        popularProducts: action.payload,
       };
     case ProductsActionType.getProductsRepos:
       return {

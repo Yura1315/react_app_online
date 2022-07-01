@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import PopularProductList from './PopularProductList';
 import style from './PopularProduct.module.scss';
 import Loader from '../../../common/Loader';
-import ButtonCarousel from '../../../common/Button/ButtonCarousel';
 
 type PopularProductPropsType = {
   productsData: any[];
@@ -14,7 +13,6 @@ const PopularProduct = ({ productsData }: PopularProductPropsType) => (
     <motion.div className={style.container}>
       <div className={style.field_top}>
         <h2 className={style.title}>Популярные товары</h2>
-        <ButtonCarousel />
       </div>
       {productsData.length ? <PopularProductList productsData={productsData} /> : <Loader />}
     </motion.div>

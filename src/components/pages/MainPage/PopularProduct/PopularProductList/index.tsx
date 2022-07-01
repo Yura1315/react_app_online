@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import MCardProduct from '../../../../common/MCardProduct';
 import style from './PopularProductList.module.scss';
+import ButtonCarousel from '../../../../common/Button/ButtonCarousel';
 
 type PopularProductListType = {
   productsData: {
@@ -19,30 +20,58 @@ type PopularProductListType = {
 };
 
 const PopularProductList = ({ productsData }: PopularProductListType) => {
-  const popularProduct = productsData.sort((a: any, b: any) => b.bought - a.bought).slice(0, 8);
   const [width, setWidth] = useState(0);
+  const [page, setPage] = useState(0);
   const carousel: any = useRef();
+  const paginate = (newDirection: number) => {
+    setPage(newDirection);
+  };
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, [width]);
+  // Настройки анимации
+  const variants = {
+    enter: (direction: number) => ({
+      x: 0,
+    }),
+    center: (direction: number) => ({
+      x: direction === 0 ? 0 : -width,
+    }),
+    exit: (direction: number) => ({
+      x: 0,
+    }),
+  };
   return (
-    <motion.ul
-      ref={carousel}
-      drag="x"
-      dragConstraints={{ right: 0, left: -width }}
-      className={style.popular_product_list}>
-      {popularProduct.map((el) => (
-        <MCardProduct
-          id={el.id}
-          key={el.id!}
-          title={el.title}
-          price={el.price}
-          src={el.src}
-          alt={el.alt}
-          category={el.category}
-        />
-      ))}
-    </motion.ul>
+    <div className={style.slider_wrap}>
+      <ButtonCarousel page={page} setPaginate={paginate} />
+      <motion.ul
+        variants={variants}
+        custom={page}
+        // custom={width}
+        initial="enter"
+        animate="center"
+        transition={{
+          x: { type: 'spring', stiffness: 120, damping: 30 },
+          opacity: { duration: 1.1 },
+        }}
+        ref={carousel}
+        drag="x"
+        exit="exit"
+        dragConstraints={{ right: 0, left: -width }}
+        className={style.popular_product_list}>
+        {productsData.map((el) => (
+          <MCardProduct
+            id={el.id}
+            key={el.id!}
+            title={el.title}
+            price={el.price}
+            src={el.src}
+            alt={el.alt}
+            category={el.category}
+          />
+        ))}
+      </motion.ul>
+    </div>
   );
 };
 

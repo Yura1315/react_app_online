@@ -1,6 +1,7 @@
 import { ProductsActionType } from './actions';
 
 export type ProductsReducerType = {
+  popularProducts: [];
   data: [];
   perPage: number;
   currentPage: number;
@@ -20,8 +21,8 @@ export type ProductsReducerType = {
   };
 };
 
-export type GetProductsActionType = {
-  type: ProductsActionType.getProducts;
+export type GetPopulatProductsActionType = {
+  type: ProductsActionType.getPopularProducts;
   payload: any[];
 };
 
@@ -35,4 +36,4 @@ export type GetOneProductActionType = {
   payload: any;
 };
 
-export type ActionType = GetProductsActionType | GetOneProductActionType | GetProductsReposActionType;
+export type ActionType = GetPopulatProductsActionType | GetOneProductActionType | GetProductsReposActionType;

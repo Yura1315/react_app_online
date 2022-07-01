@@ -5,18 +5,18 @@ import { ShowLoaderAction, HideLoaderAction } from '../loader/actions';
 import makeRequest from '../../network';
 
 export enum ProductsActionType {
-  getProducts = 'GET_PRODUCTS',
+  getPopularProducts = 'GET_POPULAR_PRODUCTS',
   getOneProduct = 'GET_ONE_PRODUCT',
   getProductsRepos = 'GET_PRODUCTS_REPOS'
 }
 
-export const GetProductsAction = () => async (dispatch: any) => {
+export const GetPopulatProductsAction = () => async (dispatch: any) => {
   try {
     dispatch(ShowLoaderAction());
-    const data = await makeRequest({ url: '/catalog' });
+    const data = await makeRequest({ url: '/popular' });
     dispatch(HideLoaderAction());
     dispatch({
-      type: ProductsActionType.getProducts,
+      type: ProductsActionType.getPopularProducts,
       payload: data,
     });
   } catch (err) {
@@ -27,7 +27,7 @@ export const GetProductsAction = () => async (dispatch: any) => {
 export const GetProductsReposAction = (searchQuery: string, currentPage: number, perPage: number) => async (dispatch: any) => {
   try {
     dispatch(ShowLoaderAction());
-    const data = await makeRequest({ url: `/catalogs/${searchQuery}?page=${currentPage}&perPage=${perPage}` });
+    const data = await makeRequest({ url: `/catalog/${searchQuery}?page=${currentPage}&perPage=${perPage}` });
     dispatch(HideLoaderAction());
     dispatch({
       type: ProductsActionType.getProductsRepos,
