@@ -1,8 +1,10 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { getProductOne } from '../../../store/productInfo/selector';
-import { AddWhishListAction, RemoveWhishListAction } from '../../../store/userUnfo/actions';
+import { AddWhishListAction } from '../../../store/userUnfo/actions';
 import { GetUserInfo } from '../../../store/userUnfo/selectors';
 import Button from '../../common/Button';
 import ButtonFavorite from '../../common/Button/ButtonFavorite';
@@ -12,16 +14,15 @@ import OneProductDescr from './OneProductDescr';
 import style from './OneProductPage.module.scss';
 
 const OneProductPage = () => {
+  const { id } = useParams();
   const [slideIndex, setSlideIndex] = useState(1);
   const dispatch = useDispatch();
   const user = useSelector(GetUserInfo);
   const oneProduct = useSelector(getProductOne);
   const dataSrcLenght = Number(oneProduct.src.length);
   const addWhish = () => {
-    dispatch(AddWhishListAction(oneProduct));
-  };
-  const removeWhish = () => {
-    dispatch(RemoveWhishListAction(oneProduct));
+    const productInfo = { productId: oneProduct._id, productNum: id, email: user.email };
+    dispatch(AddWhishListAction(productInfo));
   };
 
   const nextSlide = () => {
@@ -85,15 +86,7 @@ const OneProductPage = () => {
             <OneProductDescr char={oneProduct.char} descr={oneProduct.descr} />
             <div className={style.btn_wrap}>
               <Button title="В КОРЗИНУ" />
-              {user.name ? (
-                <ButtonFavorite
-                  whishId={oneProduct.id}
-                  addWhish={addWhish}
-                  removeWhish={removeWhish}
-                />
-              ) : (
-                ''
-              )}
+              {user.name ? <ButtonFavorite addWhish={addWhish} /> : ''}
             </div>
           </div>
         </div>

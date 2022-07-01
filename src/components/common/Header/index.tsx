@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import UserInfo from './UserInfo';
 import BasketInfo from './BasketInfo';
 import style from './Header.module.scss';
 import logo from '../../../img/logo.svg';
-import search from '../../../img/search.png';
 import FormSearch from '../FormSearch';
 import InputSearch from '../FormSearch/inputSearch';
 import ToggleMenu from './ToggleMenu';

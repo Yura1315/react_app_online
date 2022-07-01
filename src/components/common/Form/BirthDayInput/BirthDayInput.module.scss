@@ -1,0 +1,55 @@
+@import '../../../../assets/style/vars.scss';
+
+.datepicker {
+  height: 50px;
+	width: 100%;
+	font-family: "Montserrat";
+	font-size: 15px;
+	border-radius: 3px;
+	border: 2px solid var(--color-brown);
+	background-color: transparent;
+	outline: none;
+	padding-left: 18px;
+	opacity: 1;
+	color: var(--color-brown);
+	transition: 0.4s ease-in-out;
+	&_wrap {
+		position: relative;
+		margin-bottom: 25px;
+	}
+	&::placeholder {
+		color: var(--color-brown);
+		transition: 0.4s ease-in-out;
+	}
+	&:focus::placeholder {
+		opacity: 0;
+	}
+	&:focus {
+		border: 2px solid var(--color-light-brown);
+	}
+	&:hover {
+		border-color: var(--color-light-brown);
+	}
+	&:hover ~ &_label {
+		color: var(--color-light-brown);
+	}
+	&_label {
+		position: absolute;
+		text-align: center;
+		padding-left: 10px;
+		padding-right: 10px;
+		top: -5px;
+		left: 15px;
+		background-color: var(--color-grey);
+		font-family: "Montserrat Bold";
+		font-size: 10px;
+		color: var(--color-brown);
+		transition: 0.4s ease-in-out;
+		&_err {
+			color: red;
+		}
+	}
+	&:focus ~ &_label {
+		color: var(--color-light-brown);
+	}
+}

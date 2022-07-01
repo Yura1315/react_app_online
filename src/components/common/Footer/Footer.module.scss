@@ -1,107 +1,99 @@
 @import '../../../assets/style/vars.scss';
 
-
 .footer {
-	grid-area: footer;
-	display: flex;
-	align-items: center;
-	background-color: var(--color-grey);
-    &_wrap {
-        display: flex;
-	    justify-content: space-between;
-	    border-top: 1px solid var(--color-brown);
-		width: $container;
-        margin: 0 auto;
-    }
-    &_contacts {
-		margin-top: 26px;
-	}
-	&_social {
-		margin-top: 75px;
-	}
-	&_contacts_title {
-		font-family: 'Montserrat Bold';
-		font-size: 16px;
-		color: var(--color-brown-hover);
-		margin-bottom: 16px;
-	}
-	&_social_link {
-		margin-left: 12px;
-	}
-	&_social_link_item {
-		fill: var(--color-brown);
-		transition: 0.4s ease-in-out;
-		
-	}
-	&_social_link_item:hover {
-		fill: var(--color-light-brown);
-	}
-	&_phone {
-		margin-bottom: 16px;
-	}
-	&_phone a {
-		font-family: 'TTRicordiMarmo';
-		font-size: 12px;
-		color: var(--color-brown);
-		transition: 0.4s ease-in-out;
-	}
-	&_phone a:hover {
-		color: var(--color-light-brown);
-	}
-	&_mail {
-		margin-bottom: 27px;
-	}
-	&_mail a {
-		font-family: 'TTRicordiMarmo';
-		font-size: 12px;
-		color: var(--color-brown);
-		transition: 0.4s ease-in-out;
-	}
-	&_mail a:hover {
-		color: var(--color-light-brown);
-	}
-	
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-grey);
+  &_wrap {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--color-brown);
+    width: $container;
+    margin: 0 auto;
+  }
+  &_contacts {
+    margin-top: 26px;
+  }
+  &_social {
+    margin-top: 75px;
+  }
+  &_contacts_title {
+    font-family: 'Montserrat Bold';
+    font-size: 16px;
+    color: var(--color-brown-hover);
+    margin-bottom: 16px;
+  }
+  &_social_link {
+    margin-left: 12px;
+  }
+  &_social_link_item {
+    fill: var(--color-brown);
+    transition: 0.4s ease-in-out;
+  }
+  &_social_link_item:hover {
+    fill: var(--color-light-brown);
+  }
+  &_phone {
+    margin-bottom: 16px;
+  }
+  &_phone a {
+    font-family: 'TTRicordiMarmo';
+    font-size: 12px;
+    color: var(--color-brown);
+    transition: 0.4s ease-in-out;
+  }
+  &_phone a:hover {
+    color: var(--color-light-brown);
+  }
+  &_mail {
+    margin-bottom: 27px;
+  }
+  &_mail a {
+    font-family: 'TTRicordiMarmo';
+    font-size: 12px;
+    color: var(--color-brown);
+    transition: 0.4s ease-in-out;
+  }
+  &_mail a:hover {
+    color: var(--color-light-brown);
+  }
 }
 
 .political {
-	font-family: 'TTRicordiMarmo';
-	font-size: 12px;
-	align-self: flex-end;
-	color: var(--color-brown);
-	margin-bottom: 10px;
-	transition: 0.4s ease-in-out;
-	&:hover {
-		color: var(--color-light-brown);
-	}
+  font-family: 'TTRicordiMarmo';
+  font-size: 12px;
+  align-self: flex-end;
+  color: var(--color-brown);
+  margin-bottom: 10px;
+  transition: 0.4s ease-in-out;
+  &:hover {
+    color: var(--color-light-brown);
+  }
 }
-
-
-
 
 // ==============MEDIA============
 
 @media (max-width: 1340px) {
-	.footer_wrap {
-        width: 1150px;
-    }
+  .footer_wrap {
+    width: 1150px;
+  }
 }
 
 @media (max-width: 1170px) {
-	  .footer_wrap {
-		  width: 1000px;
-	  }
+  .footer_wrap {
+    width: 1000px;
+  }
 }
-
 
 @media (max-width: 1022px) {
-	.footer_wrap {
-		width: 850px;
-	}
+  .footer_wrap {
+    width: 850px;
+  }
 }
 
-
 @media (max-width: 886px) {
-	.footer_wrap {
-        width: 750px;
-    }
+  .footer_wrap {
+    width: 750px;
+  }
 }

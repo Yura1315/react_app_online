@@ -1,37 +1,37 @@
-@import '../../../../assets/style/vars.scss';
+@import "../../../../assets/style/vars.scss";
 
 .catalog {
 	margin-top: 50px;
-	margin-bottom: 100px;
-    &_wrap {
-        width: 1290px;
-        margin: 0 auto;
-        display: flex;
+	margin-bottom: 50px;
+	&_wrap {
+		width: 1290px;
+		margin: 0 auto;
+		display: flex;
 		justify-content: space-between;
-    }
-    &_filter {
-        width: 342px;
+	}
+	&_filter {
+		width: 342px;
 		background-color: var(--color-white);
 		padding-left: 27px;
 		min-height: 600px;
-        height: 100%;
-    }
-    &_filter_top {
-        padding-top: 32px;
+		height: 100%;
+	}
+	&_filter_top {
+		padding-top: 32px;
 		padding-bottom: 50px;
-    }
-    &_filter_item {
+	}
+	&_filter_item {
 		display: inline-block;
 		color: var(--color-brown);
 		font-size: 18px;
-		font-family: 'Montserrat';
+		font-family: "Montserrat";
 		transition: 0.4s ease-in-out;
 	}
-    &_filter_item:hover {
+	&_filter_item:hover {
 		color: var(--color-light-brown);
 	}
 	&_filter_item::after {
-		content: '';
+		content: "";
 		display: block;
 		position: absolute;
 		left: 0;
@@ -40,7 +40,8 @@
 		background-color: var(--color-light-brown);
 		transition: width 0.3s ease-out;
 	}
-	&_filter_item:hover::after, :focus::after {
+	&_filter_item:hover::after,
+	:focus::after {
 		width: 90%;
 	}
 	&_filter_item {
@@ -50,7 +51,7 @@
 }
 
 .sales {
-	color: #C77958;
+	color: #c77958;
 	&:hover {
 		color: #cf4d16;
 	}

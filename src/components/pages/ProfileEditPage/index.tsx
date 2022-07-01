@@ -1,21 +1,24 @@
 /* eslint-disable no-shadow */
+import React from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import BirthDay from '../../common/Form/BirthDayInput';
 import { GetUserInfo } from '../../../store/userUnfo/selectors';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
 import ButtonPrimary from '../../common/Button/ButtonPrimary';
 import InputPassword from '../../common/Form/InputPassword';
-// import { SetUserNameAction } from '../../../store/userUnfo/actions';
+import 'react-datepicker/dist/react-datepicker.css';
+import makeRequest from '../../../network';
+import { RegisrationUserAction } from '../../../store/userUnfo/actions';
 
 type InfoUserType = {
   name: string;
   lastName: string;
   middleName: string;
   email: string;
-  birthDay: string;
+  birthDay: any;
   phone: string;
   gender: string;
   password: string;
@@ -27,14 +30,14 @@ const ProfileEditPage = () => {
   const dispatch = useDispatch();
   const initialValues: InfoUserType = {
     name: infoUser.name,
-    lastName: infoUser.lastName,
-    middleName: infoUser.middleName,
+    lastName: '' || infoUser.lastName,
+    middleName: '' || infoUser.middleName,
     email: infoUser.email,
-    birthDay: infoUser.birthDay,
     phone: infoUser.phone,
     gender: infoUser.gender,
     password: '',
     repeatPassword: '',
+    birthDay: infoUser.birthDay ? new Date(infoUser.birthDay) : null,
   };
   const phoneRegExp = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
   const validationSchema = yup.object().shape({
@@ -70,22 +73,28 @@ const ProfileEditPage = () => {
     <Formik
       initialValues={initialValues}
       validateOnBlur
-      onSubmit={(values) => {
-        const infoUser = {
-          name: values.name,
-          phone: values.phone,
-          email: values.email,
-          lastName: values.lastName,
-          middleName: values.middleName,
-          birthDay: values.birthDay,
-          gender: '',
-          password: values.password,
-          repeatPassword: values.repeatPassword,
-        };
-        // dispatch(SetUserNameAction(infoUser));
+      onSubmit={async (values) => {
+        const { repeatPassword, ...data } = values;
+        const response = await makeRequest({
+          url: '/profile/edit',
+          method: 'PUT',
+          data,
+          headers: { authorization: `Bearer ${infoUser.token}` },
+        });
+        dispatch(RegisrationUserAction(response));
       }}
       validationSchema={validationSchema}>
-      {({ handleSubmit, values, handleChange, handleBlur, touched, isValid, dirty, errors }) => (
+      {({
+        handleSubmit,
+        values,
+        handleChange,
+        handleBlur,
+        touched,
+        isValid,
+        dirty,
+        errors,
+        setFieldValue,
+      }) => (
         <Form handleSubmit={handleSubmit} textClass="edit">
           <Input
             id="name"
@@ -100,6 +109,7 @@ const ProfileEditPage = () => {
           <Input
             id="lastName"
             textClass="edit"
+            placeholder="Введите фамилию"
             setValue={handleChange}
             handleBlur={handleBlur}
             value={values.lastName}
@@ -108,6 +118,7 @@ const ProfileEditPage = () => {
           />
           <Input
             id="middleName"
+            placeholder="Введите отчество"
             textClass="edit"
             setValue={handleChange}
             handleBlur={handleBlur}
@@ -125,14 +136,13 @@ const ProfileEditPage = () => {
             value={values.email}
             err={touched.email && errors.email}
           />
-          <Input
+          <BirthDay
             id="birthDay"
-            textClass="edit"
-            setValue={handleChange}
-            handleBlur={handleBlur}
+            name="birthday"
             value={values.birthDay}
-            text="день рождения"
-            err={touched.birthDay && errors.birthDay}
+            selected={values.birthDay}
+            setValue={setFieldValue}
+            dateFormat="dd.MM.yyyy"
           />
           <Input
             id="phone"

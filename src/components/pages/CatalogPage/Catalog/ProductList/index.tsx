@@ -1,6 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import MCardProduct from '../../../../common/MCardProduct';
 import style from './ProductList.module.scss';
 
@@ -16,12 +14,11 @@ const listVariants = {
   hidden: { opacity: 0 },
 };
 
-const ProductList = ({ productsData }: ProductListType) => {
-  const { category } = useParams();
-  return (
+const ProductList = ({ productsData }: ProductListType) => (
+  <div className={style.products_wrap}>
     <ul className={style.product_list}>
       {productsData
-        .filter((el) => Object.values(el.category).includes(category))
+        // .filter((el) => Object.values(el.category).includes(category))
         .map((el) => (
           <MCardProduct
             variants={listVariants}
@@ -37,7 +34,7 @@ const ProductList = ({ productsData }: ProductListType) => {
           />
         ))}
     </ul>
-  );
-};
+  </div>
+);
 
 export default ProductList;

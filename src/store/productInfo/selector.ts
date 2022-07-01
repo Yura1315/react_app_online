@@ -5,4 +5,8 @@ export const getProducts = (state: RootReducerType) => state.products.data;
 
 export const getProductOne = (state: RootReducerType) => state.products.oneProduct;
 
+export const getCurrentPage = (state: RootReducerType) => state.products.currentPage;
+
+export const getTotalCountPage = (state: RootReducerType) => state.products.totalCount;
+
 // export default getProducts;

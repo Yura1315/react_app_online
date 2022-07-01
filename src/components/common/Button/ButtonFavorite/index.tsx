@@ -1,24 +1,25 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { getProductOne } from '../../../../store/productInfo/selector';
 import { GetWhishList } from '../../../../store/userUnfo/selectors';
 import style from './ButtonFavorite.module.scss';
 
 type ButtonFavoritePropsType = {
   addWhish: () => void;
-  removeWhish: () => void;
-  whishId: number | undefined;
 };
 
-const ButtonFavorite = ({ addWhish, removeWhish, whishId }: ButtonFavoritePropsType) => {
-  const whishes = useSelector(GetWhishList);
-  const currentWhish = whishes.find((el: any) => el.id === whishId);
+const ButtonFavorite = ({ addWhish }: ButtonFavoritePropsType) => {
+  const oneProductId = useSelector(getProductOne);
+  const whishList = useSelector(GetWhishList);
   return (
-    <button
-      type="button"
-      className={style.button_favorite}
-      onClick={currentWhish ? removeWhish : addWhish}>
+    <button type="button" className={style.button_favorite} onClick={addWhish}>
       <svg
-        className={currentWhish ? style.button_favorite_svg_active : style.button_favorite_svg}
+        className={
+          whishList.includes(oneProductId._id)
+            ? style.button_favorite_svg_active
+            : style.button_favorite_svg
+        }
         width="24"
         height="24"
         viewBox="0 0 24 24"

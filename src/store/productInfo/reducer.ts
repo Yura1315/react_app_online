@@ -3,16 +3,20 @@ import { ProductsActionType } from './actions';
 
 const initialState: ProductsReducerType = {
   data: [],
+  perPage: 9,
+  currentPage: 1,
+  totalCount: 0,
   oneProduct: {
+    _id: '',
     title: '',
     alt: '',
     category: [],
-    id: NaN,
-    article: NaN,
-    bought: NaN,
+    id: 0,
+    article: 0,
+    bought: 0,
     char: [],
     descr: '',
-    price: NaN,
+    price: 0,
     src: [],
   },
 };
@@ -23,6 +27,14 @@ const productsReducer = (state = initialState, action: ActionType) => {
       return {
         ...state,
         data: action.payload,
+      };
+    case ProductsActionType.getProductsRepos:
+      return {
+        ...state,
+        currentPage: action.payload.currentPage,
+        perPage: action.payload.perPage,
+        totalCount: action.payload.totalCount,
+        data: action.payload.products
       };
     case ProductsActionType.getOneProduct:
       return {

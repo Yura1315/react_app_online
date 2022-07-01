@@ -71,13 +71,11 @@ const RegistrationPage = () => {
       onSubmit={async (values, { setStatus, resetForm }) => {
         const { checkbox, repeatPassword, ...data } = values;
         try {
-          // dispatch(ShowLoaderAction());
           const response = await makeRequest({
             method: 'POST',
             url: 'http://localhost:5000/logged/reg',
             data,
           });
-          // dispatch(HideLoaderAction());
           if (response.statusCode === 400) {
             setStatus({ email: response.payload.message });
           } else {

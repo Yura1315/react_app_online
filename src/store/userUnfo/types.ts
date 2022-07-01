@@ -11,7 +11,7 @@ export type UserInfoReducerType = {
     gender: string;
     token: string;
   };
-  whishList: any;
+  whishList: string[];
   AuthorizationErrorStatus: any;
 };
 
@@ -26,12 +26,7 @@ export type ClearUserNameActionType = {
 
 export type AddWhishListActionType = {
   type: UserInfoActionType.addWhish;
-  payload: any;
-};
-
-export type RemoveWhishListActionType = {
-  type: UserInfoActionType.removeWhish;
-  payload: any;
+  payload: string[];
 };
 
 export type AuthorizationErrorStatusType = {
@@ -47,6 +42,5 @@ export type ActionType =
   | RegisrationUserActionType
   | ClearUserNameActionType
   | AddWhishListActionType
-  | RemoveWhishListActionType
   | AuthorizationErrorStatusType
   | RemoveAuthErrActionType;

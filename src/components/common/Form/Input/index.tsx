@@ -11,6 +11,7 @@ type InputPropsType = {
   handleBlur: React.FocusEventHandler<HTMLInputElement> | undefined;
   err?: string | false | undefined | any;
   textClass?: string;
+  type?: string;
 };
 
 const Input = ({
@@ -22,11 +23,12 @@ const Input = ({
   handleBlur,
   err,
   textClass,
+  type,
 }: InputPropsType) => (
   <div className={style.input_wrap}>
     <input
       className={err ? `${style.input} ${style.input_err}` : `${style.input}`}
-      type="text"
+      type={type || 'text'}
       value={value}
       placeholder={placeholder}
       onChange={setValue}

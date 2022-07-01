@@ -30,12 +30,7 @@ const userInfoReducer = (state = initialState, action: ActionType) => {
     case UserInfoActionType.addWhish:
       return {
         ...state,
-        whishList: [...state.whishList, action.payload],
-      };
-    case UserInfoActionType.removeWhish:
-      return {
-        ...state,
-        whishList: state.whishList.filter((whish: any) => whish.id !== action.payload.id),
+        whishList: action.payload,
       };
     case UserInfoActionType.regError:
       return {

@@ -15,8 +15,10 @@ export enum UserInfoActionType {
 export const RegisrationUserAction = (userInfo: {
   name: string;
   email: string;
-  password: string;
   phone: string;
+  lastName: string;
+  birthDate: string;
+  middleName: string;
 }) => ({
   type: UserInfoActionType.setUserName,
   payload: userInfo,
@@ -31,6 +33,7 @@ export const AuthUserAction = (userInfo: {
   email: string;
   token: string;
   phone: string;
+  lastName: string;
 }) => ({
   type: UserInfoActionType.setUserName,
   payload: userInfo,
@@ -83,15 +86,24 @@ export const ClearUserNameAction = () => ({
   type: UserInfoActionType.clearUserName,
 });
 
-export const AddWhishListAction = (productinfo: any) => ({
-  type: UserInfoActionType.addWhish,
-  payload: productinfo,
-});
-
-export const RemoveWhishListAction = (productinfo: any) => ({
-  type: UserInfoActionType.removeWhish,
-  payload: productinfo,
-});
+export const AddWhishListAction = (productInfo: any) => async (dispatch: any) => {
+  try {
+    const data = { productId: productInfo.productId, email: productInfo.email };
+    dispatch(ShowLoaderAction());
+    const whish = await makeRequest({
+      url: `/product/${productInfo.id}`,
+      method: 'PUT',
+      data,
+    });
+    dispatch(HideLoaderAction());
+    dispatch({
+      type: UserInfoActionType.addWhish,
+      payload: whish,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 export const AuthorizationErrorStatus = (err: any) => ({
   type: UserInfoActionType.regError,
