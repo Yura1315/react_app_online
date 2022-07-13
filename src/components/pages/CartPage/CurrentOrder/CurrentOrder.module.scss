@@ -1,0 +1,54 @@
+@import '../../../../assets/style/vars.scss';
+
+
+.current_order {
+  margin-left: 40px;
+  border: 2px solid var(--color-light-brown);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  &_text {
+    font-size: 20px;
+    font-family: 'Montserrat';
+    color: var(--color-brown);
+  }
+  &_count {
+    padding-top: 10px;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    color: var(--color-brown);
+  }
+  &_sum {
+    display: inline-flex;
+    align-items: center;
+    padding-top: 10px;
+    width: 170px;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    color: var(--color-brown);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-brown);
+  }
+  &_bottom {
+    margin-top: 180px;
+  }
+  &_svg {
+    margin-left: 3px;
+  }
+}
+
+.auth {
+  padding-top: 12px;
+  font-size: 11px;
+  font-family: 'Montserrat';
+  color: var(--color-brown);
+  & a {
+    color: var(--color-light-brown);
+    transition: 0.4s ease-in-out;
+    &:hover {
+      color: var(--color-brown);
+    }
+  }
+}

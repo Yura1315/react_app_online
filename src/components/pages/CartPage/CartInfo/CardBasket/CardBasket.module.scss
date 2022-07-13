@@ -1,0 +1,53 @@
+@import '../../../../../assets/style/vars.scss';
+
+.card {
+  display: flex;
+  border: 2px solid var(--color-light-brown);
+  padding: 17px;
+  transition: 0.4s ease-in-out;
+  &:hover {
+		box-shadow: 7px 4px 4px rgb(216, 212, 212);
+	}
+  &_img {
+    height: 116px;
+    width: 116px;
+    & img {
+      display: block;
+      color: white;
+    }
+  }
+  &_middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  &_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &_title {
+    font-size: 30px;
+    font-family: 'Forum';
+    color: var(--color-brown);
+  }
+  &_article {
+    flex-grow: 1;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    padding-top: 10px;
+    color: var(--color-brown);
+  }
+  &_price {
+    display: inline-flex;
+    justify-content: end;
+    align-items: center;
+    font-family: 'forum';
+    font-size: 30px;
+    color: var(--color-brown);
+  }
+  &_svg {
+    margin-left: 6px;
+  }
+}

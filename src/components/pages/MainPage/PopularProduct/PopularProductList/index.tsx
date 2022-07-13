@@ -22,7 +22,7 @@ type PopularProductListType = {
 const PopularProductList = ({ productsData }: PopularProductListType) => {
   const [width, setWidth] = useState(0);
   const [page, setPage] = useState(0);
-  const carousel: any = useRef();
+  const carousel: any = useRef(null);
   const paginate = (newDirection: number) => {
     setPage(newDirection);
   };
@@ -43,7 +43,7 @@ const PopularProductList = ({ productsData }: PopularProductListType) => {
   };
   return (
     <div className={style.slider_wrap}>
-      <ButtonCarousel page={page} setPaginate={paginate} />
+      <ButtonCarousel page={page} setPaginate={paginate} width={width} />
       <motion.ul
         variants={variants}
         custom={page}

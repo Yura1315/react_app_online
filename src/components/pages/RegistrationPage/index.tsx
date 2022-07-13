@@ -39,7 +39,7 @@ const RegistrationPage = () => {
   };
   const phoneRegExp = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
   const passwordRegExp =
-    /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
+    /.*([a-z]+[A-Z]+[0-9]+|[a-z]+[0-9]+[A-Z]+|[A-Z]+[a-z]+[0-9]+|[A-Z]+[0-9]+[a-z]+|[0-9]+[a-z]+[A-Z]+|[0-9]+[A-Z]+[a-z]+).*/;
   const validationSchema = yup.object().shape({
     name: yup
       .string()
@@ -48,6 +48,7 @@ const RegistrationPage = () => {
       .required('обязательное поле'),
     password: yup
       .string()
+      .matches(passwordRegExp, 'Введите корректный пароль')
       .typeError('Должно быть строкой')
       .oneOf([yup.ref('repeatPassword')], 'Пароли не совпадают')
       .required('обязательное поле'),

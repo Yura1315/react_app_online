@@ -1,0 +1,29 @@
+@import '../../../../../../assets/style/vars.scss';
+
+.count {
+  &_btn {
+    height: 20px;
+    width: 20px;
+    background-color: var(--color-white);
+    transition: 0.4s ease-in-out;
+    &:hover {
+      background-color: rgb(204, 204, 204);
+    }
+    &_disable {
+      height: 20px;
+      width: 20px;
+      background-color: #D9D9D9;
+    }
+  }
+  &_wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+  }
+  &_input {
+    color: var(--color-brown);
+    text-align: center;
+    width: 20px;
+    height: 20px;
+  }
+}

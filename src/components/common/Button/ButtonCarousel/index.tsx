@@ -5,9 +5,10 @@ import style from './ButtonCarousel.module.scss';
 type ButtonCarouselPropsType = {
   setPaginate?: any;
   page: number;
+  width: number;
 };
 
-const ButtonCarousel = ({ setPaginate, page }: ButtonCarouselPropsType) => (
+const ButtonCarousel = ({ setPaginate, page, width }: ButtonCarouselPropsType) => (
   <div className={style.carousel_btn_wrap}>
     <button className={style.carousel_btn_left} type="button" onClick={() => setPaginate(0)}>
       <svg

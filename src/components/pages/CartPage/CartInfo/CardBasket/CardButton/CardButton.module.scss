@@ -1,0 +1,13 @@
+@import '../../../../../../assets/style/vars.scss';
+
+.btn {
+  font-size: 12px;
+  color: var(--color-brown);
+  font-family: 'Montserrat';
+  margin-left: 10px;
+  background-color: transparent;
+  transition: 0.4s ease-in-out;
+  &:hover {
+    color: var(--color-light-brown);
+  }
+}

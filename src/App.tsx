@@ -14,6 +14,7 @@ import ProfileWrapper from './components/common/ProfileWrapper';
 import ProfileInfoContainer from './containers/ProfileInfoContainer';
 import ProfileEditContainer from './containers/ProfileEditContainer';
 import FavoriteContainer from './containers/FavoriteContainer';
+import CartContainer from './containers/CartContainer';
 
 const App = () => (
   <Routes>
@@ -38,6 +39,7 @@ const App = () => (
         <Route path="edit" element={<ProfileEditContainer />} />
         <Route path="whishlist" element={<FavoriteContainer />} />
       </Route>
+      <Route path="cart" element={<CartContainer />} />
       <Route path="*" element={<NotFaundContainer />} />
     </Route>
   </Routes>

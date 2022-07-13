@@ -1,0 +1,18 @@
+@import '../../../assets/style/vars.scss';
+
+.container {
+  width: 1290px;
+  margin: 0 auto;
+}
+
+.cart {
+  background-color: var(--color-grey);
+  height: 100%;
+  padding-top: 50px;
+  &_wrap {
+    width: 1290px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    }
+}
