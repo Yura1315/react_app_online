@@ -10,6 +10,7 @@ export enum UserInfoActionType {
   removeAuthErr = 'REMOVE_AUTH_ERR',
   addWhish = 'ADD_WHISH',
   removeWhish = 'REMOVE_WHISH',
+  addCart = 'ADD_CART'
 }
 
 export const RegisrationUserAction = (userInfo: {
@@ -99,6 +100,21 @@ export const AddWhishListAction = (productInfo: any) => async (dispatch: any) =>
     dispatch({
       type: UserInfoActionType.addWhish,
       payload: whish,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const AddCardAction = (cartItem: any) => async (dispatch: any) => {
+  try {
+    dispatch(ShowLoaderAction());
+    const cartItems = await makeRequest({ url: '/addCart', method: 'PUT', data: cartItem });
+    console.log(cartItem);
+    dispatch(HideLoaderAction());
+    dispatch({
+      type: UserInfoActionType.addCart,
+      payload: cartItems
     });
   } catch (err) {
     console.log(err);

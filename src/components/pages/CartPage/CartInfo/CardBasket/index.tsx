@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import style from './CardBasket.module.scss';
 import CardButton from './CardButton';
 import CountButton from './CountButton';
@@ -21,7 +22,9 @@ const CardBasket = ({ img, alt, title, price, article, id }: CardBasketPropsType
         <img src={img} alt={alt} />
       </div>
       <div className={style.card_middle}>
-        <h3 className={style.card_title}>{title}</h3>
+        <Link to={`/product/${id}`} className={style.card_title}>
+          {title}
+        </Link>
         <span className={style.card_article}>Артикул: {article}</span>
         <CountButton />
       </div>

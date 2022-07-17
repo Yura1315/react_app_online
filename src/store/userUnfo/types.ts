@@ -12,6 +12,7 @@ export type UserInfoReducerType = {
     token: string;
   };
   whishList: string[];
+  cart: any[];
   AuthorizationErrorStatus: any;
 };
 
@@ -38,9 +39,15 @@ export type RemoveAuthErrActionType = {
   type: UserInfoActionType.removeAuthErr;
 };
 
+export type AddCartActionType = {
+  type: UserInfoActionType.addCart,
+  payload: any
+}
+
 export type ActionType =
   | RegisrationUserActionType
   | ClearUserNameActionType
   | AddWhishListActionType
   | AuthorizationErrorStatusType
-  | RemoveAuthErrActionType;
+  | RemoveAuthErrActionType
+  | AddCartActionType;

@@ -3,5 +3,8 @@
 .card {
   &_list {
     width: 100%;
+    &:nth-child(1) {
+      margin-bottom: 50px;
+    }
   }
 }

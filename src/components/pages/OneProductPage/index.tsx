@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getProductOne } from '../../../store/productInfo/selector';
-import { AddWhishListAction } from '../../../store/userUnfo/actions';
-import { GetUserInfo } from '../../../store/userUnfo/selectors';
+import { AddCardAction, AddWhishListAction } from '../../../store/userUnfo/actions';
+import { GetCartInfo, GetUserInfo } from '../../../store/userUnfo/selectors';
 import Button from '../../common/Button';
 import ButtonFavorite from '../../common/Button/ButtonFavorite';
 import ButtonArrow from './ButtonArrow';
@@ -18,8 +18,22 @@ const OneProductPage = () => {
   const [slideIndex, setSlideIndex] = useState(1);
   const dispatch = useDispatch();
   const user = useSelector(GetUserInfo);
+  const cartInfo = useSelector(GetCartInfo);
   const oneProduct = useSelector(getProductOne);
   const dataSrcLenght = Number(oneProduct.src.length);
+  const addCart = () => {
+    const isCartProduct = cartInfo.find((el) => el._id === oneProduct._id);
+    if (isCartProduct) {
+      const newCount = {
+        email: user.email,
+        cart: { ...oneProduct, count: isCartProduct.count + 1 },
+      };
+      dispatch(AddCardAction(newCount));
+    } else {
+      const cartItem = { cart: { ...oneProduct, count: 1 }, email: user.email };
+      dispatch(AddCardAction(cartItem));
+    }
+  };
   const addWhish = () => {
     const productInfo = { productId: oneProduct._id, productNum: id, email: user.email };
     dispatch(AddWhishListAction(productInfo));
@@ -85,7 +99,7 @@ const OneProductPage = () => {
             </p>
             <OneProductDescr char={oneProduct.char} descr={oneProduct.descr} />
             <div className={style.btn_wrap}>
-              <Button title="В КОРЗИНУ" />
+              <Button title="В КОРЗИНУ" onClick={addCart} />
               {user.name ? <ButtonFavorite addWhish={addWhish} /> : ''}
             </div>
           </div>

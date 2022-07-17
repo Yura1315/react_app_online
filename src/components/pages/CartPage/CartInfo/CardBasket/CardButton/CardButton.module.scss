@@ -9,5 +9,6 @@
   transition: 0.4s ease-in-out;
   &:hover {
     color: var(--color-light-brown);
+    border-bottom: 1px solid var(--color-light-brown);
   }
 }

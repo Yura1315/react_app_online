@@ -13,6 +13,7 @@ const initialState: UserInfoReducerType = {
     token: '',
   },
   whishList: [],
+  cart: [],
   AuthorizationErrorStatus: '',
 };
 
@@ -41,6 +42,11 @@ const userInfoReducer = (state = initialState, action: ActionType) => {
       return {
         ...state,
         AuthorizationErrorStatus: '',
+      };
+    case UserInfoActionType.addCart:
+      return {
+        ...state,
+        cart: action.payload
       };
     default:
       return state;
