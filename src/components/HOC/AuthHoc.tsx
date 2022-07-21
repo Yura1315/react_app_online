@@ -20,7 +20,6 @@ const AuthHoc: React.FC = ({ children }) => {
         method: 'GET',
         headers: { authorization: `Bearer ${userToken.token}` },
       });
-      console.log(userInfo);
       if (userInfo === undefined) {
         dispatch(ClearUserNameAction());
       } else {

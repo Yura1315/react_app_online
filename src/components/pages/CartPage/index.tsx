@@ -1,16 +1,26 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import CartInfo from './CartInfo';
 import CurrentOrder from './CurrentOrder';
 import style from './CartPage.module.scss';
+import { GetLoadingState } from '../../../store/loader/selectors';
+import Loader from '../../common/Loader';
+import { GetCartInfo } from '../../../store/userUnfo/selectors';
 
 const CartPage = () => {
-  console.log('cart-page');
-
+  const loading = useSelector(GetLoadingState);
+  const dd = useSelector(GetCartInfo);
   return (
     <div className={style.cart}>
       <div className={style.cart_wrap}>
-        <CartInfo />
-        <CurrentOrder />
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            <CartInfo />
+            <CurrentOrder />
+          </>
+        )}
       </div>
     </div>
   );

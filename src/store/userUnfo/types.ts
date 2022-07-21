@@ -50,4 +50,4 @@ export type ActionType =
   | AddWhishListActionType
   | AuthorizationErrorStatusType
   | RemoveAuthErrActionType
-  | AddCartActionType;
+  | AddCartActionType

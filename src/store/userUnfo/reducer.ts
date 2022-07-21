@@ -23,6 +23,8 @@ const userInfoReducer = (state = initialState, action: ActionType) => {
       return {
         ...state,
         infoUser: action.payload,
+        whishList: action.payload.whishList,
+        cart: action.payload.cart
       };
     case UserInfoActionType.clearUserName:
       return {

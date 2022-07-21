@@ -6,13 +6,10 @@ type CardButtonPropsType = {
   handler?: () => void;
 };
 
-const CardButton = ({ title }: CardButtonPropsType) => {
-  console.log('fef');
-  return (
-    <button className={style.btn} type="button">
-      {title}
-    </button>
-  );
-};
+const CardButton = ({ title }: CardButtonPropsType) => (
+  <button className={style.btn} type="button">
+    {title}
+  </button>
+);
 
 export default CardButton;

@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+import { GetUserInfo } from './selectors';
 /* eslint-disable import/no-useless-path-segments */
 /* eslint-disable no-shadow */
 import { ShowLoaderAction, HideLoaderAction } from './../loader/actions';
@@ -10,7 +12,7 @@ export enum UserInfoActionType {
   removeAuthErr = 'REMOVE_AUTH_ERR',
   addWhish = 'ADD_WHISH',
   removeWhish = 'REMOVE_WHISH',
-  addCart = 'ADD_CART'
+  addCart = 'ADD_CART',
 }
 
 export const RegisrationUserAction = (userInfo: {
@@ -35,6 +37,10 @@ export const AuthUserAction = (userInfo: {
   token: string;
   phone: string;
   lastName: string;
+  whishlist: any[];
+  cart: any[];
+  birthDate: string;
+  middleName: string;
 }) => ({
   type: UserInfoActionType.setUserName,
   payload: userInfo,
@@ -110,12 +116,11 @@ export const AddCardAction = (cartItem: any) => async (dispatch: any) => {
   try {
     dispatch(ShowLoaderAction());
     const cartItems = await makeRequest({ url: '/addCart', method: 'PUT', data: cartItem });
-    console.log(cartItem);
-    dispatch(HideLoaderAction());
     dispatch({
       type: UserInfoActionType.addCart,
       payload: cartItems
     });
+    dispatch(HideLoaderAction());
   } catch (err) {
     console.log(err);
   }
