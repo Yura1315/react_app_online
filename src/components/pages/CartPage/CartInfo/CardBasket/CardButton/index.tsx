@@ -6,8 +6,8 @@ type CardButtonPropsType = {
   handler?: () => void;
 };
 
-const CardButton = ({ title }: CardButtonPropsType) => (
-  <button className={style.btn} type="button">
+const CardButton = ({ title, handler }: CardButtonPropsType) => (
+  <button className={style.btn} type="button" onClick={handler}>
     {title}
   </button>
 );

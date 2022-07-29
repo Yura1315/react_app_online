@@ -99,7 +99,7 @@ const CountButton = ({ count, idProduct }: CountButtonPropsType) => {
       <input
         className={style.count_input}
         type="text"
-        maxLength={2}
+        maxLength={3}
         minLength={1}
         value={oldCount === 0 ? 0 : oldCount}
         onChange={handleChange}

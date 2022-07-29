@@ -20,6 +20,10 @@ const CartInfo = () => {
           img={el.src}
           count={el.count}
           idProduct={el._id}
+          descr={el.descr}
+          char={el.char}
+          bought={el.bought}
+          category={el.category}
         />
       ))}
     </ul>

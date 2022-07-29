@@ -44,6 +44,11 @@ export type AddCartActionType = {
   payload: any
 }
 
+export type DelCardActionType = {
+  type: UserInfoActionType.delCart,
+  payload: any
+}
+
 export type ActionType =
   | RegisrationUserActionType
   | ClearUserNameActionType
@@ -51,3 +56,4 @@ export type ActionType =
   | AuthorizationErrorStatusType
   | RemoveAuthErrActionType
   | AddCartActionType
+  | DelCardActionType

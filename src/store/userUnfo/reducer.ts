@@ -50,6 +50,11 @@ const userInfoReducer = (state = initialState, action: ActionType) => {
         ...state,
         cart: action.payload
       };
+    case UserInfoActionType.delCart:
+      return {
+        ...state,
+        cart: action.payload
+      };
     default:
       return state;
   }

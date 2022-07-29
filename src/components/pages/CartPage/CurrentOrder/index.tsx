@@ -10,12 +10,25 @@ const CurrentOrder = () => {
   const cart = useSelector(GetCartInfo);
   const result = cart.reduce((sum, current) => sum + current.price * current.count, 0);
   const count = cart.reduce((sum, current) => sum + current.count, 0);
+  console.log(String(result).length);
+  // eslint-disable-next-line consistent-return
+  const sum = () => {
+    if (String(result).length === 4) {
+      return `${String(result).slice(0, 1)} ${String(result).slice(1)}`;
+    }
+    if (String(result).length === 5) {
+      return `${String(result).slice(0, 2)} ${String(result).slice(2)}`;
+    }
+    if (String(result).length === 6) {
+      return `${String(result).slice(0, 3)} ${String(result).slice(3)}`;
+    }
+  };
   return (
     <div className={style.current_order}>
       <span className={style.current_order_text}>В корзине</span>
       <span className={style.current_order_count}>Кол-во: {count}</span>
       <span className={style.current_order_sum}>
-        На сумму: {`${String(result).slice(0, 2)} ${String(result).slice(2)}`}
+        На сумму: {sum()}
         <svg
           className={style.current_order_svg}
           width="11"
