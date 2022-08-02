@@ -10,9 +10,11 @@ const CurrentOrder = () => {
   const cart = useSelector(GetCartInfo);
   const result = cart.reduce((sum, current) => sum + current.price * current.count, 0);
   const count = cart.reduce((sum, current) => sum + current.count, 0);
-  console.log(String(result).length);
   // eslint-disable-next-line consistent-return
   const sum = () => {
+    if (String(result).length === 3) {
+      return result;
+    }
     if (String(result).length === 4) {
       return `${String(result).slice(0, 1)} ${String(result).slice(1)}`;
     }

@@ -1,0 +1,21 @@
+@import '../../../../../assets/style/vars.scss';
+
+.cart_text {
+  font-family: 'Montserrat';
+  font-size: 25px;
+  color: var(--color-brown);
+  &_link {
+    color: var(--color-light-brown);
+    transition: 1.3s ease 0s;
+    &:hover {
+      color: var(--color-brown);
+    }
+  }
+  &_empty {
+    display: block;
+    font-size: 35px;
+    font-family: 'Montserrat';
+    color: var(--color-brown);
+    margin-bottom: 20px;
+  }
+}
