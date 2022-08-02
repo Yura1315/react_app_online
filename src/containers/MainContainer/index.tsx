@@ -8,7 +8,7 @@ import Loader from '../../components/common/Loader';
 
 const MainContainer = () => {
   const dispatch = useDispatch();
-  const productsData = useSelector(getPopularProducts);
+  const productsData: any = useSelector(getPopularProducts);
   const loading = useSelector(GetLoadingState);
   useEffect(() => {
     dispatch(GetPopulatProductsAction());

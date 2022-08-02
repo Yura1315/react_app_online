@@ -5,7 +5,21 @@ import style from './PopularProduct.module.scss';
 import Loader from '../../../common/Loader';
 
 type PopularProductPropsType = {
-  productsData: any[];
+  productsData: [
+    {
+      id: number;
+      _id: string;
+      title: string;
+      src: [string];
+      category: [string];
+      price: number;
+      article: number;
+      bought: number;
+      alt: string;
+      char: any[];
+      descr: string;
+    }
+  ];
 };
 
 const PopularProduct = ({ productsData }: PopularProductPropsType) => (

@@ -51,6 +51,11 @@ const FavoritePage = () => {
           src={el.src}
           alt={el.alt}
           category={el.category}
+          productId={el._id}
+          bought={el.bought}
+          descr={el.descr}
+          char={el.char}
+          article={el.article}
         />
       ))}
     </ul>

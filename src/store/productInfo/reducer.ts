@@ -3,7 +3,21 @@ import { ProductsActionType } from './actions';
 
 const initialState: ProductsReducerType = {
   popularProducts: [],
-  data: [],
+  data: [
+    {
+      id: 0,
+      _id: '',
+      title: '',
+      src: [''],
+      category: [''],
+      price: 0,
+      article: 0,
+      bought: 0,
+      alt: '',
+      char: [],
+      descr: '',
+    }
+  ],
   perPage: 9,
   currentPage: 1,
   totalCount: 0,

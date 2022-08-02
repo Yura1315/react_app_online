@@ -3,11 +3,11 @@ import style from './ButtonSecondary.module.scss';
 
 type ButtonSecondaryPropsType = {
   title: string;
-  onClick?: () => void;
+  handler?: (e: React.SyntheticEvent) => void;
 };
 
-const ButtonSecondary = ({ title, onClick }: ButtonSecondaryPropsType) => (
-  <button className={style.btn_secondary} type="button" onClick={onClick}>
+const ButtonSecondary = ({ title, handler }: ButtonSecondaryPropsType) => (
+  <button className={style.btn_secondary} type="button" onClick={handler}>
     {title}
   </button>
 );

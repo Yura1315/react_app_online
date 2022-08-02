@@ -3,7 +3,21 @@ import MainBanner from './MainBanner';
 import PopularProduct from './PopularProduct';
 
 type MainPagePropsType = {
-  productsData: any[];
+  productsData: [
+    {
+      id: number;
+      _id: string;
+      title: string;
+      src: [string];
+      category: [string];
+      price: number;
+      article: number;
+      bought: number;
+      alt: string;
+      char: any[];
+      descr: string;
+    }
+  ];
 };
 
 const MainPage = ({ productsData }: MainPagePropsType) => (

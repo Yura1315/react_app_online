@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable import/no-named-default */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect, useRef, useState } from 'react';
@@ -9,13 +10,16 @@ import ButtonCarousel from '../../../../common/Button/ButtonCarousel';
 type PopularProductListType = {
   productsData: {
     id: number;
+    _id: string;
     title: string;
     src: [string];
+    category: [string];
     price: number;
     article: number;
-    alt: string;
-    category: [string];
     bought: number;
+    alt: string;
+    char: any[];
+    descr: string;
   }[];
 };
 
@@ -68,6 +72,11 @@ const PopularProductList = ({ productsData }: PopularProductListType) => {
             src={el.src}
             alt={el.alt}
             category={el.category}
+            bought={el.bought}
+            char={el.char}
+            descr={el.descr}
+            productId={el._id}
+            article={el.article}
           />
         ))}
       </motion.ul>

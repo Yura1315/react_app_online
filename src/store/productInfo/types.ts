@@ -2,7 +2,21 @@ import { ProductsActionType } from './actions';
 
 export type ProductsReducerType = {
   popularProducts: [];
-  data: [];
+  data: [
+    {
+      id: number;
+      _id: string;
+      title: string;
+      src: [string];
+      category: [string];
+      price: number;
+      article: number;
+      bought: number;
+      alt: string;
+      char: any[];
+      descr: string;
+    }
+  ];
   perPage: number;
   currentPage: number;
   totalCount: number;

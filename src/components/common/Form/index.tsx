@@ -1,4 +1,4 @@
-import React, { FormEvent, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import style from './Form.module.scss';
 
 type FormPropsType = {
