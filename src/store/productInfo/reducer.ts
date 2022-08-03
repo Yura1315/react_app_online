@@ -15,6 +15,7 @@ const initialState: ProductsReducerType = {
       bought: 0,
       alt: '',
       char: [],
+      sales: 0,
       descr: '',
     }
   ],
@@ -32,6 +33,7 @@ const initialState: ProductsReducerType = {
     char: [],
     descr: '',
     price: 0,
+    sales: 0,
     src: [],
   },
 };

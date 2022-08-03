@@ -28,6 +28,21 @@
 		font-family: "Forum";
 		font-size: 30px;
 		color: var(--color-brown);
+		&_sm {
+			display: block;
+		  text-align: end;
+		  margin-left: 12px;
+		  font-family: "Forum";
+		  font-size: 23px;
+		  color: var(--color-light-brown);
+		  text-decoration: line-through;
+		}
+		&_sales {
+			font-family: "Forum";
+			color: var(--color-red);
+			font-size: 28px;
+			margin-right: 8px;
+		}
 	}
 	&_item_img {
 		display: block;

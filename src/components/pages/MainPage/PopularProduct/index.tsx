@@ -18,6 +18,7 @@ type PopularProductPropsType = {
       alt: string;
       char: any[];
       descr: string;
+      sales: number;
     }
   ];
 };

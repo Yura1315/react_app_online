@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import ButtonSecondary from '../Button/ButtonSecondary';
 import style from './MCardProduct.module.scss';
 import { GetCartInfo, GetUserInfo } from '../../../store/userUnfo/selectors';
-import { getProductOne, getProducts } from '../../../store/productInfo/selector';
 import { AddCardAction } from '../../../store/userUnfo/actions';
 
 type CardProductType = {
@@ -20,6 +19,7 @@ type CardProductType = {
   article: number;
   bought: number;
   alt: string;
+  sales: number;
   char: any[];
   descr: string;
 };
@@ -38,6 +38,7 @@ const CardProduct = forwardRef(
       bought,
       char,
       descr,
+      sales,
     }: CardProductType,
     ref: any
   ) => {
@@ -60,6 +61,7 @@ const CardProduct = forwardRef(
           bought,
           char,
           descr,
+          sales,
         },
       };
       const isCartProduct = cart.find((el: any) => el._id === productId);
@@ -79,18 +81,40 @@ const CardProduct = forwardRef(
         <img className={style.product_item_img} src={src[0]} alt={alt} />
         <h2 className={style.product_title}>{title}</h2>
         <p className={style.product_item_price_wrap}>
-          <span className={style.product_price}>{price}</span>
-          <svg
-            width="13"
-            height="18"
-            viewBox="0 0 13 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M0 7H1V0H8.5C11 0 13 2 13 4.5C13 7 11 9 8.5 9H3V11H9V13H3V18H1V13H0V11H1V9H0V7ZM8.5 2H3V7H8.5C9.16304 7 9.79893 6.73661 10.2678 6.26777C10.7366 5.79893 11 5.16304 11 4.5C11 3.83696 10.7366 3.20107 10.2678 2.73223C9.79893 2.26339 9.16304 2 8.5 2Z"
-              fill="#706A66"
-            />
-          </svg>
+          {sales > 0 ? (
+            <>
+              <span className={style.product_price_sales}>
+                {Math.floor(price - (sales / 100) * price)}
+              </span>
+              <svg
+                width="13"
+                height="18"
+                viewBox="0 0 13 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0 7H1V0H8.5C11 0 13 2 13 4.5C13 7 11 9 8.5 9H3V11H9V13H3V18H1V13H0V11H1V9H0V7ZM8.5 2H3V7H8.5C9.16304 7 9.79893 6.73661 10.2678 6.26777C10.7366 5.79893 11 5.16304 11 4.5C11 3.83696 10.7366 3.20107 10.2678 2.73223C9.79893 2.26339 9.16304 2 8.5 2Z"
+                  fill="#C77958"
+                />
+              </svg>
+              <span className={style.product_price_sm}>{price}</span>
+            </>
+          ) : (
+            <>
+              <span className={style.product_price}>{price}</span>
+              <svg
+                width="13"
+                height="18"
+                viewBox="0 0 13 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0 7H1V0H8.5C11 0 13 2 13 4.5C13 7 11 9 8.5 9H3V11H9V13H3V18H1V13H0V11H1V9H0V7ZM8.5 2H3V7H8.5C9.16304 7 9.79893 6.73661 10.2678 6.26777C10.7366 5.79893 11 5.16304 11 4.5C11 3.83696 10.7366 3.20107 10.2678 2.73223C9.79893 2.26339 9.16304 2 8.5 2Z"
+                  fill="#706A66"
+                />
+              </svg>
+            </>
+          )}
         </p>
         <div className={style.product_btn}>
           <ButtonSecondary title="ПОДРОБНЕЕ" />

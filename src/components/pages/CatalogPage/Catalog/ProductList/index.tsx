@@ -18,6 +18,7 @@ type ProductListType = {
       alt: string;
       char: any[];
       descr: string;
+      sales: number;
     }
   ];
 };
@@ -50,6 +51,7 @@ const ProductList = ({ productsData }: ProductListType) => (
           descr={el.descr}
           char={el.char}
           bought={el.bought}
+          sales={el.sales}
         />
       ))}
     </ul>

@@ -16,6 +16,7 @@ type MainPagePropsType = {
       alt: string;
       char: any[];
       descr: string;
+      sales: number;
     }
   ];
 };

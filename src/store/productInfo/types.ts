@@ -13,6 +13,7 @@ export type ProductsReducerType = {
       article: number;
       bought: number;
       alt: string;
+      sales: number;
       char: any[];
       descr: string;
     }
@@ -30,6 +31,7 @@ export type ProductsReducerType = {
     bought: number;
     char: any[];
     descr: string;
+    sales: number;
     price: number;
     src: string[];
   };

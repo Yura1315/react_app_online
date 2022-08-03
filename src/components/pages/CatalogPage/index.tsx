@@ -14,6 +14,7 @@ type CatalogPagePropsType = {
       article: number;
       bought: number;
       alt: string;
+      sales: number;
       char: any[];
       descr: string;
     }

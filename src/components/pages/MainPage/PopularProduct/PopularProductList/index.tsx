@@ -19,6 +19,7 @@ type PopularProductListType = {
     bought: number;
     alt: string;
     char: any[];
+    sales: number;
     descr: string;
   }[];
 };
@@ -77,6 +78,7 @@ const PopularProductList = ({ productsData }: PopularProductListType) => {
             descr={el.descr}
             productId={el._id}
             article={el.article}
+            sales={el.sales}
           />
         ))}
       </motion.ul>
