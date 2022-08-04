@@ -46,6 +46,19 @@
 		font-size: 35px;
 		color: var(--color-brown);
 		margin-right: 6px;
+		&_sm {
+			font-family: 'Forum';
+			font-size: 25px;
+			color: var(--color-light-brown);
+			margin-left: 10px;
+			text-decoration: line-through;
+		}
+		&_sales {
+			font-family: 'Forum';
+			font-size: 35px;
+			color: var(--color-red);
+			margin-right: 10px;
+		}
 	}
 	&_article {
 			font-family: 'Montserrat';
