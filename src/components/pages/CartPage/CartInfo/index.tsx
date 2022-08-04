@@ -39,6 +39,7 @@ const CartInfo = () => {
             char={el.char}
             bought={el.bought}
             category={el.category}
+            sales={el.sales}
           />
         ))}
       </ul>

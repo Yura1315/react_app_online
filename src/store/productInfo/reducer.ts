@@ -2,7 +2,22 @@ import { ActionType, ProductsReducerType } from './types';
 import { ProductsActionType } from './actions';
 
 const initialState: ProductsReducerType = {
-  popularProducts: [],
+  popularProducts: [
+    {
+      id: 0,
+      _id: '',
+      title: '',
+      src: [''],
+      category: [''],
+      price: 0,
+      article: 0,
+      bought: 0,
+      alt: '',
+      char: [],
+      sales: 0,
+      descr: '',
+    }
+  ],
   data: [
     {
       id: 0,

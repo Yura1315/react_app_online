@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { useSelector } from 'react-redux';
@@ -8,7 +9,16 @@ import style from './CurrentOrder.module.scss';
 
 const CurrentOrder = () => {
   const cart = useSelector(GetCartInfo);
-  const result = cart.reduce((sum, current) => sum + current.price * current.count, 0);
+  const result = cart.reduce((sum, current) => {
+    // return sum + current.price
+
+    if (current.sales > 0) {
+      return (
+        sum + Math.floor(current.price - (current.sales / 100) * current.price) * current.count
+      );
+    }
+    return sum + current.price * current.count;
+  }, 0);
   const count = cart.reduce((sum, current) => sum + current.count, 0);
   // eslint-disable-next-line consistent-return
   const sum = () => {

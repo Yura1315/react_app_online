@@ -8,26 +8,29 @@ import style from './PopularProductList.module.scss';
 import ButtonCarousel from '../../../../common/Button/ButtonCarousel';
 
 type PopularProductListType = {
-  productsData: {
-    id: number;
-    _id: string;
-    title: string;
-    src: [string];
-    category: [string];
-    price: number;
-    article: number;
-    bought: number;
-    alt: string;
-    char: any[];
-    sales: number;
-    descr: string;
-  }[];
+  productsData: [
+    {
+      id: number;
+      _id: string;
+      title: string;
+      src: [string];
+      category: [string];
+      price: number;
+      article: number;
+      bought: number;
+      alt: string;
+      char: any[];
+      sales: number;
+      descr: string;
+    }
+  ];
 };
 
 const PopularProductList = ({ productsData }: PopularProductListType) => {
   const [width, setWidth] = useState(0);
   const [page, setPage] = useState(0);
   const carousel: any = useRef(null);
+  console.log(productsData);
   const paginate = (newDirection: number) => {
     setPage(newDirection);
   };
@@ -67,7 +70,7 @@ const PopularProductList = ({ productsData }: PopularProductListType) => {
         {productsData.map((el) => (
           <MCardProduct
             id={el.id}
-            key={el.id!}
+            key={el.id}
             title={el.title}
             price={el.price}
             src={el.src}
