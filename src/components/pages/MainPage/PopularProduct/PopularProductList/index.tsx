@@ -30,7 +30,6 @@ const PopularProductList = ({ productsData }: PopularProductListType) => {
   const [width, setWidth] = useState(0);
   const [page, setPage] = useState(0);
   const carousel: any = useRef(null);
-  console.log(productsData);
   const paginate = (newDirection: number) => {
     setPage(newDirection);
   };
