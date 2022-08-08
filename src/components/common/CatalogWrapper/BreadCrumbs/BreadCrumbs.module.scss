@@ -25,7 +25,17 @@
 		color: var(--color-brown);
 		font-size: 18px;
 		font-family: "Montserrat";
+		position: relative;
+		padding-bottom: 14px;
 		transition: 0.4s ease-in-out;
+		&_active {
+			display: inline-block;
+		  color: var(--color-light-brown);
+		  font-size: 18px;
+		  font-family: "Montserrat";
+			position: relative;
+		  padding-bottom: 14px
+		}
 	}
 	&_filter_item:hover {
 		color: var(--color-light-brown);
@@ -44,15 +54,15 @@
 	:focus::after {
 		width: 90%;
 	}
-	&_filter_item {
-		position: relative;
-		padding-bottom: 14px;
-	}
 }
 
 .sales {
-	color: #c77958;
+	color: var(--color-red);
+	transition: 0.4s ease-in-out;
+	&_active {
+		color: red
+	}
 	&:hover {
-		color: #cf4d16;
+		color: red;
 	}
 }

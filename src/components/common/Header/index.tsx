@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-curly-newline */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable no-confusing-arrow */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
@@ -19,13 +22,31 @@ const Header = () => (
       <nav className={style.mainmenu}>
         <ul className={style.mainmenu_list}>
           <li className={style.mainmenu_item}>
-            <NavLink to="/about-us">О НАС</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.mainmenu_item_link_active : style.mainmenu_item_link
+              }
+              to="/about-us">
+              О НАС
+            </NavLink>
           </li>
           <li className={style.mainmenu_item}>
-            <NavLink to="/catalog/all">КАТАЛОГ</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.mainmenu_item_link_active : style.mainmenu_item_link
+              }
+              to="/catalog/all">
+              КАТАЛОГ
+            </NavLink>
           </li>
           <li className={style.mainmenu_item}>
-            <NavLink to="/contacts">КОНТАКТЫ</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? style.mainmenu_item_link_active : style.mainmenu_item_link
+              }
+              to="/contacts">
+              КОНТАКТЫ
+            </NavLink>
           </li>
         </ul>
       </nav>

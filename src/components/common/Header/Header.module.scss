@@ -28,16 +28,23 @@
 	&_item {
 		margin-left: 100px;
 	}
-	&_item a {
+	&_item_link {
 		position: relative;
 		font-family: 'Montserrat';
 		font-size: 12px;
 		color: var(--color-brown);
+		&_active {
+			position: relative;
+		  font-family: 'Montserrat';
+		  font-size: 12px;
+			color: var(--color-light-brown);
+		}
 	}
-	&_item a:hover {
+
+	&_item_link:hover {
 		color: var(--color-brown-hover);
 	}
-	&_item a::after {
+	&_item_link::after {
 		content: '';
 		display: block;
 		position: absolute;
@@ -47,7 +54,7 @@
 		background-color: var(--color-brown-hover);
 		transition: width 0.3s ease-out;
 	}
-	&_item a:hover::after, a:focus::after {
+	&_item_link:hover::after, &_item_link:focus::after {
 		width: 100%;
 	}
 	&_item:first-child {
