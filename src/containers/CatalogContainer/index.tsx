@@ -28,23 +28,29 @@ const CatalogContainer = () => {
   };
   return (
     <div className={style.catalog_wrap}>
-      {loading ? <Loader /> : <CatalogPage productsData={productsData} />}
-      <div className={style.products_wrap}>
-        <div className={style.paginate_wrap}>
-          <ReactPaginate
-            forcePage={+pageParams - 1}
-            className={style.paginate}
-            previousLabel="<"
-            nextLabel=">"
-            breakLabel="..."
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={2}
-            pageCount={Math.ceil(totalCount / 9)}
-            onPageChange={handleClick}
-            activeClassName={style.paginate_active}
-          />
-        </div>
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <CatalogPage productsData={productsData} />
+          <div className={style.products_wrap}>
+            <div className={style.paginate_wrap}>
+              <ReactPaginate
+                forcePage={+pageParams - 1}
+                className={style.paginate}
+                previousLabel="<"
+                nextLabel=">"
+                breakLabel="..."
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={2}
+                pageCount={Math.ceil(totalCount / 9)}
+                onPageChange={handleClick}
+                activeClassName={style.paginate_active}
+              />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

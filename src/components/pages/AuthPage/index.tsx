@@ -12,6 +12,7 @@ import { GetLoadingState } from '../../../store/loader/selectors';
 import Loader from '../../common/Loader';
 import makeRequest from '../../../network';
 import style from './AuthPage.module.scss';
+import { GetCartInfo } from '../../../store/userUnfo/selectors';
 
 type AuthFormValues = {
   email: string;
@@ -25,6 +26,7 @@ const AuthPage = () => {
   };
   const loading = useSelector(GetLoadingState);
   const dispatch = useDispatch();
+  const cartInfo = useSelector(GetCartInfo);
   const validationSchema = yup.object({
     email: yup.string().typeError('Должно быть строкой').required('Обязательное поле'),
     password: yup.string().typeError('Должно быть строкой').required('Обязательное поле'),
@@ -36,7 +38,10 @@ const AuthPage = () => {
       initialValues={initialValues}
       validateOnBlur
       onSubmit={async (values, { setStatus }) => {
-        const { ...data } = values;
+        const data = { cartInfo, ...values };
+        // console.log(copy);
+        // const { ...data } = values;
+        // console.log(data);
         try {
           const response = await makeRequest({
             method: 'POST',

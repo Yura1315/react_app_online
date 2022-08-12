@@ -67,8 +67,8 @@ const CardProduct = forwardRef(
       const isCartProduct = cart.find((el: any) => el._id === productId);
       if (isCartProduct) {
         const newProductCount = {
-          email: user.email,
           cart: { ...newCount.cart, count: isCartProduct.count + 1 },
+          email: user.email,
         };
         dispatch(AddCardAction(newProductCount));
       } else {
