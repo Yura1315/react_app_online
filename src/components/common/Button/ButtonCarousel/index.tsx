@@ -1,4 +1,3 @@
-import { WithDepth } from 'framer-motion/types/render/utils/compare-by-depth';
 import React from 'react';
 import style from './ButtonCarousel.module.scss';
 

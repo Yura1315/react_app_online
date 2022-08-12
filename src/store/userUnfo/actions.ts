@@ -1,5 +1,3 @@
-import { useSelector } from 'react-redux';
-import { GetUserInfo } from './selectors';
 /* eslint-disable import/no-useless-path-segments */
 /* eslint-disable no-shadow */
 import { ShowLoaderAction, HideLoaderAction } from './../loader/actions';
@@ -23,6 +21,7 @@ export const RegisrationUserAction = (userInfo: {
   lastName: string;
   birthDate: string;
   middleName: string;
+  cart: any[]
 }) => ({
   type: UserInfoActionType.setUserName,
   payload: userInfo,
@@ -46,49 +45,6 @@ export const AuthUserAction = (userInfo: {
   type: UserInfoActionType.setUserName,
   payload: userInfo,
 });
-
-// export const RegisrationUserAction = (data: any) => async (dispatch: any) => {
-//   dispatch(ShowLoaderAction());
-//   const userInfo = await makeRequest({
-//     url: 'http://localhost:5000/logged/reg',
-//     method: 'POST',
-//     data,
-//   });
-//   dispatch(HideLoaderAction());
-//   if (userInfo.statusCode === 400) {
-//     dispatch({
-//       type: UserInfoActionType.regError,
-//       payload: userInfo.payload.message,
-//     });
-//   } else {
-//     dispatch({
-//       type: UserInfoActionType.setUserName,
-//       payload: userInfo,
-//     });
-//     dispatch(RemoveAuthErrAction());
-//   }
-// };
-
-// export const AuthUserAction = (data: any) => async (dispatch: any) => {
-//   dispatch(ShowLoaderAction());
-//   const userInfo = await makeRequest({
-//     url: 'http://localhost:5000/logged/auth',
-//     method: 'POST',
-//     data,
-//   });
-//   dispatch(HideLoaderAction());
-//   if (userInfo.statusCode) {
-//     dispatch({
-//       type: UserInfoActionType.regError,
-//       payload: userInfo.message,
-//     });
-//   } else {
-//     dispatch({
-//       type: UserInfoActionType.setUserName,
-//       payload: userInfo,
-//     });
-//   }
-// };
 
 export const ClearUserNameAction = () => ({
   type: UserInfoActionType.clearUserName,

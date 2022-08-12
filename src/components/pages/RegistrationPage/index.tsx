@@ -13,8 +13,7 @@ import { RegisrationUserAction } from '../../../store/userUnfo/actions';
 import { GetLoadingState } from '../../../store/loader/selectors';
 import Loader from '../../common/Loader';
 import makeRequest from '../../../network';
-import { HideLoaderAction, ShowLoaderAction } from '../../../store/loader/actions';
-import { GetAuthError } from '../../../store/userUnfo/selectors';
+import { GetCartInfo } from '../../../store/userUnfo/selectors';
 
 type MyFormValues = {
   name: string;
@@ -28,7 +27,7 @@ type MyFormValues = {
 const RegistrationPage = () => {
   const dispatch = useDispatch();
   const loading = useSelector(GetLoadingState);
-  const regErr = useSelector(GetAuthError);
+  const cart = useSelector(GetCartInfo);
   const initialValues: MyFormValues = {
     name: '',
     email: '',
@@ -70,7 +69,13 @@ const RegistrationPage = () => {
       initialValues={initialValues}
       validateOnBlur
       onSubmit={async (values, { setStatus, resetForm }) => {
-        const { checkbox, repeatPassword, ...data } = values;
+        const data = {
+          email: values.email,
+          password: values.password,
+          phone: values.phone,
+          name: values.name,
+          cart,
+        };
         try {
           const response = await makeRequest({
             method: 'POST',

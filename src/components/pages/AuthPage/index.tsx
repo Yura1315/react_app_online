@@ -39,9 +39,6 @@ const AuthPage = () => {
       validateOnBlur
       onSubmit={async (values, { setStatus }) => {
         const data = { cartInfo, ...values };
-        // console.log(copy);
-        // const { ...data } = values;
-        // console.log(data);
         try {
           const response = await makeRequest({
             method: 'POST',
