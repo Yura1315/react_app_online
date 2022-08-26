@@ -3,15 +3,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { GetCartInfo } from '../../../../store/userUnfo/selectors';
+import { GetCartInfo, GetUserInfo } from '../../../../store/userUnfo/selectors';
 import ButtonPrimary from '../../../common/Button/ButtonPrimary';
 import style from './CurrentOrder.module.scss';
 
 const CurrentOrder = () => {
+  const user = useSelector(GetUserInfo);
   const cart = useSelector(GetCartInfo);
   const result = cart.reduce((sum, current) => {
-    // return sum + current.price
-
     if (current.sales > 0) {
       return (
         sum + Math.floor(current.price - (current.sales / 100) * current.price) * current.count
@@ -57,9 +56,13 @@ const CurrentOrder = () => {
       <div className={style.current_order_bottom}>
         <ButtonPrimary title="ОФОРМИТЬ" />
       </div>
-      <span className={style.auth}>
-        <Link to="/logged/auth">Авторизуйтесь</Link>, чтобы воспользоваться ништяками
-      </span>
+      {user.email ? (
+        ''
+      ) : (
+        <span className={style.auth}>
+          <Link to="/logged/auth">Авторизуйтесь</Link>, чтобы воспользоваться ништяками
+        </span>
+      )}
     </div>
   );
 };

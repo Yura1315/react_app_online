@@ -12,7 +12,7 @@
 		display: flex;
 	}
 	&_menu {
-		// position: relative;
+		position: relative;
 		height: 80px;
     width: $container;
     margin: 0 auto;
@@ -99,12 +99,18 @@
 	}
 }
 
+.logo {
+	position: absolute;
+}
+
 
 // ======================================================
 
 @media (max-width: 1340px) {
 	.header_menu {
         width: 1150px;
+				padding-right: 15px;
+				padding-left: 15px;
     }
 }
 
@@ -116,15 +122,10 @@
 
 @media (max-width: 1022px) {
 	.header_menu {
-        width: 850px;
+        // width: 850px;
     }
 	.mainmenu {
-		&_item {
-			display: none;
-		}
-		&_item a {
-			font-size: 11px;
-	    }
+		display: none;
     }
 	.logo {
 		position: absolute;
@@ -134,6 +135,6 @@
 
 @media (max-width: 886px) {
 	.header_menu {
-        width: 750px;
+        // width: 750px;
     }
 }

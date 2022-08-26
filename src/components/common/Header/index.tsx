@@ -15,7 +15,7 @@ import ToggleMenu from './ToggleMenu';
 const Header = () => (
   <header className={style.header}>
     <div className={style.header_menu}>
-      {/* <ToggleMenu /> */}
+      <ToggleMenu />
       <NavLink className={style.logo} to="/">
         <img src={logo} alt="logo" />
       </NavLink>
@@ -51,9 +51,9 @@ const Header = () => (
         </ul>
       </nav>
       <div className={style.header_personal}>
-        <FormSearch>
+        {/* <FormSearch>
           <InputSearch type="text" placeholder="Поиск..." />
-        </FormSearch>
+        </FormSearch> */}
         <UserInfo />
         <BasketInfo />
       </div>

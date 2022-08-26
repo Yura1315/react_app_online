@@ -14,11 +14,11 @@ export const GetPopulatProductsAction = () => async (dispatch: any) => {
   try {
     dispatch(ShowLoaderAction());
     const data = await makeRequest({ url: '/popular' });
-    dispatch(HideLoaderAction());
     dispatch({
       type: ProductsActionType.getPopularProducts,
       payload: data,
     });
+    dispatch(HideLoaderAction());
   } catch (err) {
     console.log(err);
   }
@@ -28,11 +28,11 @@ export const GetProductsReposAction = (searchQuery: string, currentPage: number,
   try {
     dispatch(ShowLoaderAction());
     const data = await makeRequest({ url: `/catalog/${searchQuery}?page=${currentPage}&perPage=${perPage}` });
-    dispatch(HideLoaderAction());
     dispatch({
       type: ProductsActionType.getProductsRepos,
       payload: data
     });
+    dispatch(HideLoaderAction());
   } catch (err) {
     console.log(err);
   }

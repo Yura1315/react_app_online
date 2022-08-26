@@ -1,26 +1,68 @@
-.background {
-    position: absolute;
-    top: 0;
-    left: 0px;
-    bottom: 0;
-    width: 100%;
-    background: #fff;
-  }
+@import "../../../../assets/style/vars.scss";
 
-  .menu_nav {
+.toggle {
+  &_btn {
     display: none;
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 300px;
-    z-index: 5;
-  }
+    left: 15px;
+    top: 30px;
+    z-index: 15;
+    outline: none;
+    border: none;
+    width: 30px;
+    height: 20px;
 
-  // ===============MEDIA==============
+    &::before {
+      content: "";
+      background-color: var(--color-brown);
+      position: absolute;
+      top: 2px;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      transition: all 0.3s ease 0s;
+    }
 
-  @media (max-width: 1022px) {
-    .menu_nav {
-      display: block;
+    &.active::before {
+      transform: rotate(45deg);
+      top: 9px;
+    }
+
+    &::after {
+      content: "";
+      background-color: var(--color-brown);
+      position: absolute;
+      bottom: 2px;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      transition: all 0.3s ease 0s;
+    }
+
+    &.active::after {
+      transform: rotate(-45deg);
+      bottom: 9px;
     }
   }
+
+  &_path {
+    position: absolute;
+    background-color: var(--color-brown);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all 0.3s ease 0s;
+
+    &.active {
+      transform: scale(0);
+    }
+  }
+}
+//----------------MEDIA-------------------
+
+@media (max-width: 1022px) {
+  .toggle_btn {
+    display: block;
+  }
+}
