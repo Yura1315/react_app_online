@@ -1,28 +1,31 @@
 @import '../../../../assets/style/vars.scss';
 
 .main_banner {
-	// width: $container;
+	display: flex;
+	justify-content: center;
 	padding-top: 15px;
-	margin: 0 auto;
 	background-color: var(--color-grey);
+
 	&_wrap {
 		width: $container;
-		margin: 0 auto;
 		display: flex;
 		flex-direction: row-reverse;
 		position: relative;
 	}
+
 	&_title {
 		font-family: 'Cormorant';
 		font-size: 84px;
 		color: var(--color-brown);
 		line-height: 101.72px;
 	}
+
 	&_left {
 		position: absolute;
 		left: 0;
 		top: 297px;
 	}
+
 	&_left span {
 		display: block;
 		font-family: 'Forum';
@@ -31,6 +34,7 @@
 		margin-left: 115px;
 		margin-top: 5px;
 	}
+
 	&_btn {
 		margin-left: 215px;
 		margin-top: 56px;
@@ -41,21 +45,22 @@
 	font-family: 'Montserrat Bold';
 	color: var(--color-white);
 	appearance: none;
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-    text-decoration: none;
-    padding: 0 40px;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    font-weight: 600;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.25s ease;
+	border: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 60px;
+	text-decoration: none;
+	padding: 0 40px;
+	font-size: 14px;
+	letter-spacing: 0.08em;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.25s ease;
 	background-color: var(--color-light-brown);
 	transition: 0.4s ease-in-out;
+
 	&:hover {
 		background-color: var(--color-brown);
 	}
@@ -64,13 +69,17 @@
 // =================MEDIA====================
 
 @media (max-width: 1340px) {
-	.main_banner  {
+	.main_banner {
 		&_wrap {
 			width: 1150px;
+			padding-left: 15px;
+			padding-right: 15px;
 		}
+
 		&_title {
 			font-size: 65px;
 		}
+
 		&_left span {
 			display: block;
 			font-family: 'Forum';
@@ -79,41 +88,56 @@
 			margin-left: 115px;
 			margin-top: 5px;
 		}
+
 		&_btn {
 			margin-left: 150px;
 			margin-top: 56px;
 		}
-    }
-  }
+	}
+}
 
-  @media (max-width: 1170px) {
-	.main_banner  {
+@media (max-width: 1170px) {
+	.main_banner {
 		padding-top: 0;
+
 		&_title {
 			display: none;
 		}
+
 		&_left span {
 			display: none;
 		}
+
 		&_btn {
 			display: none;
 		}
+
 		&_wrap {
 			display: block;
 			width: 1000px;
 		}
+
 		&_img {
 			display: block;
 			width: 100%;
 			height: 700px;
 			object-fit: cover;
 		}
-    }
+	}
 }
 
 @media (max-width: 1022px) {
 	.main_banner {
-		overflow: hidden;
-		width: 100%
+		&_wrap {
+			width: 950px;
+		}
+	}
+}
+
+@media (max-width: 886px) {
+	.main_banner {
+		&_wrap {
+			width: 750px;
+		}
 	}
 }

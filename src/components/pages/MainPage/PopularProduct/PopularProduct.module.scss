@@ -9,8 +9,8 @@
 
 .container {
 	position: relative;
-    width: $container;
-    margin: 0 auto;
+	width: $container;
+	margin: 0 auto;
 	overflow: hidden;
 }
 
@@ -25,11 +25,11 @@
 	justify-content: space-between;
 }
 
-
 // ===================MEDIA=======================
-
 @media (max-width: 1340px) {
 	.container {
+		padding-left: 15px;
+		padding-right: 15px;
 		width: 1150px;
 	}
 }
@@ -38,10 +38,12 @@
 	.container {
 		width: 1000px;
 	}
+
 	.title {
 		font-size: 30px;
 		padding-bottom: 30px;
 	}
+
 	.popular {
 		padding-top: 60px;
 		padding-bottom: 90px;
@@ -56,6 +58,6 @@
 
 @media (max-width: 886px) {
 	.container {
-        width: 750px;
-    }
+		width: 750px;
+	}
 }
