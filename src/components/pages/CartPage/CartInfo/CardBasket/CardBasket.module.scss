@@ -67,3 +67,37 @@
     height: 15px;
   }
 }
+
+// ===================MEDIA=======================
+
+@media (max-width: 1340px) {
+  .card {
+    &_title {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: 1170px) {
+  .card {
+    padding: 10px;
+    &_title {
+      font-size: 21px;
+    }
+    &_article {
+      font-size: 14px;
+    }
+    &_img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+@media (max-width: 1022px) {
+  .card {
+    &_middle {
+      flex-grow: '';
+    }
+  }
+}

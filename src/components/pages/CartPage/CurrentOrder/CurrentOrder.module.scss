@@ -52,3 +52,37 @@
     }
   }
 }
+
+
+// ===================MEDIA=======================
+
+@media (max-width: 1170px) {
+  .current_order {
+    width: 360px;
+    height: 360px;
+    margin-left: 20px;
+    &_bottom {
+      margin-top: 150px;
+    }
+  }
+}
+
+@media (max-width: 1022px) {
+  .current_order {
+    width: 100%;
+    height: 250px;
+    margin-left: 0;
+    &_bottom {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (max-width: 886px) {
+  .current_order {
+    height: 230px;
+    &_bottom {
+      margin-top: 30px;
+    }
+  }
+}
