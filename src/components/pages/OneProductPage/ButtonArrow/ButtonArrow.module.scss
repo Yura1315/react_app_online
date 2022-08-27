@@ -24,3 +24,22 @@
 		cursor: pointer;
 	}
 }
+
+
+// =================MEDIA====================
+
+@media (max-width: 1170px) {
+	.slider_arrow {
+		&_right_wrap {
+			right: -400px;
+		}
+	}
+}
+
+@media (max-width: 886px) {
+	.slider_arrow {
+		&_right_wrap {
+			right: -350px;
+		}
+	}
+}

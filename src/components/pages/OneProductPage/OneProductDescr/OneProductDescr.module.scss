@@ -53,3 +53,23 @@
 		color: var(--color-brown);
 	}
 }
+
+
+// =================MEDIA====================
+
+@media (max-width: 1022px) {
+	.card_more {
+		&_descr_link {
+			font-size: 14px;
+			&_active {
+				font-size: 14px;
+			}
+		}
+		&_char_item {
+			font-size: 14px;
+		}
+		&_char_item_text {
+			width: 80px;
+		}
+	}
+}

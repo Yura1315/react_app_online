@@ -21,3 +21,17 @@
 		}
 	}
 }
+
+
+// =================MEDIA====================
+
+@media (max-width: 1022px) {
+	.button_favorite {
+			height: 50px;
+			width: 50px;
+			&_svg {
+				width: 20px;
+				height: 20px;
+			}
+	}
+}

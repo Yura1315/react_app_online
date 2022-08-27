@@ -87,6 +87,7 @@ const OneProductPage = () => {
                     {Math.floor(oneProduct.price - (oneProduct.sales / 100) * oneProduct.price)}
                   </span>
                   <svg
+                    className={style.roubles}
                     width="14"
                     height="19"
                     viewBox="0 0 13 18"
@@ -103,6 +104,7 @@ const OneProductPage = () => {
                 <>
                   <span className={style.card_more_price}>{oneProduct.price}</span>
                   <svg
+                    className={style.roubles}
                     width="14"
                     height="19"
                     viewBox="0 0 13 18"

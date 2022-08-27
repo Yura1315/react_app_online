@@ -3,9 +3,11 @@
 
 .container {
 	width: 1290px;
-	margin: 0 auto;
 }
 .card_more {
+	display: flex;
+	justify-content: center;
+
 	padding-top: 90px;
 	padding-bottom: 90px;
 	height: 100%;
@@ -92,4 +94,103 @@
 		opacity: 1;
 		transition: opacity ease-in-out 0.4s;
 	}
+}
+
+
+
+// =================MEDIA====================
+
+@media (max-width: 1340px) {
+	.container {
+		width: 1150px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
+@media (max-width: 1170px) {
+	.container {
+		width: 950px;
+	}
+	.card_more {
+		&_title {
+			font-size: 35px;
+			width: 500px;
+		}
+		&_info {
+			width: 80%;
+		}
+		&_list {
+			height: 400px;
+			width: 400px;
+		}
+		&_img {
+			height: 400px;
+			width: 400px;
+		}
+		&_article {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+@media (max-width: 1022px) {
+	.container {
+		width: 850px;
+	}
+	.card_more {
+		&_title {
+			font-size: 27px;
+			width: 100%;
+		}
+		&_price {
+			font-size: 30px;
+			&_sm {
+				font-size: 20px;
+			}
+			&_sales {
+				font-size: 30px;
+			}
+		}
+	}
+	.btn_wrap {
+		width: 100%;
+	}
+}
+
+@media (max-width: 886px) {
+	.container {
+		width: 750px;
+	}
+	.card_more {
+		&_list {
+			width: 350px;
+			height: 350px;
+		}
+		&_img {
+			height: 350px;
+			width: 350px;
+		}
+		&_title {
+			font-size: 24px;
+		}
+		&_price {
+			font-size: 26px;
+			&_sm {
+				font-size: 23px;
+			}
+			&_sales {
+				font-size: 26px;
+			}
+		}
+		&_article {
+			font-size: 14px;
+		}
+	}
+	.roubles {
+		width: 11px;
+		height: 16px;
+	}
+
 }

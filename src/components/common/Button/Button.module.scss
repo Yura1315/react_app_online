@@ -24,3 +24,13 @@
 		background-color: var(--color-brown);
 	}
 }
+
+// =================MEDIA====================
+
+@media (max-width: 1022px) {
+    .btn {
+        height: 50px;
+        width: 180px;
+        font-size: 12px;
+    }
+}
