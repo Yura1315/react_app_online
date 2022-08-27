@@ -3,12 +3,6 @@
 .catalog {
 	margin-top: 50px;
 	margin-bottom: 50px;
-	&_wrap {
-		width: 1290px;
-		margin: 0 auto;
-		display: flex;
-		justify-content: space-between;
-	}
 	&_filter {
 		width: 342px;
 		background-color: var(--color-white);
@@ -65,4 +59,26 @@
 	&:hover {
 		color: red;
 	}
+}
+
+// =================MEDIA====================
+
+@media (max-width: 1340px) {
+	.catalog {
+		&_filter {
+			width: 250px;
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+
+}
+
+
+@media (max-width: 1022px) {
+}
+
+@media (max-width: 886px) {
+
 }
