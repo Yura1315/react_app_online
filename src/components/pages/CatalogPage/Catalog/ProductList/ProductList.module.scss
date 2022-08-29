@@ -6,29 +6,35 @@
 	grid-template-columns: repeat(3, 1fr);
 	row-gap: 30px;
 	column-gap: 30px;
-	margin-top: 20px;
 	margin-bottom: 100px;
-	margin-left: 30px;
 }
 
 // =================MEDIA====================
 
 @media (max-width: 1340px) {
 	.product_list {
-		margin-left: 10px;
-		column-gap: 15px;
-		row-gap: 15px;
+		column-gap: 16px;
+		row-gap: 16px;
 	}
 }
 
 @media (max-width: 1170px) {
-
+	.product_list {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }
 
-
 @media (max-width: 1022px) {
+	.product_list {
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 60px;
+		row-gap: 25px;
+	}
 }
 
 @media (max-width: 886px) {
-
+	.product_list {
+		column-gap: 15px;
+		row-gap: 15px;
+	}
 }

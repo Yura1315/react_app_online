@@ -2,7 +2,7 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable no-confusing-arrow */
 import React from 'react';
-import { NavLink, Link, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import style from './BreadCrumbs.module.scss';
 
 const BreadCrumbs = () => (
