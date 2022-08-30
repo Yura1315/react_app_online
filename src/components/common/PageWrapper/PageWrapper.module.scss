@@ -1,6 +1,7 @@
 @import '../../../assets/style/vars.scss';
 
 .page_wrapper {
+    position: relative;
     height: 100vh;
     display: grid;
     grid-template-areas: 
@@ -11,5 +12,6 @@
 }
 
 .content {
+    position: relative;
     grid-area: content;
 }

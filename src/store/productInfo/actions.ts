@@ -42,11 +42,11 @@ export const GetOneProductAction = (id: any) => async (dispatch: any) => {
   try {
     dispatch(ShowLoaderAction());
     const oneProduct = await makeRequest({ url: `/product/${id}`, method: 'GET' });
-    dispatch(HideLoaderAction());
     dispatch({
       type: ProductsActionType.getOneProduct,
       payload: oneProduct.product,
     });
+    dispatch(HideLoaderAction());
   } catch (err) {
     console.log(err);
   }
