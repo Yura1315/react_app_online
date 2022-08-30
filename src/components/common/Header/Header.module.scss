@@ -6,8 +6,17 @@
 }
 
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	grid-area: header;
 	background-color: var(--color-grey);
+	z-index: 10;
+	transition: all ease-in-out 0.2s;
+	&_sticky_menu {
+		top: -80px;
+	}
 	&_personal {
 		display: flex;
 	}
