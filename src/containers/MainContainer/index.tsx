@@ -6,7 +6,7 @@ import { getPopularProducts } from '../../store/productInfo/selector';
 
 const MainContainer = () => {
   const dispatch = useDispatch();
-  const productsData: any = useSelector(getPopularProducts);
+  const productsData = useSelector(getPopularProducts);
   useEffect(() => {
     dispatch(GetPopulatProductsAction());
   }, []);
