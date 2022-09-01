@@ -1,9 +1,6 @@
 @import '../../../assets/style/vars.scss';
 
 .profile {
-    &_info {
-        // margin-left: 120px;
-    }
     &_user_info {
         display: flex;
         justify-content: space-between;
@@ -16,6 +13,26 @@
         color: var(--color-brown);
         span {
             color: #2e2b29;
+        }
+    }
+}
+
+// =================MEDIA====================
+
+
+@media (max-width: 611px) {
+    .profile {
+        &_user_info {
+            width: 300px;
+            font-size: 13px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .profile {
+        &_user_info {
+            width: 280px;
         }
     }
 }

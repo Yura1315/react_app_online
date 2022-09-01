@@ -75,6 +75,8 @@
 @media (max-width: 1340px) {
 	.card_wrap {
         width: 1150px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
     .card_descr {
         width: 600px;
@@ -104,6 +106,30 @@
 
 @media (max-width: 886px) {
     .card_wrap {
-        width: 750px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 886px) {
+    .form_wrap {
+        width: 400px;
+    }
+}
+
+@media (max-width: 800px) {
+    .form_wrap {
+        width: 390px;
+    }
+}
+
+@media (max-width: 435px) {
+    .form_wrap {
+        width: 98%;
+    }
+    .nav_auth {
+        font-size: 15px;
+        &_active {
+            font-size: 15px;
+        }
     }
 }

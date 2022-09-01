@@ -9,14 +9,25 @@
 }
 
 .form_edit {
-    // margin-left: 120px;
     width: 390px;
 }
 
-// ==========MEDIA============
+//==========MEDIA============
 
-// @media (max-width: 1022px) {
-//     .form {
-//         padding: 41px 70px;
-//     }
-// }
+@media (max-width: 429px) {
+    .form {
+        padding: 21px 40px;
+    }
+}
+
+@media (max-width: 397px) {
+    .form {
+        padding: 21px 3px;
+    }
+}
+
+@media (max-width: 583px) {
+    .form_edit {
+        width: 80%;
+    }
+}

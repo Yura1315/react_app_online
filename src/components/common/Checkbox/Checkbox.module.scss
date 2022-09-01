@@ -55,3 +55,12 @@
 	font-size: 13px;
 	width: 220px;
 }
+
+
+@media (max-width: 883px) {
+	.checkbox {
+		&_text {
+			font-size: 13px;
+		}
+	}
+}

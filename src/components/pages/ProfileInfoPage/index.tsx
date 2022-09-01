@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { GetUserInfo } from '../../../store/userUnfo/selectors';
@@ -26,7 +27,11 @@ const ProfilePage = () => {
         </li>
         <li className={style.profile_user_info}>
           <span>Дата рождения: </span>
-          {userInfo ? userInfo.birthDay : ''}
+          {userInfo
+            ? `${new Date(userInfo.birthDay).getDate()}.${
+                new Date(userInfo.birthDay).getMonth() + 1
+              }.${new Date(userInfo.birthDay).getFullYear()}`
+            : ''}
         </li>
         <li className={style.profile_user_info}>
           <span>Телефон: </span>

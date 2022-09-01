@@ -99,3 +99,60 @@
     width: 750px;
   }
 }
+
+@media (max-width: 700px) {
+  .footer_wrap {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    &_contacts_title {
+      font-size: 14px;
+    }
+    &_phone a {
+      font-size: 10px;
+    }
+    &_phone {
+      margin-bottom: 12px;
+    }
+    &_mail a {
+      font-size: 10px;
+    }
+  }
+  .political {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 397px) {
+  .footer {
+    &_contacts_title {
+      font-size: 10px;
+    }
+    &_phone a {
+      font-size: 9px;
+    }
+    &_phone {
+      margin-bottom: 8px;
+    }
+    &_mail a {
+      font-size: 9px;
+    }
+    &_social {
+      margin-top: 65px;
+    }
+    &_social_link {
+      & svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+  .political {
+    position: absolute;
+    left: 17px;
+    font-size: 9px;
+  }
+}
