@@ -28,3 +28,25 @@
     font-size: 15px;
   }
 }
+
+// ===================MEDIA=======================
+
+@media (max-width: 611px) {
+  .count {
+    &_btn {
+      height: 20px;
+      width: 20px;
+      &_disable {
+        height: 20px;
+        width: 20px;
+      }
+    }
+    &_input {
+      height: 20px;
+      width: 20px;
+    }
+    &_wrap {
+      width: 60px;
+    }
+  }
+}

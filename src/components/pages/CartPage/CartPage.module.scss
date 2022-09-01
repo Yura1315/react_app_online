@@ -35,7 +35,8 @@
 
 @media (max-width: 1022px) {
   .cart_wrap {
-    width: 950px;
+    // width: 950px;
+    width: 100%;
     flex-direction: column;
     margin-bottom: 50px;
   }
@@ -43,6 +44,6 @@
 
 @media (max-width: 886px) {
   .cart_wrap {
-    width: 750px;
+    // width: 750px;
   }
 }
