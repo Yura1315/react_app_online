@@ -24,3 +24,11 @@
 		background-color: var(--color-brown);
 	}
 }
+
+
+@media (max-width: 476px) {
+    .btn_primary {
+        height: 50px;
+        font-size: 11px;
+    }
+}

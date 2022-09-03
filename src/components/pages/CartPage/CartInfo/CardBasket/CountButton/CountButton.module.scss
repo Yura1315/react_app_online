@@ -50,3 +50,24 @@
     }
   }
 }
+
+@media (max-width: 476px) {
+  .count {
+    &_btn {
+      height: 15px;
+      width: 15px;
+      &_disable {
+        height: 15px;
+        width: 15px;
+      }
+    }
+    &_input {
+      height: 15px;
+      width: 15px;
+      font-size: 10px;
+    }
+    &_wrap {
+      width: 45px;
+    }
+  }
+}

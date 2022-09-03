@@ -25,7 +25,10 @@
 	justify-content: space-between;
 }
 
+
 // ===================MEDIA=======================
+
+
 @media (max-width: 1340px) {
 	.container {
 		position: relative;
@@ -60,5 +63,38 @@
 @media (max-width: 886px) {
 	.container {
 		width: 750px;
+	}
+}
+
+@media (max-width: 751px) {
+	.container {
+		width: 650px;
+	}
+}
+
+@media (max-width: 655px) {
+	.container {
+		width: 550px;
+	}
+}
+
+@media (max-width: 557px) {
+	.container {
+		width: 480px;
+	}
+}
+
+@media (max-width: 487px) {
+	.container {
+		width: 380px;
+	}
+}
+
+@media (max-width: 392px) {
+	.title {
+		font-size: 20px;
+	}
+	.container {
+		width: 300px;
 	}
 }

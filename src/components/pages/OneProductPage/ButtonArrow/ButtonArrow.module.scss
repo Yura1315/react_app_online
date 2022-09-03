@@ -44,13 +44,16 @@
 	}
 }
 
-@media (max-width: 700px) {
+@media (max-width: 769px) {
 	.slider_arrow {
+		&_wrap {
+			display: none;
+		}
 		&_right_wrap {
-			right: -650px;
+			right: -720px;
 		}
 		&_left_wrap {
-			left: 70px;
+			left: 10px;
 		}
 	}
 }

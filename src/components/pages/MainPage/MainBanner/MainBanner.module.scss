@@ -129,15 +129,22 @@
 @media (max-width: 1022px) {
 	.main_banner {
 		&_wrap {
-			width: 850px;
+			width: 100%;
+		}
+	}
+}
+@media (max-width: 487px) {
+	.main_banner {
+		&_img {
+			height: 525px;
 		}
 	}
 }
 
-@media (max-width: 886px) {
+@media (max-width: 350px) {
 	.main_banner {
-		&_wrap {
-			width: 750px;
+		&_img {
+			height: 400px;
 		}
 	}
 }

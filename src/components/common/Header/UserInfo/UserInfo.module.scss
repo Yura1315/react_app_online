@@ -87,7 +87,14 @@
 
 
 @media (max-width: 886px) {
-	.account_user {
+	.account {
+		margin-left: 0;
+		width: 100%;
+	&_user {
         display: none;
     }
+		&_login {
+			left: -160px;
+		}
+	}	
 }

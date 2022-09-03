@@ -138,8 +138,12 @@
     }
 	.logo {
 		position: absolute;
-		left: 43vw;	
+		left: 45%;	
 	}
+}
+
+@media (max-width: 886px) {
+
 }
 
 
@@ -147,11 +151,5 @@
 	.logo img {
 		width: 66px;
 		height: 34px;
-	}
-}
-
-@media (max-width: 500px) {
-	.logo {
-		left: 41%;
 	}
 }

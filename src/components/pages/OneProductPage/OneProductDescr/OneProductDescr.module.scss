@@ -73,3 +73,15 @@
 		}
 	}
 }
+
+
+@media (max-width: 419px) {
+	.card_more {
+		&_descr_wrap {
+			padding-right: 0;
+		}
+		&_descr_one {
+			line-height: 20px;
+		}
+	}
+}

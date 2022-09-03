@@ -167,3 +167,15 @@
     }
   }
 }
+
+
+@media (max-width: 478px) {
+  .card {
+    &_title {
+      font-size: 12px;
+    }
+    &_img {
+      display: flex;flex-shrink: 0;
+    }
+  }
+}

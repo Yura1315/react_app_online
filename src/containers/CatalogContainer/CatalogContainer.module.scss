@@ -10,6 +10,8 @@
   margin-bottom: 50px;
 }
 
+
+
 .paginate {
 	display: flex;
 	color: var(--color-light-brown);
@@ -43,5 +45,11 @@
 		display: flex;
 		justify-content: center;
 		margin-left: 30px;
+	}
+}
+
+@media (max-width: 729px) {
+	.catalog_wrap {
+		margin-top: 10px;
 	}
 }

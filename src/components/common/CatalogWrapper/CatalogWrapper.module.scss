@@ -3,7 +3,7 @@
 .container {
     width: 1290px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     position: relative;
 }
 
@@ -16,6 +16,7 @@
         justify-content: center;
     }
 }
+
 
 
 // =================MEDIA====================
@@ -31,20 +32,38 @@
 @media (max-width: 1170px) {
     .container {
         width: 1000px;
-        flex-direction: column;
-        justify-content: start;
+        // flex-direction: column;
+        // justify-content: start;
     }
 }
 
 
 @media (max-width: 1022px) {
     .container {
-        width: 850px;
+        width: 100%;
     }
 }
 
-@media (max-width: 886px) {
+@media (max-width: 990px) {
     .container {
-        width: 750px;
+        // width: 750px;
     }
 }
+
+@media (max-width: 758px) {
+    .container {
+        // width: 700px
+    }
+}
+
+@media (max-width: 727px) { 
+    .container {
+        flex-direction: column;
+    }
+}
+
+// @media (max-width: 758px) {
+//     .container {
+//         width: 580px;
+//     }
+// }

@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useSearchParams } from 'react-router-dom';
+import BreadCrumbsSm from '../../components/common/CatalogWrapper/BreadCrumbsSm';
 import Loader from '../../components/common/Loader';
 import CatalogPage from '../../components/pages/CatalogPage';
 import { GetLoadingState } from '../../store/loader/selectors';
@@ -32,6 +33,7 @@ const CatalogContainer = () => {
         <Loader />
       ) : (
         <>
+          {/* <BreadCrumbsSm category={category} /> */}
           <CatalogPage productsData={productsData} />
           <div className={style.products_wrap}>
             <div className={style.paginate_wrap}>
