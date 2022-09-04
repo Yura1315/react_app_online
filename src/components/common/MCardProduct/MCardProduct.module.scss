@@ -103,3 +103,102 @@
 		}
 	}
 }
+
+//===========Small Card================
+
+.product_small {
+	&_item {
+		display: inline-flex;
+		flex-direction: column;
+		height: 430px;
+		width: 285px;
+		border: 2px solid var(--color-light-brown);
+		cursor: pointer;
+		justify-content: space-between;
+		padding: 15px 15px 15px 15px;
+		transition: 0.6s;
+	}
+	&_item:hover {
+		box-shadow: 7px 4px 4px rgb(216, 212, 212);
+	}
+	&_title {
+		font-family: "Forum";
+		font-size: 24px;
+		text-align: end;
+		color: var(--color-brown);
+	}
+	&_price {
+		display: block;
+		text-align: end;
+		margin-right: 12px;
+		font-family: "Forum";
+		font-size: 30px;
+		color: var(--color-brown);
+		&_sm {
+			display: block;
+		  text-align: end;
+		  margin-left: 12px;
+		  font-family: "Forum";
+		  font-size: 23px;
+		  color: var(--color-light-brown);
+		  text-decoration: line-through;
+		}
+		&_sales {
+			font-family: "Forum";
+			color: var(--color-red);
+			font-size: 28px;
+			margin-right: 8px;
+		}
+	}
+	&_item_img {
+		display: block;
+		object-fit: cover;
+		width: 250px;
+		height: 250px;
+	}
+	&_item_price_wrap {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-bottom: 7px;
+	}
+	&_btn {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+
+//==============Media Small==============
+
+
+@media (max-width: 971px) {
+	.product_small {
+		&_title {
+			text-align: inherit;
+			margin-left: 10px;
+			flex-grow: 1;
+		}
+		&_item {
+			height: 150px;
+			width: 100%;
+			flex-direction: row;
+			justify-content: start;
+			&_price_wrap {
+				position: absolute;
+				right: 25px;
+			}
+			&_img {
+				width: 125px;
+				height: auto;
+				flex-shrink: 0;
+			}
+		}
+		&_btn {
+			align-items: flex-end;
+			& button {
+				margin-left: 10px;
+			}
+		}
+	}
+}

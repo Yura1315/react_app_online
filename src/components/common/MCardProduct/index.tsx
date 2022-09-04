@@ -22,6 +22,7 @@ type CardProductType = {
   sales: number;
   char: any[];
   descr: string;
+  size?: string;
 };
 
 const CardProduct = forwardRef(
@@ -39,6 +40,7 @@ const CardProduct = forwardRef(
       char,
       descr,
       sales,
+      size,
     }: CardProductType,
     ref: any
   ) => {
@@ -77,13 +79,30 @@ const CardProduct = forwardRef(
       }
     };
     return (
-      <Link className={style.product_item} to={`/product/${id}`} ref={ref}>
-        <img className={style.product_item_img} src={src[0]} alt={alt} />
-        <h2 className={style.product_title}>{title}</h2>
-        <p className={style.product_item_price_wrap}>
+      <Link
+        className={size !== 'small' ? style.product_item : style.product_small_item}
+        to={`/product/${id}`}
+        ref={ref}>
+        <img
+          className={size !== 'small' ? style.product_item_img : style.product_small_item_img}
+          src={src[0]}
+          alt={alt}
+        />
+        <h2 className={size !== 'small' ? style.product_title : style.product_small_title}>
+          {title}
+        </h2>
+        <p
+          className={
+            size !== 'small'
+              ? `${style.product_item_price_wrap}`
+              : `${style.product_small_item_price_wrap}`
+          }>
           {sales > 0 ? (
             <>
-              <span className={style.product_price_sales}>
+              <span
+                className={
+                  size !== 'small' ? style.product_price_sales : style.product_small_price_sales
+                }>
                 {Math.floor(price - (sales / 100) * price)}
               </span>
               <svg
@@ -97,11 +116,18 @@ const CardProduct = forwardRef(
                   fill="#C77958"
                 />
               </svg>
-              <span className={style.product_price_sm}>{price}</span>
+              <span
+                className={
+                  size !== 'small' ? style.product_price_sm : style.product_small_price_sm
+                }>
+                {price}
+              </span>
             </>
           ) : (
             <>
-              <span className={style.product_price}>{price}</span>
+              <span className={size !== 'small' ? style.product_price : style.product_small_price}>
+                {price}
+              </span>
               <svg
                 width="13"
                 height="18"
@@ -116,7 +142,7 @@ const CardProduct = forwardRef(
             </>
           )}
         </p>
-        <div className={style.product_btn}>
+        <div className={size !== 'small' ? style.product_btn : style.product_small_btn}>
           <ButtonSecondary title="ПОДРОБНЕЕ" />
           <ButtonSecondary title="В КОРЗИНУ" handler={handler} />
         </div>

@@ -1,26 +1,24 @@
 /* eslint-disable react/jsx-curly-newline */
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable no-confusing-arrow */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import BreadCrumbsSm from '../BreadCrumbsSm';
 import style from './BreadCrumbs.module.scss';
 
 const BreadCrumbs = () => {
-  const [clientWidth, setClientWidth] = useState(0);
+  const [clientWidth, setClientWidth] = useState(window.innerWidth);
   const { category } = useParams();
+  const getClientWidth = () => {
+    setClientWidth(window.innerWidth);
+  };
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      setClientWidth(window.innerWidth);
-    });
-    return () =>
-      window.removeEventListener('resize', () => {
-        setClientWidth(window.innerWidth);
-      });
+    window.addEventListener('resize', getClientWidth);
+    return () => window.removeEventListener('resize', getClientWidth);
   }, [clientWidth]);
   return (
     <div className={style.catalog}>
-      {clientWidth < 727 ? (
+      {clientWidth <= 807 ? (
         <BreadCrumbsSm category={category} />
       ) : (
         <div className={style.catalog_filter}>

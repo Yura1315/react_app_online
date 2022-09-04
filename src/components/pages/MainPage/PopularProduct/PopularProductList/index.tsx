@@ -81,6 +81,7 @@ const PopularProductList = ({ productsData }: PopularProductListType) => {
             productId={el._id}
             article={el.article}
             sales={el.sales}
+            size="large"
           />
         ))}
       </motion.ul>

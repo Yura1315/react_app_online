@@ -50,9 +50,9 @@ const ProductList = ({ productsData }: ProductListType) => (
         char={el.char}
         bought={el.bought}
         sales={el.sales}
+        size="small"
       />
     ))}
   </ul>
 );
-
 export default ProductList;
