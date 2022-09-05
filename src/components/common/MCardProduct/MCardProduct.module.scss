@@ -75,13 +75,13 @@
 				height: 200px;
 			}
 		}
-		&_title {
-			font-size: 20px;
-		}
-		&_price {
-			margin-right: 8px;
-			font-size: 28px;
-		}
+		// &_title {
+		// 	font-size: 20px;
+		// }
+		// &_price {
+		// 	margin-right: 8px;
+		// 	font-size: 28px;
+		// }
 	}
 }
 
@@ -171,6 +171,37 @@
 
 //==============Media Small==============
 
+@media (max-width: 1340px) {
+	.product_small {
+		&_item {
+			height: 350px;
+			width: 225px;
+			padding: 10px 10px 10px 10px;
+			&_img {
+				width: 200px;
+				height: 200px;
+			}
+		}
+		&_title {
+			font-size: 20px;
+		}
+		&_price {
+			margin-right: 8px;
+			font-size: 28px;
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.product_small {
+		&_item {
+			height: 350px;
+			width: 230px;
+			padding: 10px 10px 10px 10px;
+		}
+	}
+}
+
 
 @media (max-width: 971px) {
 	.product_small {
@@ -183,10 +214,13 @@
 			height: 150px;
 			width: 100%;
 			flex-direction: row;
-			justify-content: start;
 			&_price_wrap {
 				position: absolute;
 				right: 25px;
+				& svg {
+					width: 10px;
+					height: 15px;
+				}
 			}
 			&_img {
 				width: 125px;
@@ -198,6 +232,87 @@
 			align-items: flex-end;
 			& button {
 				margin-left: 10px;
+				padding: 0 15px;
+			}
+		}
+	}
+}
+
+@media (max-width: 583px) {
+	.product_small {
+		&_title {
+			font-size: 17px;
+		}
+		&_item {
+			height: 120px;
+			width: 100%;
+			&_price_wrap svg {
+				height: 13px;
+				width: 8px;
+			}
+			&_img {
+				width: 100px;
+			}
+		}
+		&_price {
+			font-size: 22px;
+			margin-right: 5px;
+			&_sm {
+				font-size: 22px;
+			}
+			&_sales {
+				font-size: 24px;
+				margin-right: 5px;
+			}
+		}
+		&_btn {
+			& button {
+				padding: 0 10px;
+				height: 25px;
+				font-size: 6px;
+			}
+		}
+	}
+}
+
+@media (max-width: 462px) {
+	.product_small {
+		&_title {
+			font-size: 14px;
+		}
+		&_item {
+			height: 90px;
+			&_img {
+				width: 60px;
+			}
+		}
+		&_price {
+			&_sm {
+				font-size: 16px;
+			}
+			font-size: 16px;
+			&_sales {
+				font-size: 16px;
+			}
+		}
+		&_btn {
+			& button {
+				padding: 0 7px;
+				height: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 373px) {
+	.product_small {
+		&_title {
+			font-size: 12px;
+		}
+		&_btn {
+			& button {
+				margin-left: 5px;
+				font-size: 5px;
 			}
 		}
 	}

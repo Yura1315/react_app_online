@@ -49,7 +49,35 @@
 }
 
 @media (max-width: 807px) {
+	.paginate {
+		&_wrap {
+			margin-left: 0;
+		}
+	}
 	.catalog_wrap {
 		margin-top: 10px;
+	}
+}
+
+
+@media (max-width: 583px) {
+	.paginate {
+		& li {
+			& a {
+				padding: 11px;
+				font-size: 11px;
+			}
+		}
+	}
+}
+
+@media (max-width: 462px) {
+	.paginate {
+		& li {
+			& a {
+				padding: 9px;
+				font-size: 9px;
+			}
+		}
 	}
 }
