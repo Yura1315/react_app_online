@@ -74,35 +74,53 @@
   .container {
     width: 1000px;
   }
+  .profile {
+    &_right {
+      margin-left: 10px;
+    }
+    &_user {
+      width: 200px;
+      height: 200px;
+      font-size: 35px;
+    }
+  }
 }
 
 @media (max-width: 1022px) {
   .container {
-    width: 850px;
+    width: 100%;
+  }
+
+  .profile {
+    &_link {
+      font-size: 19px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    &_link_active {
+      font-size: 19px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
 }
 
 @media (max-width: 886px) {
   .container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 20px;
   }
   .profile {
     &_right {
       margin-left: 0;
     }
-    &_link {
-      font-size: 20px;
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-    &_link_active {
-      font-size: 20px;
-      &:first-child {
-        margin-top: 0;
-      }
+    &_left {
+      margin-bottom: 30px;
     }
     &_links {
       margin-top: 0;
@@ -113,22 +131,8 @@
   }
 }
 
-@media (max-width: 700px) {
-  .profile {
-    &_link {
-      font-size: 18px;
-      }
-      &_link_active {
-        font-size: 18px;
-    }
-  }
-}
 
-@media (max-width: 611px) {
-  .container {
-    flex-direction: column;
-    padding-top: 20px;
-  }
+@media (max-width: 612px) {
   .profile {
     &_links {
       flex-direction: initial;
@@ -153,9 +157,6 @@
       display: flex;
       justify-content: center;
       margin-left: 0;
-    }
-    &_left {
-      margin-bottom: 30px;
     }
   }
 }

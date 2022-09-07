@@ -6,3 +6,18 @@
     row-gap: 30px;
     grid-column-gap: 30px;
 }
+
+@media (max-width: 1170px) {
+    .whish_list {
+        row-gap: 10px;
+        grid-column-gap: 10px;
+    }
+}
+
+@media (max-width: 1170px) {
+    .whish_list {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+}

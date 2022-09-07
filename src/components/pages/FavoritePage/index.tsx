@@ -57,6 +57,7 @@ const FavoritePage = () => {
           char={el.char}
           article={el.article}
           sales={el.sales}
+          size="small"
         />
       ))}
     </ul>
