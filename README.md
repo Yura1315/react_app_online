@@ -1,46 +1,24 @@
-# Getting Started with Create React App
+В рамках проекта была разработана клиентская часть интернет-магазина дизайнерской посуды и декора.
+Работа производилась по трем направлениям:
+1. Дизайн будущего приложения
+2. Серверная часть
+3. Клиентская чать
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Дизайн
+В основе стилистического решения лежит стиль минимализм. Цветовое решение - спокойные приглушенные тона. Такая гамма позволяет клиенту использовать сайт более продолжительное время, в отличие от сайтов с яркими насыщенными цветами.
 
-## Available Scripts
+2. Серверная часть
+Серверная часть построенна на Node.js с использованием фреймворка Hapi.js.
+Более подробно с серверной частью можно ознакомиться по ссылке - https://github.com/Yura1315/server_online_shop
 
-In the project directory, you can run:
+3. Клиентская часть
+Клиентская часть постороена с использованием библиотеки React, в качестве хранилища используется Redux, для асинхронных операций Redux-thunk, в качестве стилей выбраны модульные стили.
 
-### `npm start`
+Функционал приложения:
+Неавторизованный пользователь имеет доступ ко всем страницам, кроме личного кабинета. Также может добавлять, изменять количество или удалять товар в корзине. При авторизации или регистрации пользователя добавленные им ранее товары в корзину объединяются с корзиной, пришедшей с сервера.
+Авторизованный пользователь имеет доступ к личному кабинету, где он может изменить свои данные, также может посмотреть список избранных товаров.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Приложение пока не полное, в будущем планируется добавить страницы "Контакты", "О нас" "Оформление заказа". Также будет расширен круг пользователй, будет добавлен Администратор, которые будет иметь возможность: 1. Добавлять новые товары, 2. Удалять товары, 3. Просматривать и изменять статус заказов.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Сайт доступен по ссылке - ...
