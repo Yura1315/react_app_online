@@ -27,7 +27,7 @@ const ProfilePage = () => {
         </li>
         <li className={style.profile_user_info}>
           <span>Дата рождения: </span>
-          {userInfo
+          {userInfo.birthDay
             ? `${new Date(userInfo.birthDay).getDate()}.${
                 new Date(userInfo.birthDay).getMonth() + 1
               }.${new Date(userInfo.birthDay).getFullYear()}`

@@ -77,7 +77,7 @@ const ProfileWrapperSm = () => {
         </ul>
         <ul className={style.category_list}>
           <li className={style.category_link}>
-            <NavLink to="/profile/bought">Мои покупки</NavLink>
+            <NavLink to="/">Мои покупки</NavLink>
           </li>
         </ul>
       </div>

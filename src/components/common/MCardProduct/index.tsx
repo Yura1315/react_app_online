@@ -13,8 +13,8 @@ type CardProductType = {
   id: number;
   productId: string;
   title: string;
-  src: [string];
-  category: [string];
+  src: string[];
+  category: string[];
   price: number;
   article: number;
   bought: number;

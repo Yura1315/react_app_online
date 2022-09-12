@@ -13,7 +13,7 @@ const makeRequest = async ({
       url,
       data,
       params,
-      baseURL: 'http://localhost:5000',
+      baseURL: 'http://188.68.223.141:5000',
       timeout: 10000,
       headers,
     });

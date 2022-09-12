@@ -6,8 +6,8 @@ export type ProductsReducerType = {
       id: number,
       _id: string,
       title: string,
-      src: [string],
-      category: [string],
+      src: string[],
+      category: string[],
       price: number,
       article: number,
       bought: number,
@@ -22,8 +22,8 @@ export type ProductsReducerType = {
       id: number;
       _id: string;
       title: string;
-      src: [string];
-      category: [string];
+      src: string[];
+      category: string[];
       price: number;
       article: number;
       bought: number;

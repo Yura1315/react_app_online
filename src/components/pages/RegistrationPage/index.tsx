@@ -76,10 +76,11 @@ const RegistrationPage = () => {
           name: values.name,
           cart,
         };
+
         try {
           const response = await makeRequest({
             method: 'POST',
-            url: 'http://localhost:5000/logged/reg',
+            url: 'http://188.68.223.141:5000/logged/reg',
             data,
           });
           if (response.statusCode === 400) {
