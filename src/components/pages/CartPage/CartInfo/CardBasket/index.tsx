@@ -122,7 +122,14 @@ const CardBasket = forwardRef(
             </div>
           )}
           <div className={style.card_button_wrap}>
-            <CardButton title={allreadyWhish ? 'В избранном' : 'В избранное'} handler={addWhish} />
+            {user.email ? (
+              <CardButton
+                title={allreadyWhish ? 'В избранном' : 'В избранное'}
+                handler={addWhish}
+              />
+            ) : (
+              ''
+            )}
             <CardButton title="Удалить" handler={delProduct} />
           </div>
         </div>
