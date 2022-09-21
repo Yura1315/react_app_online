@@ -80,7 +80,7 @@ const RegistrationPage = () => {
         try {
           const response = await makeRequest({
             method: 'POST',
-            url: 'http://31.184.253.118:5000/logged/reg',
+            url: 'http://84.38.183.129:5000/logged/reg',
             data,
           });
           if (response.statusCode === 400) {

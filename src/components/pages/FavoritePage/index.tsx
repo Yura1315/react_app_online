@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import makeRequest from '../../../network';
 import { HideLoaderAction, ShowLoaderAction } from '../../../store/loader/actions';
 import { GetLoadingState } from '../../../store/loader/selectors';
-import { GetUserInfo, GetWhishList } from '../../../store/userUnfo/selectors';
+import { GetUserInfo } from '../../../store/userUnfo/selectors';
 import Loader from '../../common/Loader';
 import MCardProduct from '../../common/MCardProduct';
 import style from './FavoritePage.module.scss';
