@@ -43,6 +43,7 @@ const AuthPage = () => {
           const response = await makeRequest({
             method: 'POST',
             url: 'http://84.38.183.129:5000/logged/auth',
+            // url: 'http://localhost:5000/logged/auth',
             data,
           });
           if (response.statusCode === 400) {

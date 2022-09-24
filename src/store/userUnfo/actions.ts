@@ -73,6 +73,7 @@ export const AddCardAction = (cartItem: any) => async (dispatch: any) => {
   try {
     dispatch(ShowLoaderAction());
     const cartItems = await makeRequest({ url: '/addCart', method: 'PUT', data: cartItem });
+    console.log(cartItems);
     dispatch({
       type: UserInfoActionType.addCart,
       payload: cartItems

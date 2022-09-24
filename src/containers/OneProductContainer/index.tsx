@@ -11,7 +11,7 @@ const OneProductContainer = () => {
   const loading = useSelector(GetLoadingState);
   const { id } = useParams();
   useEffect(() => {
-    dispatch(GetOneProductAction(id));
+    dispatch(GetOneProductAction(Number(id)));
   }, []);
   return loading ? <Loader /> : <OneProductPage />;
 };

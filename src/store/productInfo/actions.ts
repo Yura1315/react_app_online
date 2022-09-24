@@ -38,7 +38,7 @@ export const GetProductsReposAction = (searchQuery: string, currentPage: number,
   }
 };
 
-export const GetOneProductAction = (id: any) => async (dispatch: any) => {
+export const GetOneProductAction = (id: number) => async (dispatch: any) => {
   try {
     dispatch(ShowLoaderAction());
     const oneProduct = await makeRequest({ url: `/product/${id}`, method: 'GET' });

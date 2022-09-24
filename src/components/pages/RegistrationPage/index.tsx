@@ -74,13 +74,14 @@ const RegistrationPage = () => {
           password: values.password,
           phone: values.phone,
           name: values.name,
-          cart,
+          cart: [...cart],
         };
 
         try {
           const response = await makeRequest({
             method: 'POST',
             url: 'http://84.38.183.129:5000/logged/reg',
+            // url: 'http://localhost:5000/logged/reg',
             data,
           });
           if (response.statusCode === 400) {
