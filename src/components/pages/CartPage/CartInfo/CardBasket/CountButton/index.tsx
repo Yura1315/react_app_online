@@ -1,6 +1,6 @@
 /* eslint-disable no-confusing-arrow */
 /* eslint-disable no-underscore-dangle */
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddCardAction } from '../../../../../../store/userUnfo/actions';
 import { GetCartInfo, GetUserInfo } from '../../../../../../store/userUnfo/selectors';
@@ -31,11 +31,11 @@ const CountButton = ({ count, idProduct }: CountButtonPropsType) => {
         article: countStore.article,
         char: countStore.char,
         bought: countStore.bought,
-        count: oldCount + 1,
+        count: count + 1,
       },
       email: user.email,
     };
-    // const newCount = { countStore, email: user.email };
+    setCount(newCount.cart.count);
     dispatch(AddCardAction(newCount));
   };
   const handleDecrement = () => {
@@ -52,10 +52,11 @@ const CountButton = ({ count, idProduct }: CountButtonPropsType) => {
         article: countStore.article,
         char: countStore.char,
         bought: countStore.bought,
-        count: oldCount - 1,
+        count: count - 1,
       },
       email: user.email,
     };
+    setCount(newCount.cart.count);
     dispatch(AddCardAction(newCount));
   };
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -80,20 +81,21 @@ const CountButton = ({ count, idProduct }: CountButtonPropsType) => {
           article: countStore.article,
           char: countStore.char,
           bought: countStore.bought,
-          count: oldCount,
+          count: +e.target.value,
         },
         email: user.email,
       };
+      setCount(+e.target.value);
       dispatch(AddCardAction(newCount));
     }
   };
   return (
     <form className={style.count_wrap}>
       <button
-        className={oldCount === 1 ? style.count_btn_disable : style.count_btn}
+        className={countStore.count === 1 ? style.count_btn_disable : style.count_btn}
         type="button"
         onClick={handleDecrement}
-        disabled={oldCount === 1}>
+        disabled={countStore.count === 1}>
         -
       </button>
       <input
@@ -101,7 +103,8 @@ const CountButton = ({ count, idProduct }: CountButtonPropsType) => {
         type="text"
         maxLength={3}
         minLength={1}
-        value={oldCount === 0 ? 0 : oldCount}
+        value={oldCount === 0 ? 1 : oldCount}
+        // value={count === 0 ? 0 : countStore.count}
         onChange={handleChange}
         onBlur={handleOnblur}
       />

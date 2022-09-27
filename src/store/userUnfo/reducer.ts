@@ -55,6 +55,11 @@ const userInfoReducer = (state = initialState, action: ActionType) => {
         ...state,
         cart: action.payload
       };
+    case UserInfoActionType.getCart:
+      return {
+        ...state,
+        cart: action.payload
+      };
     default:
       return state;
   }

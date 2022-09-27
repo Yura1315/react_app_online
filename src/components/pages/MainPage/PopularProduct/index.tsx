@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import PopularProductList from './PopularProductList';
 import style from './PopularProduct.module.scss';
 import { GetLoadingState } from '../../../../store/loader/selectors';
+import Loader from '../../../common/Loader';
 
 type PopularProductPropsType = {
   productsData: [
@@ -32,7 +33,8 @@ const PopularProduct = ({ productsData }: PopularProductPropsType) => {
         <div className={style.field_top}>
           <h2 className={style.title}>Популярные товары</h2>
         </div>
-        {loading ? '' : <PopularProductList productsData={productsData} />}
+        {loading ? <Loader /> : ''}
+        {!productsData ? <Loader /> : <PopularProductList productsData={productsData} />}
       </motion.div>
     </div>
   );

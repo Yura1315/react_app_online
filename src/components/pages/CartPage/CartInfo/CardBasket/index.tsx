@@ -21,7 +21,7 @@ type CardBasketPropsType = {
   descr: any;
   char: any;
   bought: number;
-  category: [string];
+  category: string[];
   sales: number;
 };
 

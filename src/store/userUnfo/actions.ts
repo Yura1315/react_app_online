@@ -1,3 +1,5 @@
+/* eslint-disable keyword-spacing */
+/* eslint-disable object-curly-spacing */
 /* eslint-disable import/no-useless-path-segments */
 /* eslint-disable no-shadow */
 import { ShowLoaderAction, HideLoaderAction } from './../loader/actions';
@@ -11,7 +13,8 @@ export enum UserInfoActionType {
   addWhish = 'ADD_WHISH',
   removeWhish = 'REMOVE_WHISH',
   addCart = 'ADD_CART',
-  delCart = 'DEL_CART'
+  delCart = 'DEL_CART',
+  getCart = 'GET_CART'
 }
 
 export const RegisrationUserAction = (userInfo: {
@@ -21,7 +24,7 @@ export const RegisrationUserAction = (userInfo: {
   lastName: string;
   birthDate: string;
   middleName: string;
-  cart: any[]
+  cart: any[];
 }) => ({
   type: UserInfoActionType.setUserName,
   payload: userInfo,
@@ -73,7 +76,6 @@ export const AddCardAction = (cartItem: any) => async (dispatch: any) => {
   try {
     dispatch(ShowLoaderAction());
     const cartItems = await makeRequest({ url: '/addCart', method: 'PUT', data: cartItem });
-    console.log(cartItems);
     dispatch({
       type: UserInfoActionType.addCart,
       payload: cartItems
@@ -102,3 +104,17 @@ export const AuthorizationErrorStatus = (err: any) => ({
   type: UserInfoActionType.regError,
   payload: err,
 });
+
+export const GetUserCartAction = (email?: string) => async (dispatch: any) => {
+  try {
+    dispatch(ShowLoaderAction());
+    const userCart = await makeRequest({ url: `/cart?email=${email}` });
+    dispatch({
+      type: UserInfoActionType.getCart,
+      payload: userCart
+    });
+    dispatch(HideLoaderAction());
+  } catch (err) {
+    console.log(err);
+  }
+};

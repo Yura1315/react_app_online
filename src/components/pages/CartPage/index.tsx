@@ -13,16 +13,11 @@ const CartPage = () => {
   const cart = useSelector(GetCartInfo);
   return (
     <div className={style.cart}>
-      {cart.length ? (
+      {loading ? <Loader /> : ''}
+      {cart.length > 0 ? (
         <div className={style.cart_wrap}>
-          {loading ? (
-            <Loader />
-          ) : (
-            <>
-              <CartInfo />
-              <CurrentOrder />
-            </>
-          )}
+          <CartInfo />
+          <CurrentOrder />
         </div>
       ) : (
         <div className={style.cart_wrap}>

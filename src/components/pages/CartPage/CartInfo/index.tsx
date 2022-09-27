@@ -1,10 +1,9 @@
 /* eslint-disable no-underscore-dangle */
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { GetCartInfo } from '../../../../store/userUnfo/selectors';
 import MCardBasket from './CardBasket';
-import CartEmpty from './CartEmpty';
 import style from './CartInfo.module.scss';
 
 const listVariants = {
@@ -19,7 +18,7 @@ const CartInfo = () => {
   const cart = useSelector(GetCartInfo);
   return (
     <AnimatePresence exitBeforeEnter>
-      <ul className={style.card_list}>
+      <motion.ul className={style.card_list}>
         {cart.map((el) => (
           <MCardBasket
             variants={listVariants}
@@ -42,7 +41,7 @@ const CartInfo = () => {
             sales={el.sales}
           />
         ))}
-      </ul>
+      </motion.ul>
     </AnimatePresence>
   );
 };

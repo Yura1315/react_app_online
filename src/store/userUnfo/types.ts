@@ -1,4 +1,5 @@
-import { UserInfoActionType } from './actions';
+/* eslint-disable object-curly-spacing */
+import {UserInfoActionType} from './actions';
 
 export type UserInfoReducerType = {
   infoUser: {
@@ -41,13 +42,18 @@ export type RemoveAuthErrActionType = {
 
 export type AddCartActionType = {
   type: UserInfoActionType.addCart,
-  payload: any
-}
+  payload: any;
+};
 
 export type DelCardActionType = {
   type: UserInfoActionType.delCart,
-  payload: any
-}
+  payload: any;
+};
+
+export type GetUserCartActionType = {
+  type: UserInfoActionType.getCart,
+  payload: any;
+};
 
 export type ActionType =
   | RegisrationUserActionType
@@ -57,3 +63,4 @@ export type ActionType =
   | RemoveAuthErrActionType
   | AddCartActionType
   | DelCardActionType
+  | GetUserCartActionType;

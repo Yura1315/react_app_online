@@ -1,72 +1,71 @@
-
-
 .lds_grid {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+  &_div {
     position: absolute;
-    top: 40%;
-    left: 45%;
-    width: 80px;
-    height: 80px;
-    z-index: 10;
-    &_div {
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: rgb(167, 163, 163);
-        animation: lds_grid 1.2s linear infinite;
-    }
-    &_1 {
-        top: 8px;
-        left: 8px;
-        animation-delay: 0s;
-    }
-    &_2 {
-        top: 8px;
-        left: 32px;
-        animation-delay: -0.4s;
-    }
-    &_3 {
-        top: 8px;
-        left: 56px;
-        animation-delay: -0.8s;
-    }
-    &_4 {
-        top: 32px;
-        left: 8px;
-        animation-delay: -0.4s;
-    }
-    &_5 {
-        top: 32px;
-        left: 32px;
-        animation-delay: -0.8s;
-    }
-    &_6 {
-        top: 32px;
-        left: 56px;
-        animation-delay: -1.2s;
-    }
-    &_7 {
-        top: 56px;
-        left: 8px;
-        animation-delay: -0.8s;
-    }
-    &_8 {
-        top: 56px;
-        left: 32px;
-        animation-delay: -1.2s;
-    }
-    &_9 {
-        top: 56px;
-        left: 56px;
-        animation-delay: -1.6s;
-    }
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(167, 163, 163);
+    animation: lds_grid 1.2s linear infinite;
+  }
+  &_1 {
+    top: 8px;
+    left: 8px;
+    animation-delay: 0s;
+  }
+  &_2 {
+    top: 8px;
+    left: 32px;
+    animation-delay: -0.4s;
+  }
+  &_3 {
+    top: 8px;
+    left: 56px;
+    animation-delay: -0.8s;
+  }
+  &_4 {
+    top: 32px;
+    left: 8px;
+    animation-delay: -0.4s;
+  }
+  &_5 {
+    top: 32px;
+    left: 32px;
+    animation-delay: -0.8s;
+  }
+  &_6 {
+    top: 32px;
+    left: 56px;
+    animation-delay: -1.2s;
+  }
+  &_7 {
+    top: 56px;
+    left: 8px;
+    animation-delay: -0.8s;
+  }
+  &_8 {
+    top: 56px;
+    left: 32px;
+    animation-delay: -1.2s;
+  }
+  &_9 {
+    top: 56px;
+    left: 56px;
+    animation-delay: -1.6s;
+  }
 }
 
 @keyframes lds_grid {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }

@@ -13,4 +13,4 @@ const MainContainer = () => {
   return <MainPage productsData={productsData} />;
 };
 
-export default MainContainer;
+export default React.memo(MainContainer);

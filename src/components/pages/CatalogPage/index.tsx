@@ -25,4 +25,4 @@ const CatalogPage = ({ productsData }: CatalogPagePropsType) => (
   <ProductList productsData={productsData} />
 );
 
-export default CatalogPage;
+export default React.memo(CatalogPage);

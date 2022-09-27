@@ -1,7 +1,9 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useSearchParams } from 'react-router-dom';
@@ -30,7 +32,8 @@ const CatalogContainer = () => {
   };
   return (
     <div className={style.catalog_wrap}>
-      {loading ? (
+      {loading ? <Loader /> : ''}
+      {!productsData.length ? (
         <Loader />
       ) : (
         <>
