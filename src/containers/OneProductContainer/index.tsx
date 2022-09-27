@@ -13,7 +13,7 @@ const OneProductContainer = () => {
   useEffect(() => {
     dispatch(GetOneProductAction(Number(id)));
   }, []);
-  return loading ? <Loader /> : <OneProductPage />;
+  return !loading ? <OneProductPage /> : <Loader />;
 };
 
 export default OneProductContainer;

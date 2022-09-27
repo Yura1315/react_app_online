@@ -1,24 +1,10 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
+import { IProduct } from '../../../models/IProduct';
 import ProductList from './Catalog/ProductList';
 
 type CatalogPagePropsType = {
-  productsData: [
-    {
-      id: number;
-      _id: string;
-      title: string;
-      src: string[];
-      category: string[];
-      price: number;
-      article: number;
-      bought: number;
-      alt: string;
-      sales: number;
-      char: any[];
-      descr: string;
-    }
-  ];
+  productsData: IProduct[];
 };
 
 const CatalogPage = ({ productsData }: CatalogPagePropsType) => (

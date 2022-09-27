@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable import/prefer-default-export */
-import React, { forwardRef, useCallback } from 'react';
+import React, { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,22 +8,7 @@ import ButtonSecondary from '../Button/ButtonSecondary';
 import style from './MCardProduct.module.scss';
 import { GetCartInfo, GetUserInfo } from '../../../store/userUnfo/selectors';
 import { AddCardAction } from '../../../store/userUnfo/actions';
-
-type CardProductType = {
-  id: number;
-  productId: string;
-  title: string;
-  src: string[];
-  category: string[];
-  price: number;
-  article: number;
-  bought: number;
-  alt: string;
-  sales: number;
-  char: any[];
-  descr: string;
-  size?: string;
-};
+import { IProduct } from '../../../models/IProduct';
 
 const CardProduct = forwardRef(
   (
@@ -41,7 +26,7 @@ const CardProduct = forwardRef(
       descr,
       sales,
       size,
-    }: CardProductType,
+    }: IProduct,
     ref: any
   ) => {
     const dispatch = useDispatch();
@@ -85,7 +70,7 @@ const CardProduct = forwardRef(
         ref={ref}>
         <img
           className={size !== 'small' ? style.product_item_img : style.product_small_item_img}
-          src={src[0]}
+          src={src![0]}
           alt={alt}
         />
         <h2 className={size !== 'small' ? style.product_title : style.product_small_title}>

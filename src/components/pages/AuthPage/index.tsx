@@ -13,14 +13,10 @@ import Loader from '../../common/Loader';
 import makeRequest from '../../../network';
 import style from './AuthPage.module.scss';
 import { GetCartInfo } from '../../../store/userUnfo/selectors';
-
-type AuthFormValues = {
-  email: string;
-  password: string;
-};
+import { IUser } from '../../../models/IUser';
 
 const AuthPage = () => {
-  const initialValues: AuthFormValues = {
+  const initialValues: IUser = {
     email: '',
     password: '',
   };

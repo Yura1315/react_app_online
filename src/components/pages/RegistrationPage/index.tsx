@@ -14,21 +14,13 @@ import { GetLoadingState } from '../../../store/loader/selectors';
 import Loader from '../../common/Loader';
 import makeRequest from '../../../network';
 import { GetCartInfo } from '../../../store/userUnfo/selectors';
-
-type MyFormValues = {
-  name: string;
-  email: string;
-  password: string;
-  repeatPassword: string;
-  phone: string;
-  checkbox: boolean;
-};
+import { IUser } from '../../../models/IUser';
 
 const RegistrationPage = () => {
   const dispatch = useDispatch();
   const loading = useSelector(GetLoadingState);
   const cart = useSelector(GetCartInfo);
-  const initialValues: MyFormValues = {
+  const initialValues: IUser = {
     name: '',
     email: '',
     password: '',
@@ -69,7 +61,7 @@ const RegistrationPage = () => {
       initialValues={initialValues}
       validateOnBlur
       onSubmit={async (values, { setStatus, resetForm }) => {
-        const data = {
+        const data: IUser = {
           email: values.email,
           password: values.password,
           phone: values.phone,
@@ -112,7 +104,7 @@ const RegistrationPage = () => {
             placeholder="Введите имя"
             setValue={handleChange}
             handleBlur={handleBlur}
-            value={values.name}
+            value={values.name!}
             text="имя"
             err={touched.name && errors.name}
           />
@@ -132,7 +124,7 @@ const RegistrationPage = () => {
             placeholder="Введите телефон"
             setValue={handleChange}
             handleBlur={handleBlur}
-            value={values.phone}
+            value={values.phone!}
             text="телефон"
             err={touched.phone && errors.phone}
           />
@@ -151,12 +143,12 @@ const RegistrationPage = () => {
             placeholder="********"
             handleBlur={handleBlur}
             setValue={handleChange}
-            value={values.repeatPassword}
+            value={values.repeatPassword!}
             err={touched.repeatPassword && errors.repeatPassword}
           />
           <Checkbox
             id="checkbox"
-            value={values.checkbox}
+            value={values.checkbox!}
             setValue={handleChange}
             err={touched.checkbox && errors.checkbox}
           />

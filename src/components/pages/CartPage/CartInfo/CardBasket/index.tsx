@@ -3,27 +3,12 @@ import { motion } from 'framer-motion';
 import React, { forwardRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { IProduct } from '../../../../../models/IProduct';
 import { AddWhishListAction, DelCardAction } from '../../../../../store/userUnfo/actions';
 import { GetUserInfo, GetWhishList } from '../../../../../store/userUnfo/selectors';
 import style from './CardBasket.module.scss';
 import CardButton from './CardButton';
 import CountButton from './CountButton';
-
-type CardBasketPropsType = {
-  id: number;
-  img?: string;
-  alt: string;
-  title: string;
-  price: number;
-  article: number;
-  count: number;
-  idProduct: string;
-  descr: any;
-  char: any;
-  bought: number;
-  category: string[];
-  sales: number;
-};
 
 const CardBasket = forwardRef(
   (
@@ -35,13 +20,13 @@ const CardBasket = forwardRef(
       article,
       id,
       count,
-      idProduct,
+      productId,
       descr,
       char,
       bought,
       category,
       sales,
-    }: CardBasketPropsType,
+    }: IProduct,
     ref: any
   ) => {
     const dispatch = useDispatch();
@@ -51,7 +36,7 @@ const CardBasket = forwardRef(
       const cartItem = {
         email: user.email,
         product: {
-          _id: idProduct,
+          _id: productId,
           id,
           title,
           src: img,
@@ -68,10 +53,10 @@ const CardBasket = forwardRef(
       dispatch(DelCardAction(cartItem));
     };
     const addWhish = () => {
-      const productInfo = { productId: idProduct, productNum: id, email: user.email };
+      const productInfo = { productId, productNum: id, email: user.email };
       dispatch(AddWhishListAction(productInfo));
     };
-    const allreadyWhish = whishList.find((el) => el === idProduct);
+    const allreadyWhish = whishList.find((el) => el === productId);
     return (
       <motion.li className={style.card} ref={ref}>
         <div className={style.card_img}>
@@ -82,7 +67,7 @@ const CardBasket = forwardRef(
             {title}
           </Link>
           <span className={style.card_article}>Артикул: {article}</span>
-          <CountButton count={count} idProduct={idProduct} />
+          <CountButton count={count!} idProduct={productId} />
         </div>
         <div className={style.card_right}>
           {sales > 0 ? (
