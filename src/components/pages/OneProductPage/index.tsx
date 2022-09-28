@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getProductOne } from '../../../store/productInfo/selector';
+import { GetProductOne } from '../../../store/productInfo/selector';
 import { AddCardAction, AddWhishListAction } from '../../../store/userUnfo/actions';
 import { GetCartInfo, GetUserInfo } from '../../../store/userUnfo/selectors';
 import Button from '../../common/Button';
@@ -19,7 +19,7 @@ const OneProductPage = () => {
   const dispatch = useDispatch();
   const user = useSelector(GetUserInfo);
   const cartInfo = useSelector(GetCartInfo);
-  const oneProduct = useSelector(getProductOne);
+  const oneProduct = useSelector(GetProductOne);
   const dataSrcLenght = Number(oneProduct.src.length);
   const addCart = () => {
     const isCartProduct = cartInfo.find((el) => el._id === oneProduct._id);

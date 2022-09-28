@@ -13,15 +13,15 @@ type PopularProductListType = {
 };
 
 const PopularProductList = ({ productsData }: PopularProductListType) => {
-  const [width, setWidth] = useState(0);
-  const [page, setPage] = useState(0);
-  const carousel: any = useRef(null);
+  const [width, setWidth] = useState<number>(0);
+  const [page, setPage] = useState<number>(0);
+  const carousel = useRef<HTMLUListElement>(null);
   const paginate = (newDirection: number) => {
     setPage(newDirection);
   };
   useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-  }, [width]);
+    setWidth(carousel.current!.scrollWidth - carousel.current!.offsetWidth);
+  });
   // Настройки анимации
   const variants = {
     enter: (direction: number) => ({
@@ -40,7 +40,6 @@ const PopularProductList = ({ productsData }: PopularProductListType) => {
       <motion.ul
         variants={variants}
         custom={page}
-        // custom={width}
         initial="enter"
         animate="center"
         transition={{

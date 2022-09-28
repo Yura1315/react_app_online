@@ -17,7 +17,7 @@ export type ProductsReducerType = {
       descr: string,
     }
   ];
-  data: [
+  products: [
     {
       id: number;
       _id: string;
@@ -59,7 +59,7 @@ export type GetPopulatProductsActionType = {
 
 export type GetProductsReposActionType = {
   type: ProductsActionType.getProductsRepos,
-  payload: any
+  payload: any;
 };
 
 export type GetOneProductActionType = {

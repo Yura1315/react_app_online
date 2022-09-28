@@ -3,7 +3,7 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useSearchParams } from 'react-router-dom';
@@ -11,7 +11,7 @@ import Loader from '../../components/common/Loader';
 import CatalogPage from '../../components/pages/CatalogPage';
 import { GetLoadingState } from '../../store/loader/selectors';
 import { GetProductsReposAction } from '../../store/productInfo/actions';
-import { getProducts, getTotalCountPage } from '../../store/productInfo/selector';
+import { GetProducts, GetTotalCountPage } from '../../store/productInfo/selector';
 import style from './CatalogContainer.module.scss';
 
 const CatalogContainer = () => {
@@ -19,9 +19,9 @@ const CatalogContainer = () => {
   const { category } = useParams();
   const dispatch = useDispatch();
   const pageParams = searchParams.get('page') || '1';
-  const productsData = useSelector(getProducts);
+  const productsData = useSelector(GetProducts);
   const loading = useSelector(GetLoadingState);
-  const totalCount = useSelector(getTotalCountPage);
+  const totalCount = useSelector(GetTotalCountPage);
   useEffect(() => {
     setSearchParams(`?page=${pageParams}`);
     dispatch(GetProductsReposAction(category!, +pageParams, 9));

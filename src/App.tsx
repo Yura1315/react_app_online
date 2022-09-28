@@ -19,6 +19,7 @@ import Loader from './components/common/Loader';
 
 const MainContainer = lazy(() => import('./containers/MainContainer'));
 const OneProductContainer = lazy(() => import('./containers/OneProductContainer'));
+// const PageWrapper = lazy(() => import('./components/common/PageWrapper'));
 
 const App = () => (
   <Routes>

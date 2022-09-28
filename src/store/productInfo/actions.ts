@@ -13,10 +13,10 @@ export enum ProductsActionType {
 export const GetPopulatProductsAction = () => async (dispatch: any) => {
   try {
     dispatch(ShowLoaderAction());
-    const data = await makeRequest({ url: '/popular' });
+    const popularProducts = await makeRequest({ url: '/popular', method: 'GET' });
     dispatch({
       type: ProductsActionType.getPopularProducts,
-      payload: data,
+      payload: popularProducts,
     });
     dispatch(HideLoaderAction());
   } catch (err) {
@@ -27,10 +27,10 @@ export const GetPopulatProductsAction = () => async (dispatch: any) => {
 export const GetProductsReposAction = (searchQuery: string, currentPage: number, perPage: number) => async (dispatch: any) => {
   try {
     dispatch(ShowLoaderAction());
-    const data = await makeRequest({ url: `/catalog/${searchQuery}?page=${currentPage}&perPage=${perPage}` });
+    const products = await makeRequest({ url: `/catalog/${searchQuery}?page=${currentPage}&perPage=${perPage}` });
     dispatch({
       type: ProductsActionType.getProductsRepos,
-      payload: data
+      payload: products
     });
     dispatch(HideLoaderAction());
   } catch (err) {

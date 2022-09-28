@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getProductOne } from '../../../../store/productInfo/selector';
+import { GetProductOne } from '../../../../store/productInfo/selector';
 import { GetWhishList } from '../../../../store/userUnfo/selectors';
 import style from './ButtonFavorite.module.scss';
 
@@ -10,7 +10,7 @@ type ButtonFavoritePropsType = {
 };
 
 const ButtonFavorite = ({ addWhish }: ButtonFavoritePropsType) => {
-  const oneProductId = useSelector(getProductOne);
+  const oneProductId = useSelector(GetProductOne);
   const whishList = useSelector(GetWhishList);
   return (
     <button type="button" className={style.button_favorite} onClick={addWhish}>

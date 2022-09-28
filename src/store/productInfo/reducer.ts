@@ -1,3 +1,4 @@
+/* eslint-disable array-bracket-spacing */
 import { ActionType, ProductsReducerType } from './types';
 import { ProductsActionType } from './actions';
 
@@ -7,8 +8,8 @@ const initialState: ProductsReducerType = {
       id: 0,
       _id: '',
       title: '',
-      src: [''],
-      category: [''],
+      src: [],
+      category: [],
       price: 0,
       article: 0,
       bought: 0,
@@ -18,13 +19,13 @@ const initialState: ProductsReducerType = {
       descr: '',
     }
   ],
-  data: [
+  products: [
     {
       id: 0,
       _id: '',
       title: '',
-      src: [''],
-      category: [''],
+      src: [],
+      category: [],
       price: 0,
       article: 0,
       bought: 0,
@@ -66,7 +67,7 @@ const productsReducer = (state = initialState, action: ActionType) => {
         currentPage: action.payload.currentPage,
         perPage: action.payload.perPage,
         totalCount: action.payload.totalCount,
-        data: action.payload.products
+        products: action.payload.products
       };
     case ProductsActionType.getOneProduct:
       return {
