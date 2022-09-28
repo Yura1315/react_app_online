@@ -6,24 +6,10 @@ import { motion } from 'framer-motion';
 import MCardProduct from '../../../../common/MCardProduct';
 import style from './PopularProductList.module.scss';
 import ButtonCarousel from '../../../../common/Button/ButtonCarousel';
+import { IProduct } from '../../../../../models/IProduct';
 
 type PopularProductListType = {
-  productsData: [
-    {
-      id: number;
-      _id: string;
-      title: string;
-      src: string[];
-      category: string[];
-      price: number;
-      article: number;
-      bought: number;
-      alt: string;
-      char: any[];
-      sales: number;
-      descr: string;
-    }
-  ];
+  productsData: IProduct[];
 };
 
 const PopularProductList = ({ productsData }: PopularProductListType) => {

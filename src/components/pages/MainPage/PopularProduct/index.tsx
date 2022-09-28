@@ -5,24 +5,10 @@ import PopularProductList from './PopularProductList';
 import style from './PopularProduct.module.scss';
 import { GetLoadingState } from '../../../../store/loader/selectors';
 import Loader from '../../../common/Loader';
+import { IProduct } from '../../../../models/IProduct';
 
 type PopularProductPropsType = {
-  productsData: [
-    {
-      id: number;
-      _id: string;
-      title: string;
-      src: string[];
-      category: string[];
-      price: number;
-      article: number;
-      bought: number;
-      alt: string;
-      char: any[];
-      descr: string;
-      sales: number;
-    }
-  ];
+  productsData: IProduct[];
 };
 
 const PopularProduct = ({ productsData }: PopularProductPropsType) => {

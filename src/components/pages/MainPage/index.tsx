@@ -1,24 +1,10 @@
 import React from 'react';
+import { IProduct } from '../../../models/IProduct';
 import MainBanner from './MainBanner';
 import PopularProduct from './PopularProduct';
 
 type MainPagePropsType = {
-  productsData: [
-    {
-      id: number;
-      _id: string;
-      title: string;
-      src: string[];
-      category: string[];
-      price: number;
-      article: number;
-      bought: number;
-      alt: string;
-      char: any[];
-      descr: string;
-      sales: number;
-    }
-  ];
+  productsData: IProduct[];
 };
 
 const MainPage = ({ productsData }: MainPagePropsType) => (
